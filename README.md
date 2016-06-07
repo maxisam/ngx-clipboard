@@ -1,0 +1,2 @@
+﻿# angular2-clipboard
+

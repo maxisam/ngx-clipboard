@@ -1,0 +1,28 @@
+﻿{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noEmitOnError": false,
+        "noImplicitAny": false,
+        "noEmitHelpers": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "target": "es5"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "resolveGlobs": true,
+        "forkChecker": true
+    },
+    "filesGlob": [       
+        "!./node_modules/**",
+        "src/custom-typings.d.ts",
+        "typings/browser.d.ts"
+    ],
+    "compileOnSave": false,
+    "buildOnSave": false
+}

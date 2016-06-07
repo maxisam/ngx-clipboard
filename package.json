@@ -1,0 +1,37 @@
+{
+    "name": "ngii-clipboard",
+    "version": "0.1.0",
+    "description": "angular 2 clipboard",
+    "main": "index.js",
+    "author": {
+        "name": "Sam Lin",
+        "email": "maxisam@gmail.com"
+    },
+    "homepage": "",
+    "scripts": {
+        "tslint": "tslint -c tslint.json 'src/**/*.ts'",
+        "typings": "typings install --ambient",
+        "postinstall": "npm run typings",
+        "publish": "npm publish"
+    },
+    "engines": {
+        "node": ">= 4.2.1 < 5"
+    },
+    "publishConfig": {
+        
+    },
+    "dependencies": {
+        "@angular/core": "2.0.0-rc.1",
+        "core-js": "^2.2.2",
+        "rxjs": "5.0.0-beta.6",
+        "zone.js": "~0.6.12",
+        "clipboard": "1.5.10"
+    },
+    "devDependencies": {
+        "codelyzer": "~0.0.19",
+        "es6-promise": "^3.1.2",
+        "es6-promise-loader": "^1.0.1",
+        "es6-shim": "^0.35.0",
+        "es7-reflect-metadata": "^1.6.0"
+    }
+}
