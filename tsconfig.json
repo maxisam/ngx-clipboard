@@ -23,6 +23,6 @@
         "src/custom-typings.d.ts",
         "typings/browser.d.ts"
     ],
-    "compileOnSave": false,
-    "buildOnSave": false
+    "compileOnSave": true,
+    "buildOnSave": true
 }
