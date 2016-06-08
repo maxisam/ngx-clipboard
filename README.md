@@ -7,6 +7,9 @@
 You can get it on npm.
 
 ```
-npm install ngclipboard --save
+npm install angular2-clipboard --save
 ```
 
+## Example
+
+[plunker](http://embed.plnkr.co/PD4Ap8/)
