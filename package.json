@@ -1,6 +1,6 @@
 {
-    "name": "ngii-clipboard",
-    "version": "0.1.0",
+    "name": "angular2-clipboard",
+    "version": "0.1.2",
     "description": "angular 2 clipboard",
     "main": "index.js",
     "author": {
