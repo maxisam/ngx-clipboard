@@ -7,7 +7,7 @@
         "name": "Sam Lin",
         "email": "maxisam@gmail.com"
     },
-    "homepage": "",
+    "homepage": "https://github.com/maxisam/angular2-clipboard",
     "scripts": {
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "typings": "typings install --ambient",
