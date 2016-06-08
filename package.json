@@ -11,7 +11,8 @@
     "scripts": {
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "typings": "typings install --ambient",
-        "postinstall": "npm run typings"      
+        "postinstall": "npm run typings",
+        "publish-npm": "npm publish"      
     },
     "engines": {
         "node": ">= 4.2.1 < 5"
