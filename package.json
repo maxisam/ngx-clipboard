@@ -41,5 +41,13 @@
         "es6-promise-loader": "^1.0.1",
         "es6-shim": "^0.35.0",
         "es7-reflect-metadata": "^1.6.0"
-    }
+    },
+    "files": [
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "typings.json",
+    "index.*",
+    "src/"
+  ]
 }
