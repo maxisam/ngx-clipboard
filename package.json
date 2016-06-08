@@ -1,6 +1,6 @@
 {
     "name": "angular2-clipboard",
-    "version": "0.2.0",
+    "version": "0.2.2",
     "description": "angular 2 clipboard",
     "main": "index.js",
     "author": {
@@ -11,8 +11,7 @@
     "scripts": {
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "typings": "typings install --ambient",
-        "postinstall": "npm run typings",
-        "publish": "npm publish"
+        "postinstall": "npm run typings"      
     },
     "engines": {
         "node": ">= 4.2.1 < 5"
