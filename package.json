@@ -1,6 +1,6 @@
 {
     "name": "angular2-clipboard",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "description": "angular 2 clipboard",
     "main": "index.js",
     "author": {
@@ -12,14 +12,22 @@
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "typings": "typings install --ambient",
         "postinstall": "npm run typings",
-        "publish-npm": "npm publish"      
+        "publish-npm": "npm publish"
     },
     "engines": {
         "node": ">= 4.2.1 < 5"
     },
-    "publishConfig": {
-        
+    "license": "MIT",
+    "publishConfig": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/maxisam/angular2-clipboard"
     },
+    "keywords": [
+        "angular",
+        "clipboard",
+        "copy"
+    ],
     "dependencies": {
         "@angular/core": "2.0.0-rc.1",
         "core-js": "^2.2.2",
