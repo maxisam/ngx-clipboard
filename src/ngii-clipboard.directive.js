@@ -10,7 +10,7 @@ var ClipboardDirective = (function () {
     ClipboardDirective.prototype.ngOnInit = function () {
         var _this = this;
         this.clipboard = new Clipboard(this.elmRef.nativeElement, {
-            target: function () { return _this.targetElm.nativeElement; }
+            text: function () { return !!_this.targetElm ? _this.targetElm.nativeElement : _this.cbContent; }
         });
         this.clipboard.on('success', function (e) { return _this.onSuccess.emit(true); });
         this.clipboard.on('error', function (e) { return _this.onError.emit(true); });
@@ -22,6 +22,10 @@ var ClipboardDirective = (function () {
         core_1.Input('ngIIclipboard'), 
         __metadata('design:type', core_1.ElementRef)
     ], ClipboardDirective.prototype, "targetElm", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ClipboardDirective.prototype, "cbContent", void 0);
     __decorate([
         core_1.Output('cbOnSuccess'), 
         __metadata('design:type', core_1.EventEmitter)
