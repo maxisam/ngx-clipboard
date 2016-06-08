@@ -8,6 +8,8 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     clipboard: Clipboard;
 
     @Input('ngIIclipboard') targetElm: ElementRef;
+    
+    @Input() cbContent: string;
 
     @Output('cbOnSuccess') onSuccess: EventEmitter<boolean> = new EventEmitter();
 
@@ -17,7 +19,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.clipboard = new Clipboard(this.elmRef.nativeElement, {
-            target: () => this.targetElm.nativeElement
+            text: () => !!this.targetElm ? this.targetElm.nativeElement : this.cbContent
         });
 
         this.clipboard.on('success', (e) => this.onSuccess.emit(true));
