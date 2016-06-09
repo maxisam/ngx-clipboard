@@ -13,3 +13,5 @@ npm install angular2-clipboard --save
 ## Example
 
 [plunker](http://embed.plnkr.co/PD4Ap8/)
+
+Kudos to [Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is base on his answer on StackOverflow
