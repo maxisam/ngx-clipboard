@@ -6,7 +6,6 @@
         "moduleResolution": "node",
         "noEmitOnError": false,
         "noImplicitAny": false,
-        "noEmitHelpers": true,
         "removeComments": false,
         "sourceMap": true,
         "target": "es5"
