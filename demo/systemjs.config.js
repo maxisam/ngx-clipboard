@@ -14,7 +14,7 @@
     'angular2-in-memory-web-api': 'https://npmcdn.com/angular2-in-memory-web-api', // get latest
     'rxjs':                       'https://npmcdn.com/rxjs@5.0.0-beta.6',
     'clipboard':                  'https://npmcdn.com/clipboard@1.5.10/dist/clipboard.js',
-    'angular2-clipboard':         'https://npmcdn.com/angular2-clipboard@0.2.7',
+    'angular2-clipboard':         'https://npmcdn.com/angular2-clipboard@0.2.8',
     'ts':                         'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
     'typescript':                 'https://npmcdn.com/typescript@1.8.10/lib/typescript.js'
  };
@@ -24,7 +24,7 @@
     'app':                        { main: 'main.ts',  defaultExtension: 'ts' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
-    'angular2-clipboard': { main: 'index.ts', defaultExtension: 'ts' },
+    'angular2-clipboard': { main: 'index.js', defaultExtension: 'js' },
     'clipboard' :        { defaultExtension: 'js' }
   };
 
