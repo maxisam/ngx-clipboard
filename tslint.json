@@ -78,7 +78,7 @@
       "spaces"
     ],
     "max-line-length": [
-      true,
+      false,
       100
     ],
     "no-require-imports": false,
