@@ -1,6 +1,6 @@
 {
     "name": "angular2-clipboard",
-    "version": "0.2.8",
+    "version": "0.2.9",
     "description": "angular 2 clipboard",
     "main": "index.js",
     "author": {
@@ -15,7 +15,7 @@
         "publish-npm": "npm publish"
     },
     "engines": {
-        "node": ">= 4.2.1 < 5"
+        "node": ">= 4.2.1"
     },
     "license": "MIT",
     "publishConfig": {},
