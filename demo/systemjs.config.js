@@ -10,13 +10,13 @@
   //map tells the System loader where to look for things
   var  map = {
     'app':                        'app',
-    '@angular':                   'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
-    'angular2-in-memory-web-api': 'https://npmcdn.com/angular2-in-memory-web-api', // get latest
-    'rxjs':                       'https://npmcdn.com/rxjs@5.0.0-beta.6',
-    'clipboard':                  'https://npmcdn.com/clipboard@1.5.10/dist/clipboard.js',
-    'angular2-clipboard':         'https://npmcdn.com/angular2-clipboard@0.2.8',
-    'ts':                         'https://npmcdn.com/plugin-typescript@4.0.10/lib/plugin.js',
-    'typescript':                 'https://npmcdn.com/typescript@1.8.10/lib/typescript.js'
+    '@angular':                   'https://unpkg.com/@angular', // sufficient if we didn't pin the version
+    'angular2-in-memory-web-api': 'https://unpkg.com/angular2-in-memory-web-api', // get latest
+    'rxjs':                       'https://unpkg.com/rxjs@5.0.0-beta.6',
+    'clipboard':                  'https://unpkg.com/clipboard@1.5.10/dist/clipboard.js',
+    'angular2-clipboard':         'https://unpkg.com/angular2-clipboard@0.2.8',
+    'ts':                         'https://unpkg.com/plugin-typescript@4.0.10/lib/plugin.js',
+    'typescript':                 'https://unpkg.com/typescript@1.8.10/lib/typescript.js'
  };
 
   //packages tells the System loader how to load when no filename and/or no extension
@@ -43,7 +43,7 @@
   // Add map entries for each angular package
   // only because we're pinning the version with `ngVer`.
   ngPackageNames.forEach(function(pkgName) {
-    map['@angular/'+pkgName] = 'https://npmcdn.com/@angular/' + pkgName + ngVer;
+    map['@angular/'+pkgName] = 'https://unpkg.com/@angular/' + pkgName + ngVer;
   });
 
   // Add package entries for angular packages
