@@ -2,3 +2,4 @@
 /typings/
 *.log
 /.*/
+/src/*.js
