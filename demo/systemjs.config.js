@@ -35,11 +35,10 @@
 
       // other libraries
       'rxjs': 'npm:rxjs',
-      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
       'ts': 'npm:plugin-typescript@4.0.10/lib/plugin.js',
       'typescript': 'npm:typescript@1.9.0-dev.20160409/lib/typescript.js',
       'clipboard': 'npm:clipboard@1.5.12/dist/clipboard.js',
-      'angular2-clipboard': 'npm:angular2-clipboard@0.2.16'
+      'angular2-clipboard': 'npm:angular2-clipboard@0.2.17'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -48,10 +47,6 @@
         defaultExtension: 'ts'
       },
       rxjs: {
-        defaultExtension: 'js'
-      },
-      'angular2-in-memory-web-api': {
-        main: './index.js',
         defaultExtension: 'js'
       },
       'angular2-clipboard': {
