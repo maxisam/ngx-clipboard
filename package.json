@@ -1,6 +1,6 @@
 {
     "name": "angular2-clipboard",
-    "version": "0.2.11",
+    "version": "0.2.14",
     "description": "angular 2 clipboard",
     "main": "index.js",
     "author": {
@@ -12,7 +12,7 @@
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "typings": "typings install",
         "postinstall": "npm run typings",
-        "publish-npm": "npm publish"
+        "publish-npm": "npm publish"    
     },
     "engines": {
         "node": ">= 4.2.1"
@@ -29,11 +29,11 @@
         "copy"
     ],
     "dependencies": {
-        "@angular/core": "^2.0.0-rc.3",
+        "@angular/core": "^2.0.0-rc.6",
         "core-js": "^2.2.2",
-        "rxjs": "~5.0.0-beta.6",
-        "zone.js": "~0.6.12",
-        "clipboard": "~1.5.10"
+        "rxjs": "~5.0.0-beta.11",
+        "zone.js": "~0.6.17",
+        "clipboard": "~1.5.12"
     },
     "devDependencies": {
         "codelyzer": "~0.0.19",

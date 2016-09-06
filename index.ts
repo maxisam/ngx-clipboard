@@ -1,1 +1,1 @@
-﻿export * from './src/ngii-clipboard.directive'
+﻿export * from './src/clipboard.module'

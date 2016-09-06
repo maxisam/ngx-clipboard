@@ -5,9 +5,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 var core_1 = require('@angular/core');
 var Clipboard = require('clipboard');
 var ClipboardDirective = (function () {
@@ -28,28 +25,22 @@ var ClipboardDirective = (function () {
         !!this.clipboard && this.clipboard.destroy();
     };
     __decorate([
-        core_1.Input('ngIIclipboard'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], ClipboardDirective.prototype, "targetElm", void 0);
+        core_1.Input('ngIIclipboard')
+    ], ClipboardDirective.prototype, "targetElm");
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], ClipboardDirective.prototype, "cbContent", void 0);
+        core_1.Input()
+    ], ClipboardDirective.prototype, "cbContent");
     __decorate([
-        core_1.Output('cbOnSuccess'), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], ClipboardDirective.prototype, "onSuccess", void 0);
+        core_1.Output('cbOnSuccess')
+    ], ClipboardDirective.prototype, "onSuccess");
     __decorate([
-        core_1.Output('cbOnError'), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], ClipboardDirective.prototype, "onError", void 0);
+        core_1.Output('cbOnError')
+    ], ClipboardDirective.prototype, "onError");
     ClipboardDirective = __decorate([
         core_1.Directive({
             selector: '[ngIIclipboard]'
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        })
     ], ClipboardDirective);
     return ClipboardDirective;
 }());
 exports.ClipboardDirective = ClipboardDirective;
-//# sourceMappingURL=ngii-clipboard.directive.js.map
