@@ -2,12 +2,25 @@
 
  Angular2  directive for [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha)
 
+## Dependencies
+
++ Angular 2 (2.0-rc.6)
++ [clipboard.js](https://clipboardjs.com/)
+
 ## Install
 
 You can get it on npm.
 
 ```
 npm install angular2-clipboard --save
+```
+
+## Build project
+
+```
+1. npm i
+
+2. npm run build
 ```
 
 ## Example
