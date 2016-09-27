@@ -36,7 +36,7 @@
       // other libraries
       'rxjs': 'npm:rxjs',
       'ts': 'npm:plugin-typescript@4.0.10/lib/plugin.js',
-      'typescript': 'npm:typescript@1.9.0-dev.20160409/lib/typescript.js',
+      'typescript':                'npm:typescript@2.0.2/lib/typescript.js',
       'clipboard': 'npm:clipboard@1.5.12/dist/clipboard.js',
       'angular2-clipboard': 'npm:angular2-clipboard@0.2.17'
     },

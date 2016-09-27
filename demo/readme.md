@@ -10,6 +10,10 @@ You can get it on npm.
 npm install angular2-clipboard --save
 ```
 
+## Source Code
+
+[github](https://github.com/maxisam/angular2-clipboard)
+
 ## Example
 
 [plunker](http://embed.plnkr.co/PD4Ap8/)
