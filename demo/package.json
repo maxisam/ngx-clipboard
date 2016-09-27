@@ -1,0 +1,15 @@
+{
+  "name": "angular2-clipboard",
+  "version": "0.2.18",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "license": "ISC",
+  "dependencies": {
+   
+  },
+  "devDependencies": {   
+    "lite-server": "2.2.2"   
+  }
+}
