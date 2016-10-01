@@ -4,7 +4,7 @@
 
 ## Dependencies
 
-+ Angular 2 (2.0-rc.6)
++ Angular 2
 + [clipboard.js](https://clipboardjs.com/)
 
 ## Install

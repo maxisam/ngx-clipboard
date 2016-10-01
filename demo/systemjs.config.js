@@ -38,7 +38,7 @@
       'ts': 'npm:plugin-typescript@4.0.10/lib/plugin.js',
       'typescript':                'npm:typescript@2.0.2/lib/typescript.js',
       'clipboard': 'npm:clipboard@1.5.12/dist/clipboard.js',
-      'angular2-clipboard': 'npm:angular2-clipboard@0.2.17'
+      'angular2-clipboard': 'npm:angular2-clipboard@1.0.0'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
