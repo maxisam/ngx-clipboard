@@ -1,6 +1,5 @@
 {
   "name": "angular2-clipboard",
-  "version": "1.0.0",
   "description": "angular 2 clipboard",
   "main": "index.js",
   "author": {
@@ -11,7 +10,8 @@
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "publish-npm": "npm publish",
-    "build": "webpack  --progress --profile --bail"
+    "build": "webpack  --progress --profile --bail",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "engines": {
     "node": ">= 4.2.1"
@@ -44,7 +44,8 @@
     "ts-node": "^1.2.2",
     "typescript": "^2.0.3",
     "typings": "^1.3.3",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "semantic-release": "^4.3.5"
   },
   "files": [
     "LICENSE",
