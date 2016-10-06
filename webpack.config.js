@@ -1,23 +1,33 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const webpackMerge = require('webpack-merge'); // used to merge webpack configs
 
-module.exports = {
+var commonConfig = {
   devtool: 'source-map',
 
   entry: {
     'index': './index.ts'
   },
-  
+
   output: {
-    path: './',
-    filename: '[name].js',
-    library: 'ngII', 
+    path: './dist/',
+    library: 'ngII',
     libraryTarget: 'umd'
   },
 
   externals: {
     "clipboard": "clipboard",
-    '@angular/core': { root: ['ng', 'core'], commonjs: '@angular/core', commonjs2: '@angular/core', amd: '@angular/core' },
-    'rxjs/Rx': { root: 'Rx', commonjs: 'rxjs/Rx', commonjs2: 'rxjs/Rx', amd: 'rxjs/Rx' },
+    '@angular/core': {
+      root: ['ng', 'core'],
+      commonjs: '@angular/core',
+      commonjs2: '@angular/core',
+      amd: '@angular/core'
+    },
+    'rxjs/Rx': {
+      root: 'Rx',
+      commonjs: 'rxjs/Rx',
+      commonjs2: 'rxjs/Rx',
+      amd: 'rxjs/Rx'
+    },
     'rxjs/add/operator/let': {
       root: ['Rx', 'Observable', 'prototype'],
       commonjs: 'rxjs/add/operator/let',
@@ -31,14 +41,14 @@ module.exports = {
   },
 
   module: {
-    loaders: [
-      {
-        test: /\.ts$/,
-        loader: 'ts'
-      }
-    ]
-  },
+    loaders: [{
+      test: /\.ts$/,
+      loader: 'ts'
+    }]
+  }
+};
 
+var uglify = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
       mangle: {
@@ -46,4 +56,10 @@ module.exports = {
       }
     })
   ]
-};
+}
+
+if (process.env.NODE_ENV && process.env.NODE_ENV.indexOf('prod') !== -1) {
+  module.exports = webpackMerge(commonConfig, uglify);
+} else {
+  module.exports = commonConfig, uglify;
+}
