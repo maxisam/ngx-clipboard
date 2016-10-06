@@ -9,6 +9,7 @@
   "homepage": "https://github.com/maxisam/angular2-clipboard",
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
+    "commit": "git-cz",
     "publish-npm": "npm publish",
     "build": "webpack  --progress --profile --bail",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -30,10 +31,10 @@
   "dependencies": {
     "@angular/core": "^2.0.0",
     "@types/clipboard": "1.5.29",
+    "clipboard": "~1.5.12",
     "core-js": "^2.4.1",
     "rxjs": "~5.0.0-beta.12",
-    "zone.js": "~0.6.25",
-    "clipboard": "~1.5.12"
+    "zone.js": "~0.6.25"
   },
   "devDependencies": {
     "es6-promise": "^3.1.2",
@@ -45,7 +46,12 @@
     "typescript": "^2.0.3",
     "typings": "^1.3.3",
     "webpack": "^1.13.0",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^4.3.5",
+    "commitizen": "^2.8.6",
+    "cz-conventional-changelog": "^1.2.0"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   },
   "files": [
     "LICENSE",
