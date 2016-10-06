@@ -1,4 +1,6 @@
-﻿# angular2-clipboard
+﻿[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
+# angular2-clipboard
 
  Angular2  directive for [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha)
 
