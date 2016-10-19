@@ -2,3 +2,4 @@ node_modules/
 /typings/
 *.log
 /src/*.js
+npm-debug.log.*
