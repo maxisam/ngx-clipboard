@@ -21,8 +21,8 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         let option: ClipboardOptions;
         option = !!this.targetElm ? { target: () => <any>this.targetElm } : { text: () => this.cbContent };
         this.clipboard = new Clipboard(this.elmRef.nativeElement, option);
-        this.clipboard.on('success', (e) => this.onSuccess.emit(true));
-        this.clipboard.on('error', (e) => this.onError.emit(true));
+        this.clipboard.on('success', () => this.onSuccess.emit(true));
+        this.clipboard.on('error', () => this.onError.emit(true));
     }
 
     ngOnDestroy() {
