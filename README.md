@@ -34,6 +34,13 @@ npm install angular2-clipboard --save
 [plunker](http://embed.plnkr.co/PD4Ap8/)
 
 
+## Contributing 
+
+1. Your commits conform to the conventions established [here](https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/convention.md)
+2. This project used [commitizen](https://github.com/commitizen/cz-cli) and [semantic-release](https://github.com/semantic-release/semantic-release) to handle npm version from CI
+    + run git add first to add your changes to staging 
+    + use `npm run commit` to commit, and CI will do the rest.
+
 ## Troubleshooting
 
 If you see the following error message.
