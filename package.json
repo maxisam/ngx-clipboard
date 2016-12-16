@@ -47,7 +47,7 @@
     "es6-shim": "^0.35.2",
     "es7-reflect-metadata": "^1.6.0",
     "npm-run-all": "^3.1.2",
-    "semantic-release": "6.3.2",
+    "semantic-release": "^4.3.5",
     "ts-loader": "^0.8.2",
     "ts-node": "^1.2.2",
     "typescript": "^2.1.4",
