@@ -6,7 +6,7 @@
             "es6",
             "dom"
         ],
-        "module": "commonjs",
+        "module": "es6",
         "moduleResolution": "node",
         "noEmitOnError": false,
         "noImplicitAny": false,

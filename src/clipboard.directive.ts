@@ -1,5 +1,5 @@
-import {Directive, ElementRef, Input, Output, EventEmitter, OnInit, OnDestroy  } from '@angular/core';
-import Clipboard = require('clipboard');
+import { Directive, ElementRef, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
+import * as Clipboard from 'clipboard';
 
 @Directive({
     selector: '[ngIIclipboard]'
@@ -18,7 +18,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     constructor(private elmRef: ElementRef) { }
 
     ngOnInit() {
-        let option: ClipboardOptions;
+        let option: Clipboard.Options;
         option = !!this.targetElm ? { target: () => <any>this.targetElm } : { text: () => this.cbContent };
         this.clipboard = new Clipboard(this.elmRef.nativeElement, option);
         this.clipboard.on('success', () => this.onSuccess.emit(true));
