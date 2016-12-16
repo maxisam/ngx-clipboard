@@ -43,10 +43,5 @@ npm install angular2-clipboard --save
 
 ## Troubleshooting
 
-If you see the following error message.
-
-`Import assignment cannot be used when targeting ECMAScript 2015 modules. Consider using 'import * as ns from "mod"', 'import {a} from "mod"', 'import d from "mod"', or another module format instead.`
-
-Please check if the module setting in tsconfig.json is set to `commonjs`
 
 Kudos to [Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is base on his answer on StackOverflow
