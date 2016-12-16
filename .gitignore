@@ -3,3 +3,4 @@ node_modules/
 *.log
 /src/*.js
 npm-debug.log.*
+angulardoc.json
