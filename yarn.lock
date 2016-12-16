@@ -440,7 +440,7 @@ commander@^2.9.0:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-commitizen@^2.9.0:
+commitizen@^2.8.6:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-2.9.0.tgz#876e57f9ac7aedf1d27d945cdd19d63b872f8298"
   dependencies:

@@ -40,7 +40,7 @@
     "zone.js": "~0.7.2"
   },
   "devDependencies": {
-    "commitizen": "^2.9.0",
+    "commitizen": "^2.8.6",
     "cz-conventional-changelog": "^1.2.0",
     "es6-promise": "^3.1.2",
     "es6-promise-loader": "^1.0.2",
