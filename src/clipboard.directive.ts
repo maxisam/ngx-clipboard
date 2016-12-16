@@ -2,12 +2,12 @@ import { Directive, ElementRef, Input, Output, EventEmitter, OnInit, OnDestroy }
 import * as Clipboard from 'clipboard';
 
 @Directive({
-    selector: '[ngIIclipboard]'
+    selector: '[xngClipboard]'
 })
 export class ClipboardDirective implements OnInit, OnDestroy {
     clipboard: Clipboard;
 
-    @Input('ngIIclipboard') targetElm: ElementRef;
+    @Input('xngClipboard') targetElm: ElementRef;
 
     @Input() cbContent: string;
 
@@ -26,6 +26,8 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        !!this.clipboard && this.clipboard.destroy();
+        if (this.clipboard) {
+            this.clipboard.destroy();
+        }
     }
 }
