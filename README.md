@@ -6,11 +6,15 @@
 
 # angular2-clipboard
 
- Angular2  directive for [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha)
+Angular directive for [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha)
+
+It works with angular version 2.0.0 and up
+
+To make more sense with the future versioning of Angular, the directive selector is now named as xngClipboard
 
 ## Dependencies
 
-+ Angular 2
++ Angular ~2.0.0
 + [clipboard.js](https://clipboardjs.com/)
 
 ## Install
@@ -40,6 +44,8 @@ npm install angular2-clipboard --save
 2. This project used [commitizen](https://github.com/commitizen/cz-cli) and [semantic-release](https://github.com/semantic-release/semantic-release) to handle npm version from CI
     + run git add first to add your changes to staging 
     + use `npm run commit` to commit, and CI will do the rest.
+    + if changes contain breaking change, use `BREAKING CHANGE` keyword in the comment to trigger major release
+    + before push to git and trigger CI, you can dry run `npm run semantic-release` locally to make sure the version number is push as expected.
 
 ## Troubleshooting
 
