@@ -11,7 +11,8 @@ var commonConfig = {
   output: {
     path: './dist/',
     library: 'xng',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
 
   externals: {
@@ -21,18 +22,6 @@ var commonConfig = {
       commonjs: '@angular/core',
       commonjs2: '@angular/core',
       amd: '@angular/core'
-    },
-    'rxjs/Rx': {
-      root: 'Rx',
-      commonjs: 'rxjs/Rx',
-      commonjs2: 'rxjs/Rx',
-      amd: 'rxjs/Rx'
-    },
-    'rxjs/add/operator/let': {
-      root: ['Rx', 'Observable', 'prototype'],
-      commonjs: 'rxjs/add/operator/let',
-      commonjs2: 'rxjs/add/operator/let',
-      amd: 'rxjs/add/operator/let'
     }
   },
 

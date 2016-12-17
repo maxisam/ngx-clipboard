@@ -2,7 +2,7 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("@angular/core"), require("clipboard"));
 	else if(typeof define === 'function' && define.amd)
-		define(["@angular/core", "clipboard"], factory);
+		define("xng", ["@angular/core", "clipboard"], factory);
 	else if(typeof exports === 'object')
 		exports["xng"] = factory(require("@angular/core"), require("clipboard"));
 	else
