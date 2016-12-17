@@ -1,1 +1,1 @@
-export * from './src/clipboard.module';
+export * from './dist';

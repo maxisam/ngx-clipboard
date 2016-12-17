@@ -6,18 +6,22 @@
             "es6",
             "dom"
         ],
-        "module": "es6",
+        "module": "commonjs",
         "moduleResolution": "node",
         "noEmitOnError": false,
         "noImplicitAny": false,
         "removeComments": false,
         "sourceMap": true,
         "declaration": true,
-        "target": "es5"
+        "target": "es5",
+        "declarationDir": "dist",
+        "outDir": "dist"
     },
     "exclude": [
         "node_modules",
-        "demo"
+        "demo",
+        "index.d.ts",
+        "dist"
     ],
     "awesomeTypescriptLoaderOptions": {
         "resolveGlobs": true,
@@ -25,7 +29,6 @@
     },
     "filesGlob": [
         "!./node_modules/**",
-        "src/custom-typings.d.ts",
         "typings/browser.d.ts"
     ],
     "compileOnSave": true,

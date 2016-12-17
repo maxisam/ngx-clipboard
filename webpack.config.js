@@ -5,12 +5,12 @@ var commonConfig = {
   devtool: 'source-map',
 
   entry: {
-    'index': './index.ts'
+    'index': './src/index.ts'
   },
 
   output: {
     path: './dist/',
-    library: 'ngII',
+    library: 'xng',
     libraryTarget: 'umd'
   },
 

@@ -1,5 +1,6 @@
+/// <reference types="clipboard" />
 import { ElementRef, EventEmitter, OnInit, OnDestroy } from '@angular/core';
-import Clipboard = require('clipboard');
+import * as Clipboard from 'clipboard';
 export declare class ClipboardDirective implements OnInit, OnDestroy {
     private elmRef;
     clipboard: Clipboard;

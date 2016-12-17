@@ -10,8 +10,10 @@
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "commit": "git-cz",
+    "clean:dist": "rimraf dist",
     "publish-npm": "npm publish",
     "build": "npm-run-all --parallel build:*",
+    "build:ts": "tsc",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
     "dev:build": "webpack --output-filename index.umd.js --progress --profile --bail",
@@ -61,7 +63,8 @@
     "README.md",
     "tsconfig.json",
     "index.*",
-    "src/"
+    "src/",
+    "dist"
   ],
   "config": {
     "commitizen": {
