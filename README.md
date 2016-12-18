@@ -49,6 +49,6 @@ npm install angular2-clipboard --save
 
 ## Troubleshooting
 
-1. If you use webpack, check `/demo/webpack`. Try to use the same version of webpack that demo used.
+1. If you use webpack, check `/demo/webpack`. Try to use the same version of webpack that demo used, if you run into any error.
 
 Kudos to [Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is base on his answer on StackOverflow
