@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es6",
     "target": "es5",
     "outDir": "dist",
     "rootDir": ".",
@@ -8,11 +8,11 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-     "types": [
-       "core-js",
-       "node",
-       "clipboard"
-     ]     
+    "types": [
+      "core-js",
+      "node",
+      "clipboard"
+    ]
   },
   "exclude": [
     "node_modules"
@@ -22,5 +22,7 @@
   },
   "compileOnSave": false,
   "buildOnSave": false,
-  "atom": { "rewriteTsconfig": false }
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }

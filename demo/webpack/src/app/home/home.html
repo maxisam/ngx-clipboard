@@ -1,24 +1,24 @@
 <div class="row">
   <div class="col-sm-12">
-    <h3>Copy from text -- text</h3> 
+    <h3>Copy from text -- text</h3>
     Click this button, it will copy the text from the input by referring to the <strong>text content</strong>
     <div class="input-group">
       <input type="text" class="form-control" [(ngModel)]="text" placeholder="content will be copy after click the copy button">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ngIIclipboard [cbContent]="text">copy</button>
+        <button class="btn btn-default" type="button" xngClipboard [cbContent]="text">copy</button>
       </span>
     </div>
   </div>
 </div>
-
 <div class="row">
   <div class="col-sm-12">
-    <h3>Copy from text -- target</h3> 
+    <h3>Copy from text -- target</h3>
     Click this button, it will copy the text from the input by referring to the <strong>input element</strong>
     <div class="input-group">
-      <input type="text" class="form-control" [(ngModel)]="text2" placeholder="content will be copy after click the copy button" #inputTarget>
+      <input type="text" class="form-control" [(ngModel)]="text2" placeholder="content will be copy after click the copy button"
+        #inputTarget>
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" [ngIIclipboard]="inputTarget">copy</button>
+        <button class="btn btn-default" type="button" [xngClipboard]="inputTarget">copy</button>
       </span>
     </div>
   </div>
