@@ -10,7 +10,7 @@ Angular directive for [clipboard.js](http://zenorocha.github.io/clipboard.js/) b
 
 It works with angular version 2.0.0 and up
 
-To make more sense with the future versioning of Angular, the directive selector is now named as xngClipboard
+To make more sense with the future versioning scheme of Angular, the directive selector is now rename to **xngClipboard**
 
 ## Dependencies
 
@@ -49,5 +49,6 @@ npm install angular2-clipboard --save
 
 ## Troubleshooting
 
+1. If you use webpack, check `/demo/webpack`. Try to use the same version of webpack that demo used.
 
 Kudos to [Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is base on his answer on StackOverflow
