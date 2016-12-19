@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: 'app/app.component.html'
 })
 
-export class AppComponent { }
+export class AppComponent { 
+  isCopied1: boolean = false;
+  isCopied2: boolean = false;
+}
