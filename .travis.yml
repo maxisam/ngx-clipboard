@@ -15,7 +15,6 @@ before_install:
 before_script:
   - npm prune
 script:
-  - npm run clean:dist
   - npm run build
 after_success:
   - npm run semantic-release
