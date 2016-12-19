@@ -14,7 +14,9 @@
         "sourceMap": true,
         "declaration": true,
         "target": "es5",
-        "declarationDir": "dist"
+        "declarationDir": "dist",
+        "outDir": "dist",
+        "rootDir": "./src"
     },
     "exclude": [
         "node_modules",
