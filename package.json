@@ -1,5 +1,6 @@
 {
   "name": "angular2-clipboard",
+  "version": "1.0.1",
   "description": "angular 2 clipboard",
   "main": "index.js",
   "author": {
