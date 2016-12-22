@@ -1,0 +1,49 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "module": "es2015",
+        "moduleResolution": "node",
+        "noEmitOnError": false,
+        "noImplicitAny": false,
+        "removeComments": false,
+        "sourceMap": true,
+        "declaration": true,
+        "target": "es5",
+        "declarationDir": "dist",
+        "outDir": "dist",
+        "rootDir": "./src"
+    },
+    "exclude": [
+        "node_modules",
+        "demo",
+        "index.d.ts",
+        "dist"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "resolveGlobs": true,
+        "forkChecker": true
+    },
+    "filesGlob": [
+        "!./node_modules/**",
+        "typings/browser.d.ts"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": true,
+    "types": [
+        "core-js",
+        "node",
+        "clipboard"
+    ],
+    "typeRoots": [
+        "node_modules/@types"
+    ],
+    "angularCompilerOptions": {
+        "genDir": ".",
+        "entryModule": "src/clipboard.module.ts"
+    }
+}

@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,19 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var clipboard_directive_1 = require("./clipboard.directive");
+import { NgModule } from '@angular/core';
+import { ClipboardDirective } from './clipboard.directive';
 var ClipboardModule = (function () {
     function ClipboardModule() {
     }
     return ClipboardModule;
 }());
 ClipboardModule = __decorate([
-    core_1.NgModule({
-        declarations: [clipboard_directive_1.ClipboardDirective],
-        exports: [clipboard_directive_1.ClipboardDirective]
+    NgModule({
+        declarations: [ClipboardDirective],
+        exports: [ClipboardDirective]
     }),
     __metadata("design:paramtypes", [])
 ], ClipboardModule);
-exports.ClipboardModule = ClipboardModule;
+export { ClipboardModule };
 //# sourceMappingURL=clipboard.module.js.map

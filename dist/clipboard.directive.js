@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,13 +7,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var Clipboard = require("clipboard");
+import { Directive, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import * as Clipboard from 'clipboard';
 var ClipboardDirective = (function () {
     function ClipboardDirective(elmRef) {
         this.elmRef = elmRef;
-        this.onSuccess = new core_1.EventEmitter();
-        this.onError = new core_1.EventEmitter();
+        this.onSuccess = new EventEmitter();
+        this.onError = new EventEmitter();
     }
     ClipboardDirective.prototype.ngOnInit = function () {
         var _this = this;
@@ -32,26 +31,26 @@ var ClipboardDirective = (function () {
     return ClipboardDirective;
 }());
 __decorate([
-    core_1.Input('xngClipboard'),
-    __metadata("design:type", core_1.ElementRef)
+    Input('xngClipboard'),
+    __metadata("design:type", ElementRef)
 ], ClipboardDirective.prototype, "targetElm", void 0);
 __decorate([
-    core_1.Input(),
+    Input(),
     __metadata("design:type", String)
 ], ClipboardDirective.prototype, "cbContent", void 0);
 __decorate([
-    core_1.Output('cbOnSuccess'),
-    __metadata("design:type", core_1.EventEmitter)
+    Output('cbOnSuccess'),
+    __metadata("design:type", EventEmitter)
 ], ClipboardDirective.prototype, "onSuccess", void 0);
 __decorate([
-    core_1.Output('cbOnError'),
-    __metadata("design:type", core_1.EventEmitter)
+    Output('cbOnError'),
+    __metadata("design:type", EventEmitter)
 ], ClipboardDirective.prototype, "onError", void 0);
 ClipboardDirective = __decorate([
-    core_1.Directive({
+    Directive({
         selector: '[xngClipboard]'
     }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
+    __metadata("design:paramtypes", [ElementRef])
 ], ClipboardDirective);
-exports.ClipboardDirective = ClipboardDirective;
+export { ClipboardDirective };
 //# sourceMappingURL=clipboard.directive.js.map

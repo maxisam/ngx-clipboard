@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge'); // used to merge webpack configs
+const ngtools = require('@ngtools/webpack');
 
 var commonConfig = {
   devtool: 'source-map',
@@ -37,7 +38,7 @@ var commonConfig = {
   }
 };
 
-var uglify = {
+const uglify = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
       mangle: {
@@ -45,10 +46,18 @@ var uglify = {
       }
     })
   ]
+};
+
+const aot = {
+  plugins: [
+    new ngtools.AotPlugin({
+      tsConfigPath: 'tsconfig-aot.json'
+    })
+  ]
 }
 
 if (process.env.NODE_ENV && process.env.NODE_ENV.indexOf('prod') !== -1) {
-  module.exports = webpackMerge(commonConfig, uglify);
+  module.exports = webpackMerge(commonConfig, uglify, aot);
 } else {
   module.exports = commonConfig, uglify;
 }

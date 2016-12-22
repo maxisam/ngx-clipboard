@@ -12,8 +12,8 @@
     "commit": "git-cz",
     "clean:dist": "rimraf dist",
     "publish-npm": "npm publish",
-    "build": "npm-run-all --parallel build:*",
-    "build:ts": "tsc",
+    "build": "npm run build-aot && npm-run-all --parallel build:*",
+    "build-aot": "ngc -p ./tsconfig-aot.json",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
     "dev:build": "webpack --output-filename index.umd.js --progress --profile --bail",
@@ -34,7 +34,7 @@
     "copy"
   ],
   "dependencies": {
-    "@angular/core": "^2.3.1",
+    "@angular/core": "^2.4.1",
     "@types/clipboard": "1.5.30",
     "clipboard": "~1.5.16",
     "core-js": "^2.4.1",
@@ -42,6 +42,10 @@
     "zone.js": "~0.7.2"
   },
   "devDependencies": {
+    "@angular/compiler-cli": "2.4.1",
+    "@angular/platform-server": "2.4.1",
+    "@angular/compiler": "2.4.1",
+    "@ngtools/webpack": "1.2.1",
     "commitizen": "2.9.0",
     "cz-conventional-changelog": "^1.2.0",
     "es6-promise": "^3.1.2",
