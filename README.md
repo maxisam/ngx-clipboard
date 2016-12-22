@@ -51,4 +51,6 @@ npm install angular2-clipboard --save
 
 1. If you use webpack, check `/demo/webpack`. Try to use the same version of webpack that demo used, if you run into any error.
 
+2. If you don't need AoT support, you can stick with 1.4.0. 2.x is just trying to solve AoT issue.
+
 Kudos to [Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is base on his answer on StackOverflow
