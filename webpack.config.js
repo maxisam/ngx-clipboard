@@ -27,13 +27,13 @@ var commonConfig = {
   },
 
   resolve: {
-    extensions: ['', '.ts']
+    extensions: ['.ts']
   },
 
   module: {
     loaders: [{
       test: /\.ts$/,
-      loader: 'ts'
+      use: ['@ngtools/webpack']
     }]
   }
 };
