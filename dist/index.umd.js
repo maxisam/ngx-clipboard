@@ -55,10 +55,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	function __export(m) {
-	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-	}
-	__export(__webpack_require__(1));
+	var clipboard_module_1 = __webpack_require__(1);
+	exports.ClipboardModule = clipboard_module_1.ClipboardModule;
 
 
 /***/ },

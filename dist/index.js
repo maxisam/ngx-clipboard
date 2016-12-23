@@ -1,2 +1,2 @@
-export * from './clipboard.module';
+export { ClipboardModule } from './clipboard.module';
 //# sourceMappingURL=index.js.map
