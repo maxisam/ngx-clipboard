@@ -53,4 +53,7 @@ npm install angular2-clipboard --save
 
 2. If you don't need AoT support, you can stick with 1.4.0. 2.x is just trying to solve AoT issue.
 
+3. The latest version (2.0.12) should work with AoT, please check /demo/angular2-aot-webpack to see how to make it work.
+
 Kudos to [Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is base on his answer on StackOverflow
+Kudos to [blacksonic](https://github.com/blacksonic/angular2-aot-webpack) AoT's demo is based on his project

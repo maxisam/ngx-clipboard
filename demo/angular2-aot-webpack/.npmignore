@@ -1,0 +1,6 @@
+node_modules
+dist
+typings
+.idea
+*.ngfactory.ts
+src
