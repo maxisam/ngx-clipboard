@@ -31,4 +31,4 @@ var ClipboardModuleInjector = (function (_super) {
     return ClipboardModuleInjector;
 }(import0.NgModuleInjector));
 export var ClipboardModuleNgFactory = new import0.NgModuleFactory(ClipboardModuleInjector, import1.ClipboardModule);
-//# sourceMappingURL=clipboard.module.ngfactory.js.map
+//# sourceMappingURL=D:/Users/saml/Documents/GitHub/angular2-clipboard/clipboard.module.ngfactory.js.map

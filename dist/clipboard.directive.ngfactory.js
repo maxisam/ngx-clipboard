@@ -63,4 +63,4 @@ var Wrapper_ClipboardDirective = (function () {
     return Wrapper_ClipboardDirective;
 }());
 export { Wrapper_ClipboardDirective };
-//# sourceMappingURL=clipboard.directive.ngfactory.js.map
+//# sourceMappingURL=D:/Users/saml/Documents/GitHub/angular2-clipboard/clipboard.directive.ngfactory.js.map

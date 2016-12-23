@@ -22,4 +22,4 @@ ClipboardModule = __decorate([
     __metadata("design:paramtypes", [])
 ], ClipboardModule);
 export { ClipboardModule };
-//# sourceMappingURL=clipboard.module.js.map
+//# sourceMappingURL=D:/Users/saml/Documents/GitHub/angular2-clipboard/clipboard.module.js.map

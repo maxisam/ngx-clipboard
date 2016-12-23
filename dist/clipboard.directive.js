@@ -53,4 +53,4 @@ ClipboardDirective = __decorate([
     __metadata("design:paramtypes", [ElementRef])
 ], ClipboardDirective);
 export { ClipboardDirective };
-//# sourceMappingURL=clipboard.directive.js.map
+//# sourceMappingURL=D:/Users/saml/Documents/GitHub/angular2-clipboard/clipboard.directive.js.map

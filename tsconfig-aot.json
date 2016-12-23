@@ -6,6 +6,7 @@
             "es6",
             "dom"
         ],
+        "mapRoot": "",
         "module": "es2015",
         "moduleResolution": "node",
         "noEmitOnError": false,
@@ -14,8 +15,8 @@
         "sourceMap": true,
         "declaration": true,
         "target": "es5",
-        "declarationDir": "dist",
-        "outDir": "dist",
+        "declarationDir": "./dist",
+        "outDir": "./dist",
         "rootDir": "./src",
         "skipLibCheck": false
     },
@@ -45,6 +46,6 @@
     ],
     "angularCompilerOptions": {
         "genDir": ".",
-        "entryModule": "src/clipboard.module.ts"
+        "entryModule": "src/clipboard.module.ts#ClipboardModule"
     }
 }

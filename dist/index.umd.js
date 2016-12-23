@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("clipboard"), require("@angular/core"));
 	else if(typeof define === 'function' && define.amd)
-		define("xng", [], factory);
+		define("xng", ["clipboard", "@angular/core"], factory);
 	else if(typeof exports === 'object')
-		exports["xng"] = factory();
+		exports["xng"] = factory(require("clipboard"), require("@angular/core"));
 	else
-		root["xng"] = factory();
-})(this, function() {
+		root["xng"] = factory(root["clipboard"], root["ng"]["core"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_0__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -43,16 +43,18 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 /******/
-/******/ 	// define getter function for harmory exports
+/******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		Object.defineProperty(exports, name, {
-/******/ 			configurable: false,
-/******/ 			enumerable: true,
-/******/ 			get: getter
-/******/ 		});
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -71,17 +73,127 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ function(module, exports) {
 
-throw new Error("Module build failed: TypeError: Cannot read property 'newLine' of undefined\n    at Object.getNewLineCharacter (D:\\Users\\saml\\Documents\\GitHub\\angular2-clipboard\\node_modules\\typescript\\lib\\typescript.js:9434:20)\n    at Object.createCompilerHost (D:\\Users\\saml\\Documents\\GitHub\\angular2-clipboard\\node_modules\\typescript\\lib\\typescript.js:62060:26)\n    at Object.ngcLoader (D:\\Users\\saml\\Documents\\GitHub\\angular2-clipboard\\node_modules\\@ngtools\\webpack\\src\\loader.js:171:31)");
+module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var clipboard_directive_1 = __webpack_require__(2);
+var ClipboardModule = (function () {
+    function ClipboardModule() {
+    }
+    return ClipboardModule;
+}());
+ClipboardModule = __decorate([
+    core_1.NgModule({
+        declarations: [clipboard_directive_1.ClipboardDirective],
+        exports: [clipboard_directive_1.ClipboardDirective]
+    }),
+    __metadata("design:paramtypes", [])
+], ClipboardModule);
+exports.ClipboardModule = ClipboardModule;
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var Clipboard = __webpack_require__(3);
+var ClipboardDirective = (function () {
+    function ClipboardDirective(elmRef) {
+        this.elmRef = elmRef;
+        this.onSuccess = new core_1.EventEmitter();
+        this.onError = new core_1.EventEmitter();
+    }
+    ClipboardDirective.prototype.ngOnInit = function () {
+        var _this = this;
+        var option;
+        option = !!this.targetElm ? { target: function () { return _this.targetElm; } } : { text: function () { return _this.cbContent; } };
+        this.clipboard = new Clipboard(this.elmRef.nativeElement, option);
+        this.clipboard.on('success', function () { return _this.onSuccess.emit(true); });
+        this.clipboard.on('error', function () { return _this.onError.emit(true); });
+    };
+    ClipboardDirective.prototype.ngOnDestroy = function () {
+        if (this.clipboard) {
+            this.clipboard.destroy();
+        }
+    };
+    return ClipboardDirective;
+}());
+__decorate([
+    core_1.Input('xngClipboard'),
+    __metadata("design:type", core_1.ElementRef)
+], ClipboardDirective.prototype, "targetElm", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], ClipboardDirective.prototype, "cbContent", void 0);
+__decorate([
+    core_1.Output('cbOnSuccess'),
+    __metadata("design:type", core_1.EventEmitter)
+], ClipboardDirective.prototype, "onSuccess", void 0);
+__decorate([
+    core_1.Output('cbOnError'),
+    __metadata("design:type", core_1.EventEmitter)
+], ClipboardDirective.prototype, "onError", void 0);
+ClipboardDirective = __decorate([
+    core_1.Directive({
+        selector: '[xngClipboard]'
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], ClipboardDirective);
+exports.ClipboardDirective = ClipboardDirective;
+
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var clipboard_module_1 = __webpack_require__(1);
+exports.ClipboardModule = clipboard_module_1.ClipboardModule;
+
 
 /***/ }
-/******/ ])
+/******/ ]);
 });
-;
 //# sourceMappingURL=index.umd.js.map

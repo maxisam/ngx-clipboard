@@ -33,7 +33,8 @@ var commonConfig = {
   module: {
     loaders: [{
       test: /\.ts$/,
-      use: ['@ngtools/webpack']
+      //use: ['@ngtools/webpack']
+      use: ['awesome-typescript-loader']
     }]
   }
 };
@@ -51,13 +52,14 @@ const uglify = {
 const aot = {
   plugins: [
     new ngtools.AotPlugin({
-      tsConfigPath: 'tsconfig-aot.json'
+      tsConfigPath: './tsconfig-aot.json',
+      entryModule: 'src/clipboard.module.ts#ClipboardModule'
     })
   ]
 }
 
 if (process.env.NODE_ENV && process.env.NODE_ENV.indexOf('prod') !== -1) {
-  module.exports = webpackMerge(commonConfig, uglify, aot);
+  module.exports = webpackMerge(commonConfig, uglify);
 } else {
-  module.exports = commonConfig, uglify;
+  module.exports = webpackMerge(commonConfig);
 }
