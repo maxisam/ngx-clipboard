@@ -1,6 +1,9 @@
 import { Directive, ElementRef, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import * as Clipboard from 'clipboard';
 
+export { Clipboard };
+
+
 @Directive({
     selector: '[xngClipboard]'
 })

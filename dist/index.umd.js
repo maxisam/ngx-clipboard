@@ -7,7 +7,7 @@
 		exports["xng"] = factory(require("clipboard"), require("@angular/core"));
 	else
 		root["xng"] = factory(root["clipboard"], root["ng"]["core"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_0__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_1__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -43,18 +43,16 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	// identity function for calling harmory imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 /******/
-/******/ 	// define getter function for harmony exports
+/******/ 	// define getter function for harmory exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
+/******/ 		Object.defineProperty(exports, name, {
+/******/ 			configurable: false,
+/******/ 			enumerable: true,
+/******/ 			get: getter
+/******/ 		});
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -78,12 +76,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
-
-/***/ },
-/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97,40 +89,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = __webpack_require__(0);
-var clipboard_directive_1 = __webpack_require__(2);
-var ClipboardModule = (function () {
-    function ClipboardModule() {
-    }
-    return ClipboardModule;
-}());
-ClipboardModule = __decorate([
-    core_1.NgModule({
-        declarations: [clipboard_directive_1.ClipboardDirective],
-        exports: [clipboard_directive_1.ClipboardDirective]
-    }),
-    __metadata("design:paramtypes", [])
-], ClipboardModule);
-exports.ClipboardModule = ClipboardModule;
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
+var core_1 = __webpack_require__(1);
 var Clipboard = __webpack_require__(3);
+exports.Clipboard = Clipboard;
 var ClipboardDirective = (function () {
     function ClipboardDirective(elmRef) {
         this.elmRef = elmRef;
@@ -150,31 +111,72 @@ var ClipboardDirective = (function () {
             this.clipboard.destroy();
         }
     };
+    __decorate([
+        core_1.Input('xngClipboard'), 
+        __metadata('design:type', core_1.ElementRef)
+    ], ClipboardDirective.prototype, "targetElm", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ClipboardDirective.prototype, "cbContent", void 0);
+    __decorate([
+        core_1.Output('cbOnSuccess'), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ClipboardDirective.prototype, "onSuccess", void 0);
+    __decorate([
+        core_1.Output('cbOnError'), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ClipboardDirective.prototype, "onError", void 0);
+    ClipboardDirective = __decorate([
+        core_1.Directive({
+            selector: '[xngClipboard]'
+        }), 
+        __metadata('design:paramtypes', [core_1.ElementRef])
+    ], ClipboardDirective);
     return ClipboardDirective;
 }());
-__decorate([
-    core_1.Input('xngClipboard'),
-    __metadata("design:type", core_1.ElementRef)
-], ClipboardDirective.prototype, "targetElm", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], ClipboardDirective.prototype, "cbContent", void 0);
-__decorate([
-    core_1.Output('cbOnSuccess'),
-    __metadata("design:type", core_1.EventEmitter)
-], ClipboardDirective.prototype, "onSuccess", void 0);
-__decorate([
-    core_1.Output('cbOnError'),
-    __metadata("design:type", core_1.EventEmitter)
-], ClipboardDirective.prototype, "onError", void 0);
-ClipboardDirective = __decorate([
-    core_1.Directive({
-        selector: '[xngClipboard]'
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], ClipboardDirective);
 exports.ClipboardDirective = ClipboardDirective;
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(1);
+var clipboard_directive_1 = __webpack_require__(0);
+var clipboard_directive_2 = __webpack_require__(0);
+exports.Clipboard = clipboard_directive_2.Clipboard;
+exports.ClipboardDirective = clipboard_directive_2.ClipboardDirective;
+var ClipboardModule = (function () {
+    function ClipboardModule() {
+    }
+    ClipboardModule = __decorate([
+        core_1.NgModule({
+            declarations: [clipboard_directive_1.ClipboardDirective],
+            exports: [clipboard_directive_1.ClipboardDirective]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ClipboardModule);
+    return ClipboardModule;
+}());
+exports.ClipboardModule = ClipboardModule;
 
 
 /***/ },
@@ -189,7 +191,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
 "use strict";
 "use strict";
-var clipboard_module_1 = __webpack_require__(1);
+var clipboard_module_1 = __webpack_require__(2);
 exports.ClipboardModule = clipboard_module_1.ClipboardModule;
 
 

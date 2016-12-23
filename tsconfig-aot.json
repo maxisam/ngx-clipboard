@@ -3,10 +3,11 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "lib": [
-            "es6",
+            "es2015",
             "dom"
         ],
         "mapRoot": "",
+        "compileOnSave": false,
         "module": "es2015",
         "moduleResolution": "node",
         "noEmitOnError": false,
@@ -18,13 +19,15 @@
         "declarationDir": "./dist",
         "outDir": "./dist",
         "rootDir": "./src",
-        "skipLibCheck": false
+        "skipLibCheck": true,
+        "suppressImplicitAnyIndexErrors": false
     },
     "exclude": [
         "node_modules",
         "demo",
         "index.d.ts",
-        "dist"
+        "dist",
+        "**/*.ngfactory.ts"
     ],
     "awesomeTypescriptLoaderOptions": {
         "resolveGlobs": true,
@@ -34,10 +37,7 @@
         "!./node_modules/**",
         "typings/browser.d.ts"
     ],
-    "compileOnSave": true,
-    "buildOnSave": true,
     "types": [
-        "core-js",
         "node",
         "clipboard"
     ],

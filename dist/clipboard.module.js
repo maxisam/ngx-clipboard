@@ -1,25 +1,18 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 import { NgModule } from '@angular/core';
 import { ClipboardDirective } from './clipboard.directive';
-var ClipboardModule = (function () {
+export { Clipboard, ClipboardDirective } from './clipboard.directive';
+export var ClipboardModule = (function () {
     function ClipboardModule() {
     }
+    // static forRoot(): ModuleWithProviders { return { ngModule: ClipboardModule, providers: [] }; }
+    ClipboardModule.decorators = [
+        { type: NgModule, args: [{
+                    declarations: [ClipboardDirective],
+                    exports: [ClipboardDirective]
+                },] },
+    ];
+    /** @nocollapse */
+    ClipboardModule.ctorParameters = function () { return []; };
     return ClipboardModule;
 }());
-ClipboardModule = __decorate([
-    NgModule({
-        declarations: [ClipboardDirective],
-        exports: [ClipboardDirective]
-    }),
-    __metadata("design:paramtypes", [])
-], ClipboardModule);
-export { ClipboardModule };
 //# sourceMappingURL=D:/Users/saml/Documents/GitHub/angular2-clipboard/clipboard.module.js.map
