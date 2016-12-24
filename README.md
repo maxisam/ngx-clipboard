@@ -1,8 +1,8 @@
 ﻿[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
-[![travis build](https://img.shields.io/travis/maxisam/angular2-clipboard.svg?style=flat-square)](https://travis-ci.org/maxisam/angular2-clipboard)
-[![npm](https://img.shields.io/npm/dt/angular2-clipboard.svg?style=flat-square)](https://www.npmjs.com/package/angular2-clipboard)
-[![GitHub release](https://img.shields.io/github/release/maxisam/angular2-clipboard.svg?style=flat-square)]()
-[![npm](https://img.shields.io/npm/l/angular2-clipboard.svg?style=flat-square)]()
+[![travis build](https://img.shields.io/travis/maxisam/ngx-clipboard.svg?style=flat-square)](https://travis-ci.org/maxisam/ngx-clipboard)
+[![npm](https://img.shields.io/npm/dt/ngx-clipboard.svg?style=flat-square)](https://www.npmjs.com/package/ngx-clipboard)
+[![GitHub release](https://img.shields.io/github/release/maxisam/ngx-clipboard.svg?style=flat-square)]()
+[![npm](https://img.shields.io/npm/l/ngx-clipboard.svg?style=flat-square)]()
 
 # ngx-clipboard , F.K.A angular2-clipboard
 
@@ -53,7 +53,7 @@ npm install ngx-clipboard --save
 
 2. If you don't need AoT support, you can stick with 1.4.0. 2.x is just trying to solve AoT issue.
 
-3. The latest version (2.0.12) should work with AoT, please check /demo/angular2-aot-webpack to see how to make it work.
+3. The latest version (2.0.12) should work with AoT, please check /demo/ngx-aot-webpack to see how to make it work.
 
 Kudos to [Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is base on his answer on StackOverflow
-Kudos to [blacksonic](https://github.com/blacksonic/angular2-aot-webpack) AoT's demo is based on his project
+Kudos to [blacksonic](https://github.com/blacksonic/ngx-aot-webpack) AoT's demo is based on his project
