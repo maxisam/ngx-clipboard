@@ -22,7 +22,7 @@ export var ClipboardDirective = (function () {
     };
     ClipboardDirective.decorators = [
         { type: Directive, args: [{
-                    selector: '[xngClipboard]'
+                    selector: '[ngxClipboard]'
                 },] },
     ];
     /** @nocollapse */
@@ -30,7 +30,7 @@ export var ClipboardDirective = (function () {
         { type: ElementRef, },
     ]; };
     ClipboardDirective.propDecorators = {
-        'targetElm': [{ type: Input, args: ['xngClipboard',] },],
+        'targetElm': [{ type: Input, args: ['ngxClipboard',] },],
         'cbContent': [{ type: Input },],
         'onSuccess': [{ type: Output, args: ['cbOnSuccess',] },],
         'onError': [{ type: Output, args: ['cbOnError',] },],

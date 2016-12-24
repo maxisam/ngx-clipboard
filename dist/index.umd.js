@@ -43,16 +43,18 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 /******/
-/******/ 	// define getter function for harmory exports
+/******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		Object.defineProperty(exports, name, {
-/******/ 			configurable: false,
-/******/ 			enumerable: true,
-/******/ 			get: getter
-/******/ 		});
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -112,7 +114,7 @@ var ClipboardDirective = (function () {
         }
     };
     __decorate([
-        core_1.Input('xngClipboard'), 
+        core_1.Input('ngxClipboard'), 
         __metadata('design:type', core_1.ElementRef)
     ], ClipboardDirective.prototype, "targetElm", void 0);
     __decorate([
@@ -129,7 +131,7 @@ var ClipboardDirective = (function () {
     ], ClipboardDirective.prototype, "onError", void 0);
     ClipboardDirective = __decorate([
         core_1.Directive({
-            selector: '[xngClipboard]'
+            selector: '[ngxClipboard]'
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], ClipboardDirective);

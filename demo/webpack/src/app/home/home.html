@@ -5,7 +5,7 @@
     <div class="input-group">
       <input type="text" class="form-control" [(ngModel)]="text" placeholder="content will be copy after click the copy button">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" xngClipboard [cbContent]="text">copy</button>
+        <button class="btn btn-default" type="button" ngxClipboard [cbContent]="text">copy</button>
       </span>
     </div>
   </div>
@@ -18,7 +18,7 @@
       <input type="text" class="form-control" [(ngModel)]="text2" placeholder="content will be copy after click the copy button"
         #inputTarget>
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" [xngClipboard]="inputTarget">copy</button>
+        <button class="btn btn-default" type="button" [ngxClipboard]="inputTarget">copy</button>
       </span>
     </div>
   </div>

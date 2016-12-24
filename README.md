@@ -4,13 +4,13 @@
 [![GitHub release](https://img.shields.io/github/release/maxisam/angular2-clipboard.svg?style=flat-square)]()
 [![npm](https://img.shields.io/npm/l/angular2-clipboard.svg?style=flat-square)]()
 
-# angular2-clipboard
+# ngx-clipboard , F.K.A angular2-clipboard
 
 Angular directive for [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha)
 
 It works with angular version 2.0.0 and up
 
-To make more sense with the future versioning scheme of Angular, the directive selector is now rename to **xngClipboard**
+To make more sense with the future versioning scheme of Angular, the directive selector is now rename to **ngxClipboard**
 
 ## Dependencies
 
@@ -22,7 +22,7 @@ To make more sense with the future versioning scheme of Angular, the directive s
 You can get it on npm.
 
 ```
-npm install angular2-clipboard --save
+npm install ngx-clipboard --save
 ```
 
 ## Build project

@@ -5,12 +5,12 @@ export { Clipboard };
 
 
 @Directive({
-    selector: '[xngClipboard]'
+    selector: '[ngxClipboard]'
 })
 export class ClipboardDirective implements OnInit, OnDestroy {
     clipboard: Clipboard;
 
-    @Input('xngClipboard') targetElm: ElementRef;
+    @Input('ngxClipboard') targetElm: ElementRef;
 
     @Input() cbContent: string;
 
