@@ -1,2 +1,2 @@
-# angular2-clipboard
+# ngx-clipboard
 Github page source
