@@ -1,4 +1,4 @@
-# angular2-clipboard
+# ngx-clipboard
 
  Angular2  directive for [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha)
 
@@ -7,12 +7,12 @@
 You can get it on npm.
 
 ```
-npm install angular2-clipboard --save
+npm install ngx-clipboard --save
 ```
 
 ## Source Code
 
-[github](https://github.com/maxisam/angular2-clipboard)
+[github](https://github.com/maxisam/ngx-clipboard)
 
 ## Example
 

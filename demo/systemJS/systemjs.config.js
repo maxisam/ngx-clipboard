@@ -38,7 +38,7 @@
       'ts': 'npm:plugin-typescript@4.0.10/lib/plugin.js',
       'typescript': 'npm:typescript@2.1.4/lib/typescript.js',
       'clipboard': 'npm:clipboard@1.5.16/dist/clipboard.js',
-      'angular2-clipboard': 'npm:angular2-clipboard@2.0.3'
+      'ngx-clipboard': 'npm:ngx-clipboard@3.0.0'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -49,7 +49,7 @@
       rxjs: {
         defaultExtension: 'js'
       },
-      'angular2-clipboard': {
+      'ngx-clipboard': {
         main: 'index.js',
         defaultExtension: 'js'
       },

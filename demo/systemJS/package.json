@@ -1,5 +1,5 @@
 {
-  "name": "angular2-clipboard",
+  "name": "ngx-clipboard-demo",
   "version": "1.0.0",
   "scripts": {
     "start": "npm run lite",
@@ -7,9 +7,9 @@
   },
   "license": "ISC",
   "dependencies": {
-   
+
   },
-  "devDependencies": {   
-    "lite-server": "2.2.2"   
+  "devDependencies": {
+    "lite-server": "2.2.2"
   }
 }
