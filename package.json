@@ -6,7 +6,6 @@
     "name": "Sam Lin",
     "email": "maxisam@gmail.com"
   },
-  "version": "3.0.0",
   "homepage": "https://github.com/maxisam/ngx-clipboard",
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
