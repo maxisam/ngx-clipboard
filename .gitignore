@@ -4,4 +4,3 @@ node_modules/
 /src/*.js
 npm-debug.log.*
 angulardoc.json
-/demo/angularCli/
