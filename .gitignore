@@ -4,3 +4,5 @@ node_modules/
 /src/*.js
 npm-debug.log.*
 angulardoc.json
+*.ngfactory.ts
+*.ngsummary.json
