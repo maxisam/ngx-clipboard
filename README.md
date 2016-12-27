@@ -51,9 +51,7 @@ npm install ngx-clipboard --save
 
 1. If you use webpack, check `/demo/webpack`. Try to use the same version of webpack that demo used, if you run into any error.
 
-2. If you don't need AoT support, you can stick with 1.4.0. 2.x is just trying to solve AoT issue.
-
-3. The latest version (3.0.0+) should work with AoT, please check [/demo/angular2-aot-webpack](https://github.com/maxisam/ngx-clipboard/tree/master/demo/angular2-aot-webpack) to see how to make it work.
+2. The latest version (3.0.0+) works with AoT, please check [/demo/angular2-aot-webpack](https://github.com/maxisam/ngx-clipboard/tree/master/demo/angular2-aot-webpack) to see how to make it work.
 
 
 Kudos to 
