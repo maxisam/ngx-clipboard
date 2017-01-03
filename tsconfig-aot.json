@@ -7,6 +7,7 @@
             "dom"
         ],
         "mapRoot": "",
+        "baseUrl": "./node_modules",
         "compileOnSave": false,
         "module": "es2015",
         "moduleResolution": "node",
@@ -19,6 +20,9 @@
         "declarationDir": "./dist",
         "outDir": "./dist",
         "rootDir": "./src",
+        "rootDirs": [
+            "compiled"
+        ],
         "skipLibCheck": true,
         "suppressImplicitAnyIndexErrors": false
     },
@@ -45,7 +49,7 @@
         "node_modules/@types"
     ],
     "angularCompilerOptions": {
-        "genDir": ".",
-        "entryModule": "src/clipboard.module.ts#ClipboardModule"
+        "genDir": "compiled",
+        "entryModule": "src/index.ts#ClipboardModule"
     }
 }

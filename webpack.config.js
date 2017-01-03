@@ -52,8 +52,7 @@ const uglify = {
 const aot = {
   plugins: [
     new ngtools.AotPlugin({
-      tsConfigPath: './tsconfig-aot.json',
-      entryModule: 'src/clipboard.module.ts#ClipboardModule'
+      tsConfigPath: './tsconfig-aot.json'
     })
   ]
 }

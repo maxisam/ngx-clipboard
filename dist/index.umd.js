@@ -7,7 +7,7 @@
 		exports["xng"] = factory(require("clipboard"), require("@angular/core"));
 	else
 		root["xng"] = factory(root["clipboard"], root["ng"]["core"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_1__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_1__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -81,7 +81,12 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__angular_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_clipboard__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_clipboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_clipboard__);
+/* harmony reexport (module object) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1_clipboard__; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "b", function() { return ClipboardDirective; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -91,20 +96,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = __webpack_require__(1);
-var Clipboard = __webpack_require__(3);
-exports.Clipboard = Clipboard;
+
+
+
 var ClipboardDirective = (function () {
     function ClipboardDirective(elmRef) {
         this.elmRef = elmRef;
-        this.onSuccess = new core_1.EventEmitter();
-        this.onError = new core_1.EventEmitter();
+        this.onSuccess = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.onError = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     ClipboardDirective.prototype.ngOnInit = function () {
         var _this = this;
         var option;
         option = !!this.targetElm ? { target: function () { return _this.targetElm; } } : { text: function () { return _this.cbContent; } };
-        this.clipboard = new Clipboard(this.elmRef.nativeElement, option);
+        this.clipboard = new __WEBPACK_IMPORTED_MODULE_1_clipboard__(this.elmRef.nativeElement, option);
         this.clipboard.on('success', function () { return _this.onSuccess.emit(true); });
         this.clipboard.on('error', function () { return _this.onError.emit(true); });
     };
@@ -114,30 +119,29 @@ var ClipboardDirective = (function () {
         }
     };
     __decorate([
-        core_1.Input('ngxClipboard'), 
-        __metadata('design:type', core_1.ElementRef)
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])('ngxClipboard'), 
+        __metadata('design:type', __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], ClipboardDirective.prototype, "targetElm", void 0);
     __decorate([
-        core_1.Input(), 
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(), 
         __metadata('design:type', String)
     ], ClipboardDirective.prototype, "cbContent", void 0);
     __decorate([
-        core_1.Output('cbOnSuccess'), 
-        __metadata('design:type', core_1.EventEmitter)
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])('cbOnSuccess'), 
+        __metadata('design:type', __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"])
     ], ClipboardDirective.prototype, "onSuccess", void 0);
     __decorate([
-        core_1.Output('cbOnError'), 
-        __metadata('design:type', core_1.EventEmitter)
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])('cbOnError'), 
+        __metadata('design:type', __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"])
     ], ClipboardDirective.prototype, "onError", void 0);
     ClipboardDirective = __decorate([
-        core_1.Directive({
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
             selector: '[ngxClipboard]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [__WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]])
     ], ClipboardDirective);
     return ClipboardDirective;
 }());
-exports.ClipboardDirective = ClipboardDirective;
 
 
 /***/ },
@@ -148,10 +152,22 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
 /***/ },
 /* 2 */
+/***/ function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+/***/ },
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__angular_core__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clipboard_directive__ = __webpack_require__(0);
+Object.defineProperty(exports, "__esModule", { value: true });
+/* harmony reexport (binding) */ __webpack_require__.d(exports, "Clipboard", function() { return __WEBPACK_IMPORTED_MODULE_1__clipboard_directive__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(exports, "ClipboardDirective", function() { return __WEBPACK_IMPORTED_MODULE_1__clipboard_directive__["b"]; });
+/* harmony export (binding) */ __webpack_require__.d(exports, "ClipboardModule", function() { return ClipboardModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -161,40 +177,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = __webpack_require__(1);
-var clipboard_directive_1 = __webpack_require__(0);
-var clipboard_directive_2 = __webpack_require__(0);
-exports.Clipboard = clipboard_directive_2.Clipboard;
-exports.ClipboardDirective = clipboard_directive_2.ClipboardDirective;
+
+
+
 var ClipboardModule = (function () {
     function ClipboardModule() {
     }
     ClipboardModule = __decorate([
-        core_1.NgModule({
-            declarations: [clipboard_directive_1.ClipboardDirective],
-            exports: [clipboard_directive_1.ClipboardDirective]
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__clipboard_directive__["b" /* ClipboardDirective */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__clipboard_directive__["b" /* ClipboardDirective */]]
         }), 
         __metadata('design:paramtypes', [])
     ], ClipboardModule);
     return ClipboardModule;
 }());
-exports.ClipboardModule = ClipboardModule;
-
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var clipboard_module_1 = __webpack_require__(2);
-exports.ClipboardModule = clipboard_module_1.ClipboardModule;
 
 
 /***/ }

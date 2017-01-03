@@ -1,1 +1,1 @@
-export * from './dist/index.umd.min.js';
+export * from './dist';

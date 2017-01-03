@@ -2,6 +2,7 @@
   "name": "ngx-clipboard",
   "description": "angular 2 clipboard",
   "main": "index.js",
+  "version": "3.0.5",
   "author": {
     "name": "Sam Lin",
     "email": "maxisam@gmail.com"
@@ -10,9 +11,9 @@
   "scripts": {
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "commit": "git-cz",
-    "clean:dist": "rimraf dist",
+    "clean:dist": "rimraf dist compiled",
     "publish-npm": "npm publish",
-    "build": "npm run build-aot && npm-run-all --parallel build:*",
+    "build": "npm run clean:dist && npm run build-aot && npm-run-all --parallel build:*",
     "build-aot": "ngc -p ./tsconfig-aot.json",
     "build:umd": "webpack --output-filename index.umd.js",
     "build:umd.min": "webpack --output-filename index.umd.min.js -p",
@@ -66,9 +67,9 @@
     "LICENSE",
     "package.json",
     "README.md",
-    "tsconfig.json",
+    "tsconfig*.json",
     "index.*",
-    "src/",
+    "src",
     "dist"
   ],
   "config": {

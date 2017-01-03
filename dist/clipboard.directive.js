@@ -37,4 +37,4 @@ export var ClipboardDirective = (function () {
     };
     return ClipboardDirective;
 }());
-//# sourceMappingURL=D:/Users/saml/Documents/GitHub/angular2-clipboard/clipboard.directive.js.map
+//# sourceMappingURL=D:/Users/saml/Documents/GitHub/ngx-clipboard/clipboard.directive.js.map
