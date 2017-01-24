@@ -50,6 +50,8 @@
     ],
     "angularCompilerOptions": {
         "genDir": "compiled",
-        "entryModule": "src/index.ts#ClipboardModule"
+        "entryModule": "src/index.ts#ClipboardModule",
+        "skipMetadataEmit": false,
+        "skipTemplateCodegen": true
     }
 }
