@@ -2,7 +2,7 @@
   "name": "ngx-clipboard",
   "description": "angular 2 clipboard",
   "main": "index.js",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "author": {
     "name": "Sam Lin",
     "email": "maxisam@gmail.com"
@@ -35,19 +35,23 @@
     "copy"
   ],
   "dependencies": {
-    "@angular/core": "^2.4.1",
-    "@types/clipboard": "1.5.31",
-    "clipboard": "~1.5.16",
+    "clipboard": "~1.5.16"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=2.4.1",
     "core-js": "^2.4.1",
     "rxjs": "^5.0.1",
     "zone.js": "~0.7.2"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "2.4.1",
-    "@angular/platform-server": "2.4.1",
     "@angular/compiler": "2.4.1",
+    "@angular/compiler-cli": "2.4.1",
+    "@angular/core": "^2.4.1",
+    "@angular/platform-server": "2.4.1",
     "@ngtools/webpack": "1.2.1",
+    "@types/clipboard": "1.5.31",
     "@types/node": "6.0.48",
+    "awesome-typescript-loader": "3.0.0-beta.17",
     "commitizen": "2.9.2",
     "cz-conventional-changelog": "^1.2.0",
     "es6-promise": "4.0.5",
@@ -55,14 +59,15 @@
     "es6-shim": "^0.35.2",
     "es7-reflect-metadata": "^1.6.0",
     "npm-run-all": "^3.1.2",
+    "rimraf": "2.5.4",
+    "rxjs": "^5.0.1",
     "semantic-release": "6.3.2",
-    "awesome-typescript-loader": "3.0.0-beta.17",
     "ts-loader": "1.3.3",
     "ts-node": "1.7.2",
     "typescript": "2.0.10",
     "webpack": "2.1.0-beta.28",
     "webpack-merge": "2.0.0",
-    "rimraf": "2.5.4"
+    "zone.js": "~0.7.2"
   },
   "files": [
     "LICENSE",
