@@ -2,37 +2,37 @@
 # yarn lockfile v1
 
 
-"@angular/common@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.4.1.tgz#a70167430574959c3423ac96ebdec98032d3500d"
+"@angular/common@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.4.9.tgz#3094f973e18330526256dcd13fcf27609b7abc08"
 
-"@angular/compiler@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.1.tgz#62b4fbfc53c934bd5def78db594cbf245b3f446a"
+"@angular/compiler@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.9.tgz#ee159181c4013046598e1d176b45063bddb141f6"
 
-"@angular/core@2.4.1", "@angular/core@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.1.tgz#3a6d2dc7fd86fdebe4febae7eb28abad7d04c76a"
+"@angular/core@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.9.tgz#85dca2afa4021be91512c97597702ac8d73092e6"
 
-"@angular/forms@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.4.1.tgz#440ff9b864b3b79c55423c9ce5863030a25767ce"
+"@angular/forms@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.4.9.tgz#a1ee9f403267fd78041f9ee77d1c9c24150e1d7c"
 
-"@angular/http@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/http/-/http-2.4.1.tgz#f06067e370c44d025ed00a03ef704f6c46ea59ac"
+"@angular/http@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/http/-/http-2.4.9.tgz#a7de980d564ac25a497c5e822d2b941c1f143d48"
 
-"@angular/platform-browser-dynamic@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.4.1.tgz#5fb72038f76c1e3646cea95f5b4722d67a4419dd"
+"@angular/platform-browser-dynamic@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.4.9.tgz#353b92e8670065ab5b1b6baea3a96928b174ee09"
 
-"@angular/platform-browser@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-2.4.1.tgz#4eaa829b450be34f0029796b6c3b99e27d3d5740"
+"@angular/platform-browser@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-2.4.9.tgz#936139a1e0d280394988473a8a11d922d768f89e"
 
-"@angular/platform-server@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-2.4.1.tgz#9e5e427b8226d1a073949effea00a4df352682de"
+"@angular/platform-server@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-2.4.9.tgz#d3710cbd96d2b9f41f8800a6525c783628af8da3"
   dependencies:
     parse5 "^2.2.1"
 
@@ -40,13 +40,13 @@
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-3.4.1.tgz#079c8580943547a710f292026ac86a08d336a49d"
 
-"@angular/upgrade@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-2.4.1.tgz#f13a61551c0616fdb765e34e0ebdeeadfebb5f6a"
+"@angular/upgrade@2.4.9":
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-2.4.9.tgz#931e1e8413d54cf921b2752cbcc2ce791b7a4966"
 
-"@types/clipboard@1.5.30":
-  version "1.5.30"
-  resolved "https://registry.yarnpkg.com/@types/clipboard/-/clipboard-1.5.30.tgz#7ebf07e90e1050de368fbceafb3afb58069fcd4b"
+"@types/clipboard@1.5.31":
+  version "1.5.31"
+  resolved "https://registry.yarnpkg.com/@types/clipboard/-/clipboard-1.5.31.tgz#e7b549a5d4ee689b3766dc6a631ca1cf2f4a624a"
 
 "@types/core-js@^0.9.35":
   version "0.9.35"
@@ -1693,16 +1693,12 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ngx-clipboard@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-3.0.0.tgz#8692638dd610a4fdf1efd5a1377c37d419537375"
+ngx-clipboard@3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-3.0.7.tgz#7ca42262ad3099cebdf9848c5429bd44685d6b77"
   dependencies:
-    "@angular/core" "^2.4.1"
-    "@types/clipboard" "1.5.30"
+    "@types/clipboard" "1.5.31"
     clipboard "~1.5.16"
-    core-js "^2.4.1"
-    rxjs "5.0.0-rc.4"
-    zone.js "~0.7.2"
 
 node-libs-browser@^2.0.0:
   version "2.0.0"
@@ -2431,15 +2427,9 @@ ripemd160@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-1.0.1.tgz#93a4bbd4942bc574b69a8fa57c71de10ecca7d6e"
 
-rxjs@5.0.0-rc.4:
-  version "5.0.0-rc.4"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-rc.4.tgz#a4d08bc5d7f30d48ed7130e2995490c326a325c4"
-  dependencies:
-    symbol-observable "^1.0.1"
-
-rxjs@^5.0.1:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.2.tgz#cc6513756daa93cab4085c1b5a19a3e28fb6c6bf"
+rxjs@^5.0.2:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.2.0.tgz#db537de8767c05fa73721587a29e0085307d318b"
   dependencies:
     symbol-observable "^1.0.1"
 
