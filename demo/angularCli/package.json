@@ -25,7 +25,7 @@
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2",
-    "ngx-clipboard": "3.0.1"
+    "ngx-clipboard": "3.0.7"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^2.3.1",

@@ -31,7 +31,7 @@
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.1.tgz#62b4fbfc53c934bd5def78db594cbf245b3f446a"
 
-"@angular/core@^2.3.1", "@angular/core@^2.4.1":
+"@angular/core@^2.3.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.1.tgz#3a6d2dc7fd86fdebe4febae7eb28abad7d04c76a"
 
@@ -70,9 +70,9 @@
     magic-string "^0.16.0"
     source-map "^0.5.6"
 
-"@types/clipboard@1.5.30":
-  version "1.5.30"
-  resolved "https://registry.yarnpkg.com/@types/clipboard/-/clipboard-1.5.30.tgz#7ebf07e90e1050de368fbceafb3afb58069fcd4b"
+"@types/clipboard@1.5.31":
+  version "1.5.31"
+  resolved "https://registry.yarnpkg.com/@types/clipboard/-/clipboard-1.5.31.tgz#e7b549a5d4ee689b3766dc6a631ca1cf2f4a624a"
 
 "@types/jasmine@2.5.38", "@types/jasmine@^2.5.36":
   version "2.5.38"
@@ -3362,11 +3362,7 @@ lowercase-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.0.tgz#4e3366b39e7f5457e35f1324bdf6f88d0bfc7306"
 
-lru-cache@2:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
-
-lru-cache@2.2.x:
+lru-cache@2, lru-cache@2.2.x:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.2.4.tgz#6c658619becf14031d0d0b594b16042ce4dc063d"
 
@@ -3634,16 +3630,12 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ngx-clipboard@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-3.0.1.tgz#38985f31c2fea0541df3f0a7029a891a288c680b"
+ngx-clipboard@3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-3.0.7.tgz#7ca42262ad3099cebdf9848c5429bd44685d6b77"
   dependencies:
-    "@angular/core" "^2.4.1"
-    "@types/clipboard" "1.5.30"
+    "@types/clipboard" "1.5.31"
     clipboard "~1.5.16"
-    core-js "^2.4.1"
-    rxjs "^5.0.1"
-    zone.js "~0.7.2"
 
 no-case@^2.2.0:
   version "2.3.0"
@@ -5961,6 +5953,6 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zone.js@^0.7.2, zone.js@~0.7.2:
+zone.js@^0.7.2:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.7.4.tgz#0e624fe5b724450ee433495deff15c02b3908ee0"
