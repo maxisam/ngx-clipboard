@@ -1,7 +1,9 @@
 {
   "name": "ngx-clipboard",
+  "version": "4.0.0-beta",
   "description": "angular 2 clipboard",
-  "main": "index.js",
+  "main": "bundles/ngxClipboard.umd.js",
+  "module": "index.js",
   "author": {
     "name": "Sam Lin",
     "email": "maxisam@gmail.com"
@@ -11,14 +13,12 @@
     "tslint": "tslint -c tslint.json 'src/**/*.ts'",
     "commit": "git-cz",
     "clean:dist": "rimraf dist compiled",
-    "publish-npm": "npm publish",
-    "build": "npm run clean:dist && npm run build-aot && npm-run-all --parallel build:*",
-    "build-aot": "ngc -p ./tsconfig-aot.json",
-    "build:umd": "webpack --output-filename index.umd.js",
-    "build:umd.min": "webpack --output-filename index.umd.min.js -p",
-    "dev:build": "webpack --output-filename index.umd.js --progress --profile --bail",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "publish-npm": "npm publish ./dist",
+    "publish-npm-beta": "npm publish ./dist --tag beta",
+    "build": "node build.js",
+    "semantic-release": "semantic-release pre && npm run publish-npm && semantic-release post"
   },
+  "typings": "index.d.ts",
   "engines": {
     "node": ">= 4.2.1"
   },
@@ -28,17 +28,20 @@
     "type": "git",
     "url": "https://github.com/maxisam/ngx-clipboard"
   },
+  "bugs": {
+    "url": "https://github.com/maxisam/ngx-clipboard/issues"
+  },
   "keywords": [
     "angular",
     "clipboard",
     "copy"
   ],
   "dependencies": {
-    "@types/clipboard": "1.5.31",
-    "clipboard": "~1.5.16"
+    "@types/clipboard": "1.5.31"
   },
   "peerDependencies": {
     "@angular/core": ">=2.4.1",
+    "clipboard": "~1.5.16",
     "core-js": "^2.4.1",
     "rxjs": "^5.0.2",
     "zone.js": "~0.7.2"
@@ -50,6 +53,7 @@
     "@angular/platform-server": "2.4.1",
     "@ngtools/webpack": "1.2.1",
     "@types/node": "6.0.48",
+    "@types/clipboard": "1.5.31",
     "awesome-typescript-loader": "3.0.0-beta.17",
     "commitizen": "2.9.2",
     "cz-conventional-changelog": "^1.2.0",
@@ -65,16 +69,17 @@
     "ts-node": "1.7.2",
     "typescript": "2.0.10",
     "webpack": "2.1.0-beta.28",
+    "codelyzer": "2.0.0",
+
     "webpack-merge": "2.0.0",
-    "zone.js": "~0.7.2"
+    "zone.js": "~0.7.2",
+    "rollup": "0.41.6",
+    "tslint": "4.5.1",
+    "shelljs": "0.7.7",
+    "chalk": "1.1.3",
+    "uglify-js": "2.8.15"
   },
   "files": [
-    "LICENSE",
-    "package.json",
-    "README.md",
-    "tsconfig*.json",
-    "index.*",
-    "src",
     "dist"
   ],
   "config": {

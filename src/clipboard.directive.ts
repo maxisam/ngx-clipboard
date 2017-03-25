@@ -3,7 +3,6 @@ import * as Clipboard from 'clipboard';
 
 export { Clipboard };
 
-
 @Directive({
     selector: '[ngxClipboard]'
 })
@@ -14,21 +13,21 @@ export class ClipboardDirective implements OnInit, OnDestroy {
 
     @Input() cbContent: string;
 
-    @Output('cbOnSuccess') onSuccess: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() cbOnSuccess: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    @Output('cbOnError') onError: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() cbOnError: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     constructor(private elmRef: ElementRef) { }
 
-    ngOnInit() {
+    public ngOnInit() {
         let option: Clipboard.Options;
         option = !!this.targetElm ? { target: () => <any>this.targetElm } : { text: () => this.cbContent };
         this.clipboard = new Clipboard(this.elmRef.nativeElement, option);
-        this.clipboard.on('success', () => this.onSuccess.emit(true));
-        this.clipboard.on('error', () => this.onError.emit(true));
+        this.clipboard.on('success', () => this.cbOnSuccess.emit(true));
+        this.clipboard.on('error', () => this.cbOnError.emit(true));
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy() {
         if (this.clipboard) {
             this.clipboard.destroy();
         }

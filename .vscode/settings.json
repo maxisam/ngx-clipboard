@@ -10,5 +10,7 @@
         "**/*.js.map":false
     }
 ,
-"typescript.tsdk": "./node_modules/typescript/lib"
+"typescript.tsdk": "./node_modules/typescript/lib",
+"angulardoc.repoId": "6b429f77-eb2f-461e-81b9-5f7afa08ff23",
+"angulardoc.lastSync": 0
 }
