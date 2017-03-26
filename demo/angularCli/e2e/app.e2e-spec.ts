@@ -1,10 +1,10 @@
-import { ClidemoPage } from './app.po';
+import { AngularCliPage } from './app.po';
 
-describe('clidemo App', function() {
-  let page: ClidemoPage;
+describe('angular-cli App', () => {
+  let page: AngularCliPage;
 
   beforeEach(() => {
-    page = new ClidemoPage();
+    page = new AngularCliPage();
   });
 
   it('should display message saying app works', () => {
