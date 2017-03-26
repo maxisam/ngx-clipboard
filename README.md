@@ -14,7 +14,7 @@ To make more sense with the future versioning scheme of Angular, the directive s
 
 ## Dependencies
 
-+ Angular ~2.0.0
++ Angular >=2.0.0
 + [clipboard.js](https://clipboardjs.com/)
 
 ## Install
@@ -31,6 +31,17 @@ npm install ngx-clipboard --save
 1. npm i
 
 2. npm run build
+```
+## Usage
+
+If you use SystemJS to load your files, you might have to update your config:
+
+```js
+System.config({
+    map: {
+        'ngx-clipboard': 'node_modules/ngx-clipboard/bundles/ngxClipboard.umd.min.js'
+    }
+});
 ```
 
 ## Example
