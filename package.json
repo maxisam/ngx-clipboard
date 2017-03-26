@@ -15,8 +15,8 @@
     "publish-npm": "npm publish ./dist",
     "publish-npm-beta": "npm publish ./dist --tag beta",
     "build": "node build.js",
-    "prepublish": "node pre-release.js",
-    "semantic-release": "semantic-release pre && npm run prepublish && npm run publish-npm && semantic-release post"
+    "pre-publish": "node pre-release.js",
+    "semantic-release": "semantic-release pre && npm run pre-publish && npm run publish-npm && semantic-release post"
   },
   "typings": "index.d.ts",
   "engines": {
