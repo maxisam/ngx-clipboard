@@ -1,6 +1,5 @@
 {
   "name": "ngx-clipboard",
-  "version": "4.0.0-beta1",
   "description": "angular 2 clipboard",
   "main": "bundles/ngxClipboard.umd.js",
   "module": "index.js",
