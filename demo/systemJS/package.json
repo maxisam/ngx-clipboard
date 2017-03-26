@@ -10,6 +10,6 @@
 
   },
   "devDependencies": {
-    "lite-server": "2.2.2"
+    "lite-server": "2.3.0"
   }
 }
