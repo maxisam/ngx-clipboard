@@ -38,7 +38,7 @@
       'ts': 'npm:plugin-typescript@4.0.10/lib/plugin.js',
       'typescript': 'npm:typescript@2.1.4/lib/typescript.js',
       'clipboard': 'npm:clipboard@1.5.16/dist/clipboard.js',
-      'ngx-clipboard': 'npm:ngx-clipboard@4.0.0/bundles/ngxClipboard.umd.min.js'
+      'ngx-clipboard': 'npm:ngx-clipboard@5.0.2/dist/bundles/ngxClipboard.umd.min.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
