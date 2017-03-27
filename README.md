@@ -44,6 +44,8 @@ System.config({
 });
 ```
 
+For webpack / Angular CLI, it works as any other libraries. Please check demo folder for more help. 
+
 ## Example
 
 [plunker](http://embed.plnkr.co/PD4Ap8/)
