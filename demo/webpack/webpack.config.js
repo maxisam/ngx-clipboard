@@ -10,7 +10,6 @@ var webpackConfig = {
     'vendor': './src/vendor.browser.ts',
     'main': './src/main.browser.ts',
   },
-
   output: {
     path: '/dist',
   },
@@ -51,6 +50,14 @@ var webpackConfig = {
         loader: 'raw-loader'
       }
     ]
+  },
+  node: {
+    global: true,
+    crypto: 'empty',
+    process: true,
+    module: false,
+    clearImmediate: false,
+    setImmediate: false
   }
 
 };
