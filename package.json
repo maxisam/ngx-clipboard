@@ -14,7 +14,8 @@
     "publish-npm": "npm publish",
     "build": "node build.js",
     "pre-publish": "node pre-release.js",
-    "semantic-release": "semantic-release pre && npm run publish-npm && semantic-release post"
+    "semantic-release": "semantic-release pre && npm run publish-npm && semantic-release post",
+    "sr": "npm run semantic-release"
   },
   "typings": "index.d.ts",
   "engines": {
