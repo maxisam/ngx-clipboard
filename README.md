@@ -39,7 +39,7 @@ If you use SystemJS to load your files, you might have to update your config:
 ```js
 System.config({
     map: {
-        'ngx-clipboard': 'node_modules/ngx-clipboard/bundles/ngxClipboard.umd.min.js'
+        'ngx-clipboard': 'node_modules/ngx-clipboard/dist/bundles/ngxClipboard.umd.min.js'
     }
 });
 ```
