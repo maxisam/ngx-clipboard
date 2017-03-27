@@ -52,7 +52,7 @@ echo(chalk.green('Minification completed'));
 
 
 /* Copies files */
-cp('-Rf', ['package.json', 'LICENSE', 'README.md'], 'dist');
+/*cp('-Rf', ['package.json', 'LICENSE', 'README.md'], 'dist');*/
 
 
 echo('End building');
