@@ -1,1 +1,1 @@
-export * from './src/index';
+export { ClipboardModule, ClipboardDirective } from './src/index';
