@@ -28,10 +28,6 @@
         "dist",
         "**/*.ngfactory.ts"
     ],
-    "awesomeTypescriptLoaderOptions": {
-        "resolveGlobs": true,
-        "forkChecker": true
-    },
     "filesGlob": [
         "!./node_modules/**",
         "typings/browser.d.ts"
