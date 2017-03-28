@@ -76,7 +76,8 @@
     "LICENSE",
     "package.json",
     "README.md",
-    "dist"
+    "dist",
+    "src"
   ],
   "config": {
     "commitizen": {
