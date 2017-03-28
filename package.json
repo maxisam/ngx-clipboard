@@ -19,7 +19,6 @@
     "sr": "npm run semantic-release",
     "sr:beta": "semantic-release pre && npm run publish-npm:beta && semantic-release post"
   },
-  "typings": "./dist/index.d.ts",
   "engines": {
     "node": ">= 4.2.1"
   },
@@ -79,7 +78,8 @@
     "package.json",
     "README.md",
     "dist",
-    "src"
+    "src",
+    "index.ts"
   ],
   "config": {
     "commitizen": {
