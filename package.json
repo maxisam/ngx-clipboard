@@ -1,7 +1,8 @@
 {
   "name": "ngx-clipboard",
   "description": "angular 2 clipboard",
-  "main": "dist/index.js",
+  "main": "./dist/bundle/ngxClipboard.umd.min.js",
+  "module": "./dist/index.js",
   "author": {
     "name": "Sam Lin",
     "email": "maxisam@gmail.com"
@@ -13,11 +14,10 @@
     "clean:dist": "rimraf dist compiled",
     "publish-npm": "npm publish",
     "build": "node build.js",
-    "pre-publish": "node pre-release.js",
     "semantic-release": "semantic-release pre && npm run publish-npm && semantic-release post",
     "sr": "npm run semantic-release"
   },
-  "typings": "index.d.ts",
+  "typings": "./dist/index.d.ts",
   "engines": {
     "node": ">= 4.2.1"
   },
