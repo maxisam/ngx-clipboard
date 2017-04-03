@@ -9,15 +9,15 @@ export { Clipboard };
 export class ClipboardDirective implements OnInit, OnDestroy {
     public clipboard: Clipboard;
 
-    @Input('ngxClipboard') private targetElm: ElementRef;
+    @Input('ngxClipboard') public targetElm: ElementRef;
 
-    @Input() private cbContent: string;
+    @Input() public cbContent: string;
 
-    @Output() private cbOnSuccess: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public cbOnSuccess: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    @Output() private cbOnError: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public cbOnError: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    constructor(private elmRef: ElementRef) { }
+    constructor(public elmRef: ElementRef) { }
 
     public ngOnInit() {
         let option: Clipboard.Options;
