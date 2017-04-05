@@ -125,9 +125,9 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
-"@types/clipboard@1.5.31":
-  version "1.5.31"
-  resolved "https://registry.yarnpkg.com/@types/clipboard/-/clipboard-1.5.31.tgz#e7b549a5d4ee689b3766dc6a631ca1cf2f4a624a"
+"@types/clipboard@1.5.32":
+  version "1.5.32"
+  resolved "https://registry.yarnpkg.com/@types/clipboard/-/clipboard-1.5.32.tgz#f085c0898e296e1f25c0fd2fa056ade049be7e85"
 
 "@types/jasmine@2.5.38":
   version "2.5.38"
@@ -3016,11 +3016,11 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ngx-clipboard@5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-5.0.3.tgz#1ee9b0e1457bf729c354ab210e48c193b646ade4"
+ngx-clipboard@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-5.1.0.tgz#d07cbbaa183dfd582a20ce704671054a0b715bda"
   dependencies:
-    "@types/clipboard" "1.5.31"
+    "@types/clipboard" "1.5.32"
     clipboard "~1.5.16"
 
 no-case@^2.2.0:
