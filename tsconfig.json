@@ -38,10 +38,6 @@
         "!./node_modules/**",
         "typings/browser.d.ts"
     ],
-    "types": [
-        "node",
-        "clipboard"
-    ],
     "typeRoots": [
         "node_modules/@types"
     ]

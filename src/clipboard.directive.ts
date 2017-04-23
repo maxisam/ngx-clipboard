@@ -1,35 +1,52 @@
-import { Directive, ElementRef, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
-import * as Clipboard from 'clipboard';
-
-export { Clipboard };
+import { ClipboardService } from './clipboard.service';
+import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, Renderer } from '@angular/core';
 
 @Directive({
     selector: '[ngxClipboard]'
 })
 export class ClipboardDirective implements OnInit, OnDestroy {
-    public clipboard: Clipboard;
-
-    @Input('ngxClipboard') public targetElm: ElementRef;
+    @Input('ngxClipboard') public targetElm: HTMLInputElement;
 
     @Input() public cbContent: string;
 
     @Output() public cbOnSuccess: EventEmitter<any> = new EventEmitter<any>();
 
     @Output() public cbOnError: EventEmitter<any> = new EventEmitter<any>();
+    constructor(
+        private clipboardSrv: ClipboardService,
+        private renderer: Renderer
 
-    constructor(public elmRef: ElementRef) { }
+    ) { }
 
     public ngOnInit() {
-        let option: Clipboard.Options;
-        option = !!this.targetElm ? { target: () => <any>this.targetElm } : { text: () => this.cbContent };
-        this.clipboard = new Clipboard(this.elmRef.nativeElement, option);
-        this.clipboard.on('success', (e) => this.cbOnSuccess.emit(e));
-        this.clipboard.on('error', (e) => this.cbOnError.emit(e));
+        if (!this.clipboardSrv.isSupported) {
+            throw new Error('Your environment does not support copy.');
+        }
     }
 
     public ngOnDestroy() {
-        if (this.clipboard) {
-            this.clipboard.destroy();
+        this.clipboardSrv.destroy();
+    }
+
+    @HostListener('click', ['$event.target']) private onClick(button) {
+        if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
+            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm, this.renderer), this.targetElm.value);
+        } else if (this.cbContent) {
+            this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent, this.renderer), this.cbContent);
+        } else {
+            throw new Error('Expecting a HtmlInputElement for ngxClipboard or a string value for cbContent.');
+        }
+    }
+
+    /**
+     * Fires an event based on the copy operation result.
+     * @param {Boolean} succeeded
+     */
+    private handleResult(succeeded, copiedContent) {
+        if (succeeded) {
+            this.cbOnSuccess.emit({ isSuccess: true, content: copiedContent });
+        } else {
+            this.cbOnError.emit({ isSuccess: false });
         }
     }
 }
