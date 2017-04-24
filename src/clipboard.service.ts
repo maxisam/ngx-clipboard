@@ -1,11 +1,19 @@
-import { Injectable, Renderer } from '@angular/core';
+import { WindowSrv } from './window.service';
+import { Inject, Injectable, Renderer } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Injectable()
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement;
-
+    private window: Window;
+    constructor(
+        @Inject(DOCUMENT) private document,
+        private windowService: WindowSrv
+    ) {
+        this.window = this.windowService.nativeWindow;
+    }
     public get isSupported(): boolean {
-        return !!document.queryCommandSupported && !!document.queryCommandSupported('copy');
+        return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy');
     }
 
     public isTargetValid(element: HTMLInputElement | HTMLTextAreaElement): boolean {
@@ -24,7 +32,7 @@ export class ClipboardService {
     public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement, renderer: Renderer): boolean {
         this.selectTarget(targetElm, renderer);
         const re = this.copyText();
-        this.clearSelection(targetElm, window);
+        this.clearSelection(targetElm, this.window);
         return re;
     }
 
@@ -34,8 +42,8 @@ export class ClipboardService {
      */
     public copyFromContent(content: string, renderer: Renderer) {
         if (!this.tempTextArea) {
-            this.tempTextArea = this.createTempTextArea(document, window);
-            document.body.appendChild(this.tempTextArea);
+            this.tempTextArea = this.createTempTextArea(this.document, this.window);
+            this.document.body.appendChild(this.tempTextArea);
         }
         this.tempTextArea.value = content;
         return this.copyFromInputElement(this.tempTextArea, renderer);
@@ -44,25 +52,24 @@ export class ClipboardService {
     // remove temporary textarea if any
     public destroy() {
         if (this.tempTextArea) {
-            document.body.removeChild(this.tempTextArea);
+            this.document.body.removeChild(this.tempTextArea);
             this.tempTextArea = undefined;
         }
     }
 
     // select the target html input element
     private selectTarget(inputElement: HTMLInputElement | HTMLTextAreaElement, renderer: Renderer) {
-        // TODO: handle contenteditable or selection
         if (inputElement.nodeName === 'INPUT' || inputElement.nodeName === 'TEXTAREA') {
-            // TODO: might need to set readonly first
             renderer.invokeElementMethod(inputElement, 'select');
             renderer.invokeElementMethod(inputElement, 'setSelectionRange', [0, inputElement.value.length]);
+        } else {
+            throw new Error('Target element should be either input textbox  or textarea');
         }
     }
 
     private copyText(): boolean {
         try {
-            // TODO: shouldn't use document directly
-            return document.execCommand('copy');
+            return this.document.execCommand('copy');
         } catch (err) {
             throw new Error('Fail to perform copy');
         }
@@ -70,7 +77,6 @@ export class ClipboardService {
     // Removes current selection and focus from `target` element.
     private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement, window: Window) {
         inputElement && inputElement.blur();
-        // TODO: should inject window
         window.getSelection().removeAllRanges();
     }
 
