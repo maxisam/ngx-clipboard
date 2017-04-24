@@ -19,7 +19,7 @@
         "target": "es5",
         "declarationDir": "./dist",
         "outDir": "./dist",
-        "rootDir": "./src",
+        "rootDir": ".",
         "skipLibCheck": true,
         "suppressImplicitAnyIndexErrors": false
     },
