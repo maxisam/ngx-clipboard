@@ -9,15 +9,13 @@ export default {
         '@angular/core',
         '@angular/common',
         'rxjs/Observable',
-        'rxjs/Observer',
-        'clipboard'
+        'rxjs/Observer'
     ],
     globals: {
         '@angular/core': 'ng.core',
         '@angular/common': 'ng.common',
         'rxjs/Observable': 'Rx',
-        'rxjs/Observer': 'Rx',
-        'clipboard': 'Clipboard'
+        'rxjs/Observer': 'Rx'
     },
     onwarn: () => {
         return
