@@ -22,7 +22,7 @@
     "sr:beta": "semantic-release pre && npm run publish-npm:beta && semantic-release post"
   },
   "engines": {
-    "node": ">= 4.2.1"
+    "node": ">= 6.9.0"
   },
   "license": "MIT",
   "publishConfig": {},
