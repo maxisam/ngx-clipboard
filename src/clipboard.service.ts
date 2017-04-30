@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { WindowSrv } from './window.service';
 import { Inject, Injectable, Renderer } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
@@ -17,23 +18,28 @@ export class ClipboardService {
     }
 
     public isTargetValid(element: HTMLInputElement | HTMLTextAreaElement): boolean {
-        if (element && typeof element === 'object' && element.nodeType === 1) {
+        if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) {
             if (element.hasAttribute('disabled')) {
+                // tslint:disable-next-line:max-line-length
                 throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
             }
             return true;
         }
-        throw new Error('Invalid "target" value, use a valid Element');
+        throw new Error('Target should be input or textarea');
     }
 
     /**
      * copyFromInputElement
      */
     public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement, renderer: Renderer): boolean {
-        this.selectTarget(targetElm, renderer);
-        const re = this.copyText();
-        this.clearSelection(targetElm, this.window);
-        return re;
+        try {
+            this.selectTarget(targetElm, renderer);
+            const re = this.copyText();
+            this.clearSelection(targetElm, this.window);
+            return re;
+        } catch (error) {
+            return false;
+        }
     }
 
     /**
@@ -58,21 +64,14 @@ export class ClipboardService {
     }
 
     // select the target html input element
-    private selectTarget(inputElement: HTMLInputElement | HTMLTextAreaElement, renderer: Renderer) {
-        if (inputElement.nodeName === 'INPUT' || inputElement.nodeName === 'TEXTAREA') {
-            renderer.invokeElementMethod(inputElement, 'select');
-            renderer.invokeElementMethod(inputElement, 'setSelectionRange', [0, inputElement.value.length]);
-        } else {
-            throw new Error('Target element should be either input textbox  or textarea');
-        }
+    private selectTarget(inputElement: HTMLInputElement | HTMLTextAreaElement, renderer: Renderer): number | undefined {
+        renderer.invokeElementMethod(inputElement, 'select');
+        renderer.invokeElementMethod(inputElement, 'setSelectionRange', [0, inputElement.value.length]);
+        return inputElement.value.length;
     }
 
     private copyText(): boolean {
-        try {
-            return this.document.execCommand('copy');
-        } catch (err) {
-            throw new Error('Fail to perform copy');
-        }
+        return this.document.execCommand('copy');
     }
     // Removes current selection and focus from `target` element.
     private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement, window: Window) {
