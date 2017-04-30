@@ -19,7 +19,7 @@
         "target": "es5",
         "declarationDir": "./dist",
         "outDir": "./dist",
-        "rootDir": "./src",
+        "rootDir": ".",
         "skipLibCheck": true,
         "suppressImplicitAnyIndexErrors": false
     },
@@ -37,10 +37,6 @@
     "filesGlob": [
         "!./node_modules/**",
         "typings/browser.d.ts"
-    ],
-    "types": [
-        "node",
-        "clipboard"
     ],
     "typeRoots": [
         "node_modules/@types"

@@ -7,3 +7,4 @@ angulardoc.json
 *.ngfactory.ts
 *.ngsummary.json
 /dist/
+**/.vscode

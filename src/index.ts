@@ -1,11 +1,21 @@
+import { WindowSrv } from './window.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { ClipboardService } from './clipboard.service';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ClipboardDirective } from './clipboard.directive';
-export { Clipboard, ClipboardDirective } from './clipboard.directive';
+export * from './clipboard.directive';
+export * from './clipboard.service';
 
 @NgModule({
     declarations: [ClipboardDirective],
-    exports: [ClipboardDirective]
+    exports: [ClipboardDirective],
+    imports: [BrowserModule]
 })
 export class ClipboardModule {
-    // static forRoot(): ModuleWithProviders { return { ngModule: ClipboardModule, providers: [] }; }
+    public static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: ClipboardModule,
+            providers: [ClipboardService, WindowSrv]
+        };
+    }
 }

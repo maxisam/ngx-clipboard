@@ -125,10 +125,6 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
-"@types/clipboard@1.5.32":
-  version "1.5.32"
-  resolved "https://registry.yarnpkg.com/@types/clipboard/-/clipboard-1.5.32.tgz#f085c0898e296e1f25c0fd2fa056ade049be7e85"
-
 "@types/jasmine@2.5.38":
   version "2.5.38"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.38.tgz#a4379124c4921d4e21de54ec74669c9e9b356717"
@@ -805,14 +801,6 @@ cli-width@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.1.0.tgz#b234ca209b29ef66fc518d9b98d5847b00edf00a"
 
-clipboard@~1.5.16:
-  version "1.5.16"
-  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-1.5.16.tgz#916d5e739b0064be61b0b48a535731ecaef3d367"
-  dependencies:
-    good-listener "^1.2.0"
-    select "^1.0.6"
-    tiny-emitter "^1.0.0"
-
 cliui@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-2.1.0.tgz#4b475760ff80264c762c3a1719032e91c7fea0d1"
@@ -1268,10 +1256,6 @@ del@^2.2.0:
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
-
-delegate@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.1.2.tgz#1e1bc6f5cadda6cb6cbf7e6d05d0bcdd5712aebe"
 
 delegates@^1.0.0:
   version "1.0.0"
@@ -1926,12 +1910,6 @@ globule@^1.0.0:
     glob "~7.1.1"
     lodash "~4.16.4"
     minimatch "~3.0.2"
-
-good-listener@^1.2.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
-  dependencies:
-    delegate "^3.1.2"
 
 got@^6.7.1:
   version "6.7.1"
@@ -3016,12 +2994,9 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ngx-clipboard@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-5.1.0.tgz#d07cbbaa183dfd582a20ce704671054a0b715bda"
-  dependencies:
-    "@types/clipboard" "1.5.32"
-    clipboard "~1.5.16"
+ngx-clipboard@^6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-6.0.5.tgz#e41733987030e65795757b69220d549b0b658a80"
 
 no-case@^2.2.0:
   version "2.3.1"
@@ -4117,10 +4092,6 @@ select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
 
-select@^1.0.6:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
-
 selenium-webdriver@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/selenium-webdriver/-/selenium-webdriver-3.0.1.tgz#a2dea5da4a97f6672e89e7ca7276cefa365147a7"
@@ -4586,10 +4557,6 @@ timers-browserify@^2.0.2:
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.2.tgz#ab4883cf597dcd50af211349a00fbca56ac86b86"
   dependencies:
     setimmediate "^1.0.4"
-
-tiny-emitter@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.1.0.tgz#ab405a21ffed814a76c19739648093d70654fecb"
 
 tmp@0.0.24:
   version "0.0.24"

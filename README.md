@@ -6,7 +6,7 @@
 
 # ngx-clipboard , F.K.A [angular2-clipboard](https://www.npmjs.com/package/angular2-clipboard)
 
-Angular directive for [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha)
+From 6.0.0, there is no dependency anymore. Just Angular.
 
 It works with angular version 2.0.0 and up
 
@@ -15,7 +15,6 @@ To make more sense with the future versioning scheme of Angular, the directive s
 ## Dependencies
 
 + Angular >=2.0.0
-+ [clipboard.js](https://clipboardjs.com/)
 
 ## Install
 
@@ -39,7 +38,7 @@ If you use SystemJS to load your files, you might have to update your config:
 ```js
 System.config({
     map: {
-        'ngx-clipboard': 'node_modules/ngx-clipboard/dist/bundles/ngxClipboard.umd.min.js'
+        'ngx-clipboard': 'node_modules/ngx-clipboard'
     }
 });
 ```
@@ -69,6 +68,8 @@ For webpack / Angular CLI, it works as any other libraries. Please check demo fo
 
 Kudos to 
 
-[Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is base on his answer on StackOverflow
+[Thierry Templier](http://stackoverflow.com/a/36330518/667767) This project is inspired by his answer on StackOverflow.
 
-[blacksonic](https://github.com/blacksonic/ngx-aot-webpack) AoT's demo is based on his project
+The core function is ported from [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha).
+
+[blacksonic](https://github.com/blacksonic/ngx-aot-webpack) AoT's demo is based on his project.
