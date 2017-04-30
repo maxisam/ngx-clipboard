@@ -75,6 +75,7 @@ export class ClipboardService {
     }
     // Removes current selection and focus from `target` element.
     private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement, window: Window) {
+        // tslint:disable-next-line:no-unused-expression
         inputElement && inputElement.blur();
         window.getSelection().removeAllRanges();
     }

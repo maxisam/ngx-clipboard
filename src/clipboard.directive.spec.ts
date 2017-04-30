@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule, DOCUMENT } from '@angular/platform-browser';
 /**
  * Helper function to easily build a component Fixture using the specified template
- * From: https://blog.thoughtram.io/angular/2016/12/27/angular-2-advance-testing-with-custom-matchers.html#testing-directives
+ * From: https://blog.thoughtram.io/angular/2016/12/27/angular-2-advance-testing-with-custom-matchers.html
  */
 function createTestComponent(template: string): ComponentFixture<TestClipboardComponent> {
   return TestBed
@@ -26,7 +26,6 @@ export class TestClipboardComponent {
   public text: string = 'test';
   public isCopied: boolean;
 }
-
 
 describe('Directive: clipboard', () => {
   beforeEach(() => {
