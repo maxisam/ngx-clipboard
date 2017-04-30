@@ -9,9 +9,13 @@ export * from './clipboard.service';
 @NgModule({
     declarations: [ClipboardDirective],
     exports: [ClipboardDirective],
-    imports: [BrowserModule],
-    providers: [ClipboardService, WindowSrv]
+    imports: [BrowserModule]
 })
 export class ClipboardModule {
-    // static forRoot(): ModuleWithProviders { return { ngModule: ClipboardModule, providers: [ClipboardService] }; }
+    public static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: ClipboardModule,
+            providers: [ClipboardService, WindowSrv]
+        };
+    }
 }
