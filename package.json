@@ -53,6 +53,7 @@
     "@angular/platform-server": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/forms": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "6.0.48",
     "rxjs": "^5.1.0",
