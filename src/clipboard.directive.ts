@@ -30,11 +30,10 @@ export class ClipboardDirective implements OnInit, OnDestroy {
 
     @HostListener('click', ['$event.target']) private onClick(button) {
         if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
-            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm, this.renderer), this.targetElm.value);
+            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm, this.renderer),
+                this.targetElm.value);
         } else if (this.cbContent) {
             this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent, this.renderer), this.cbContent);
-        } else {
-            throw new Error('Expecting a HtmlInputElement for ngxClipboard or a string value for cbContent.');
         }
     }
 
