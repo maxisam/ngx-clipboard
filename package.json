@@ -3,7 +3,7 @@
   "description": "angular 2 clipboard",
   "main": "./dist/bundles/ngxClipboard.umd.min.js",
   "module": "./dist/index.js",
-  "version": "0.0.0",
+  "version": "6.1.0-beta10",
   "author": {
     "name": "Sam Lin",
     "email": "maxisam@gmail.com"
