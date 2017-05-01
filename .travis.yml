@@ -9,9 +9,8 @@ branches:
 notifications:
   email: false
 node_js:
-  - '4'
-before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.21.3
+  - '6'
+before_install:  
   - npm i -g npm@^4
 before_script:
   - npm prune
