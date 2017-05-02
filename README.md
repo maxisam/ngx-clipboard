@@ -43,12 +43,6 @@ System.config({
 });
 ```
 
-
-In your root module,
-```
-imports:[ClipboardModule.forRoot()]
-```
-
 For webpack / Angular CLI, it works as any other libraries. Please check demo folder for more help. 
 
 ## Example
