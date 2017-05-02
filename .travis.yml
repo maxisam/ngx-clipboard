@@ -1,5 +1,11 @@
-sudo: false
+sudo: required
 language: node_js
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 cache:
   directories:
     - node_modules
@@ -11,10 +17,14 @@ notifications:
 node_js:
   - '6'
 before_install:  
-  - npm i -g npm@^4
+  - npm i -g npm@^4 -g
 before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
   - npm prune
 script:
+  - karma start
   - npm run build
 after_success:
   - npm run semantic-release
