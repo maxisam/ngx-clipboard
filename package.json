@@ -3,7 +3,7 @@
   "description": "angular 2 clipboard",
   "main": "./dist/bundles/ngxClipboard.umd.min.js",
   "module": "./dist/index.js",
-  "version": "0.0.0",
+  "version": "7.0.3",
   "author": {
     "name": "Sam Lin",
     "email": "maxisam@gmail.com"
@@ -40,10 +40,10 @@
   ],
   "dependencies": {},
   "peerDependencies": {
-    "@angular/core": ">=2.4.1",
-    "@angular/common": ">=2.4.1",
-    "@angular/platform-browser": ">=2.4.1",
-    "core-js": ">=2.4.1"
+    "@angular/core": ">=2.0.0",
+    "@angular/common": ">=2.0.0",
+    "@angular/platform-browser": ">=2.0.0",
+    "core-js": ">=2.0.0"
   },
   "devDependencies": {
     "@angular/compiler": "^4.0.0",
