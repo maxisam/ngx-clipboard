@@ -1,18 +1,13 @@
-import { CssBlockDefinitionRuleAst } from 'codelyzer/angular/styles/cssAst';
-import { DOCUMENT } from '@angular/platform-browser';
-/* tslint:disable:no-unused-variable */
-
-import { TestBed, async, inject } from '@angular/core/testing';
 import { ClipboardService } from './clipboard.service';
-import { WindowSrv } from "./window.service";
+import { inject, TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
+import { WindowTokenModule } from 'ngx-window-token';
 
 describe('Service: Clipboard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ClipboardService,
-        { provide: DOCUMENT, useValue: document },
-        WindowSrv
-      ]
+      imports: [BrowserModule, WindowTokenModule],
+      providers: [ClipboardService]
     });
   });
 

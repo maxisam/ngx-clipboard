@@ -2679,6 +2679,10 @@ nerf-dart@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/nerf-dart/-/nerf-dart-1.0.0.tgz#e6dab7febf5ad816ea81cf5c629c5a0ebde72c1a"
 
+ngx-window-token@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-0.0.2.tgz#680ee986bbe6f95d07daadf154c0ecf35e589920"
+
 node-libs-browser@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/node-libs-browser/-/node-libs-browser-2.0.0.tgz#a3a59ec97024985b46e958379646f96c4b616646"

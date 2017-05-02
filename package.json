@@ -38,7 +38,9 @@
     "clipboard",
     "copy"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "ngx-window-token": "0.0.2"
+  },
   "peerDependencies": {
     "@angular/core": ">=2.4.1",
     "@angular/common": ">=2.4.1",
