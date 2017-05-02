@@ -13,7 +13,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ClipboardModule.forRoot()
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
