@@ -1,7 +1,7 @@
-import { element } from 'protractor';
 import { WindowSrv } from './window.service';
-import { Inject, Injectable, Renderer } from '@angular/core';
+import { Inject, InjectionToken, Injectable, Optional, Renderer, SkipSelf } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
+
 
 @Injectable()
 export class ClipboardService {
@@ -101,3 +101,13 @@ export class ClipboardService {
         return ta;
     }
 }
+// this pattern is mentioned in https://github.com/angular/angular/issues/13854 in #43
+export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(doc, windowSrv: WindowSrv, parentDispatcher: ClipboardService) {
+    return parentDispatcher || new ClipboardService(doc, windowSrv);
+};
+
+export const CLIPBOARD_SERVICE_PROVIDER = {
+    provide: ClipboardService,
+    deps: [DOCUMENT, WindowSrv, [new Optional(), new SkipSelf(), ClipboardService]],
+    useFactory: CLIPBOARD_SERVICE_PROVIDER_FACTORY
+};

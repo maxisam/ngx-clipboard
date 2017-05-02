@@ -1,21 +1,15 @@
-import { CommonModule } from '@angular/common';
 import { WindowSrv } from './window.service';
-import { ClipboardService } from './clipboard.service';
-import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ClipboardDirective } from './clipboard.directive';
+import { CLIPBOARD_SERVICE_PROVIDER } from './clipboard.service';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 export * from './clipboard.directive';
 export * from './clipboard.service';
 
 @NgModule({
     declarations: [ClipboardDirective],
     exports: [ClipboardDirective],
-    imports: [CommonModule]
+    imports: [CommonModule],
+    providers: [WindowSrv, CLIPBOARD_SERVICE_PROVIDER]
 })
-export class ClipboardModule {
-    public static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: ClipboardModule,
-            providers: [ClipboardService, WindowSrv]
-        };
-    }
-}
+export class ClipboardModule { }

@@ -33,7 +33,7 @@ describe('Directive: clipboard', () => {
       declarations: [TestClipboardComponent],
       imports: [
         BrowserModule,
-        ClipboardModule.forRoot(),
+        ClipboardModule,
         FormsModule]
     });
   });
