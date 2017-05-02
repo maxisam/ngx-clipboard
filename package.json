@@ -42,9 +42,9 @@
     "ngx-window-token": "0.0.2"
   },
   "peerDependencies": {
-    "@angular/core": ">=2.4.1",
-    "@angular/common": ">=2.4.1",
-    "@angular/platform-browser": ">=2.4.1",
+    "@angular/core": ">=4.0.0",
+    "@angular/common": ">=4.0.0",
+    "@angular/platform-browser": ">=4.0.0",
     "core-js": ">=2.4.1"
   },
   "devDependencies": {
