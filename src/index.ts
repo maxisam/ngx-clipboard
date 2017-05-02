@@ -10,6 +10,6 @@ export * from './clipboard.service';
     declarations: [ClipboardDirective],
     exports: [ClipboardDirective],
     imports: [CommonModule],
-    providers: [CLIPBOARD_SERVICE_PROVIDER]
+    providers: [WindowSrv, CLIPBOARD_SERVICE_PROVIDER]
 })
 export class ClipboardModule { }
