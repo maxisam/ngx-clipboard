@@ -2,50 +2,49 @@
 # yarn lockfile v1
 
 
-"@angular/common@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.0.3.tgz#17472895eb425f2812b3a79162b5b494d2506a5b"
+"@angular/common@^2.0.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.4.10.tgz#a3a682d2228fa30ec23dd0eb57c8e887fba26997"
 
-"@angular/compiler-cli@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-4.0.3.tgz#691f280bc4d6611a88d6555f43e57032a0d34300"
+"@angular/compiler-cli@^2.0.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-2.4.10.tgz#c21143bfaab45231c8d2eaa82456bed3d39f91a3"
   dependencies:
-    "@angular/tsc-wrapped" "4.0.3"
+    "@angular/tsc-wrapped" "0.5.2"
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
 
-"@angular/compiler@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-4.0.3.tgz#8b3cad338ac539328e10a6a4bfaa057094f7bc89"
+"@angular/compiler@^2.0.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.10.tgz#f51fd34820b2a02c7cb61fbcf49873c58056fb0c"
 
-"@angular/core@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-4.0.3.tgz#61be21db6aa5778e33159ffd38cbbebaf16120d9"
+"@angular/core@^2.0.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.10.tgz#0b8320a65065965d998645b1f5cd3cf769b441ea"
 
-"@angular/forms@^4.0.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-4.1.0.tgz#8eae2a45c4ba064b377f9280e59c012b5dac6b80"
+"@angular/forms@^2.0.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.4.10.tgz#062133aaade1f3b3c962f1593208c541b622fd06"
 
-"@angular/platform-browser-dynamic@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-4.0.3.tgz#5fa3b98f725999b631d7d7174e6e43dcbf6aa9ac"
+"@angular/platform-browser-dynamic@^2.0.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.4.10.tgz#8df25dec2b06adc690cc9bc26448deccaebcd8ec"
 
-"@angular/platform-browser@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-4.0.3.tgz#170b18d5af4ee02b248aa6a1f1e0584ac841681e"
+"@angular/platform-browser@^2.0.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-2.4.10.tgz#cbf25608148fb4ffef96cc5005ba5d7b3e093906"
 
-"@angular/platform-server@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-4.0.3.tgz#3f93d5830e7a085c45c18f1214a8112ef1c23f92"
+"@angular/platform-server@^2.0.0":
+  version "2.4.10"
+  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-2.4.10.tgz#ede03075081f807ed83dd8ec92f2924858fb3455"
   dependencies:
-    parse5 "^3.0.1"
-    xhr2 "^0.1.4"
+    parse5 "^2.2.1"
 
-"@angular/tsc-wrapped@4.0.3":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/tsc-wrapped/-/tsc-wrapped-4.0.3.tgz#a5fea6a87df9c348faa5577c3698c8a363082781"
+"@angular/tsc-wrapped@0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@angular/tsc-wrapped/-/tsc-wrapped-0.5.2.tgz#2eddf472c467fcb334ea94deddaaa71990c5a482"
   dependencies:
-    tsickle "^0.21.0"
+    tsickle "^0.2"
 
 "@bahmutov/parse-github-repo-url@^0.1.0":
   version "0.1.2"
@@ -2975,11 +2974,9 @@ parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
 
-parse5@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.2.tgz#05eff57f0ef4577fb144a79f8b9a967a6cc44510"
-  dependencies:
-    "@types/node" "^6.0.46"
+parse5@^2.2.1:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-2.2.3.tgz#0c4fc41c1000c5e6b93d48b03f8083837834e9f6"
 
 parsejson@0.0.3:
   version "0.0.3"
@@ -4034,9 +4031,9 @@ ts-loader@^2.0.3:
     loader-utils "^1.0.2"
     semver "^5.0.1"
 
-tsickle@^0.21.0:
-  version "0.21.6"
-  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.21.6.tgz#53b01b979c5c13fdb13afb3fb958177e5991588d"
+tsickle@^0.2:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.2.6.tgz#ad4abf92e74ebdf3fb5aa187ca85b02066fe1a1b"
   dependencies:
     minimist "^1.2.0"
     mkdirp "^0.5.1"
@@ -4356,10 +4353,6 @@ wtf-8@1.0.0:
 xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
-
-xhr2@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/xhr2/-/xhr2-0.1.4.tgz#7f87658847716db5026323812f818cadab387a5f"
 
 xml2js@0.4.4:
   version "0.4.4"

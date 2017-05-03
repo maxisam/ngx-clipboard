@@ -1,9 +1,11 @@
+import { DOCUMENT } from './document.service';
 import { ClipboardService } from './clipboard.service';
 import { ClipboardModule } from './index';
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule, DOCUMENT } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+
 /**
  * Helper function to easily build a component Fixture using the specified template
  * From: https://blog.thoughtram.io/angular/2016/12/27/angular-2-advance-testing-with-custom-matchers.html

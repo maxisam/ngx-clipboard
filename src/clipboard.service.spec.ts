@@ -1,5 +1,5 @@
 import { CssBlockDefinitionRuleAst } from 'codelyzer/angular/styles/cssAst';
-import { DOCUMENT } from '@angular/platform-browser';
+import { _document, DOCUMENT } from './document.service';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
@@ -9,9 +9,10 @@ import { WindowSrv } from "./window.service";
 describe('Service: Clipboard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ClipboardService,
-        { provide: DOCUMENT, useValue: document },
-        WindowSrv
+      providers: [
+        { provide: DOCUMENT, useFactory: _document },
+        WindowSrv,
+        ClipboardService
       ]
     });
   });

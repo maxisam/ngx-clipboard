@@ -1,6 +1,6 @@
 import { WindowSrv } from './window.service';
-import { Inject, InjectionToken, Injectable, Optional, Renderer, SkipSelf } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { Inject, Injectable, Optional, Renderer, SkipSelf, OpaqueToken } from '@angular/core';
+import { DOCUMENT } from './document.service';
 
 
 @Injectable()
@@ -8,7 +8,7 @@ export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement;
     private window: Window;
     constructor(
-        @Inject(DOCUMENT) private document,
+        @Inject(DOCUMENT) private document: Document,
         private windowService: WindowSrv
     ) {
         this.window = this.windowService.nativeWindow;
@@ -108,6 +108,6 @@ export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(doc, windowSrv: WindowSrv, pa
 
 export const CLIPBOARD_SERVICE_PROVIDER = {
     provide: ClipboardService,
-    deps: [DOCUMENT, WindowSrv, [new Optional(), new SkipSelf(), ClipboardService]],
-    useFactory: CLIPBOARD_SERVICE_PROVIDER_FACTORY
+    useFactory: CLIPBOARD_SERVICE_PROVIDER_FACTORY,
+    deps: [DOCUMENT, WindowSrv, [new Optional(), new SkipSelf(), ClipboardService]]
 };
