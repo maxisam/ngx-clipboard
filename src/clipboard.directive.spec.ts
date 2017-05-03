@@ -54,6 +54,15 @@ describe('Directive: clipboard', () => {
       button = fixture.debugElement.nativeElement.querySelector('button');
     });
 
+    it('should fire cbOnError if environment does not support copy', async(() => {
+      spy = spyOn(clipboardService, 'isSupported');
+      spy.and.returnValue(false);
+      button.click();
+      fixture.whenStable().then(() => {
+        expect(fixture.componentInstance.isCopied).toBeFalsy();
+      });
+    }));
+
     it('should fire cbOnSuccess after copy successfully', async(() => {
       spy.and.returnValue(true);
       button.click();
@@ -113,7 +122,16 @@ describe('Directive: clipboard', () => {
       });
     }));
 
-    it('should fire cbOnSuccess after copy fail', async(() => {
+    it('should fire cbOnError if environment does not support copy', async(() => {
+      spy = spyOn(clipboardService, 'isSupported');
+      spy.and.returnValue(false);
+      button.click();
+      fixture.whenStable().then(() => {
+        expect(fixture.componentInstance.isCopied).toBeFalsy();
+      });
+    }));
+
+    it('should fire cbOnError after copy fail', async(() => {
       spy.and.returnValue(false);
       fixture.detectChanges();
       // button click to trigger copy

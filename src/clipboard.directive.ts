@@ -18,18 +18,16 @@ export class ClipboardDirective implements OnInit, OnDestroy {
 
     ) { }
 
-    public ngOnInit() {
-        if (!this.clipboardSrv.isSupported) {
-            throw new Error('Your environment does not support copy.');
-        }
-    }
+    public ngOnInit() { }
 
     public ngOnDestroy() {
         this.clipboardSrv.destroy();
     }
 
     @HostListener('click', ['$event.target']) private onClick(button) {
-        if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
+        if (!this.clipboardSrv.isSupported) {
+            this.handleResult(false, undefined);
+        } else if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
             this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm, this.renderer),
                 this.targetElm.value);
         } else if (this.cbContent) {
