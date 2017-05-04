@@ -1,5 +1,5 @@
 import { ClipboardService } from './clipboard.service';
-import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, Renderer } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, Renderer, ElementRef } from '@angular/core';
 
 @Directive({
     selector: '[ngxClipboard]'
@@ -24,7 +24,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         this.clipboardSrv.destroy();
     }
 
-    @HostListener('click', ['$event.target']) private onClick(button) {
+    @HostListener('click', ['$event.target']) private onClick(button: ElementRef) {
         if (!this.clipboardSrv.isSupported) {
             this.handleResult(false, undefined);
         } else if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
@@ -39,7 +39,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
      * Fires an event based on the copy operation result.
      * @param {Boolean} succeeded
      */
-    private handleResult(succeeded, copiedContent) {
+    private handleResult(succeeded: Boolean, copiedContent: string) {
         if (succeeded) {
             this.cbOnSuccess.emit({ isSuccess: true, content: copiedContent });
         } else {
