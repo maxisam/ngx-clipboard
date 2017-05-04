@@ -2994,9 +2994,9 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ngx-clipboard@7.0.3-beta0:
-  version "7.0.3-beta0"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-7.0.3-beta0.tgz#f4a93787125a12c00991644420aabfcddc801bce"
+ngx-clipboard@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-8.0.1.tgz#8a4d43362a1bbae05a32ec492b486b8890623f12"
   dependencies:
     ngx-window-token "0.0.2"
 
