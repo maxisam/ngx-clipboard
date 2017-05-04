@@ -7,8 +7,8 @@ import { WINDOW } from "ngx-window-token";
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement;
     constructor(
-        @Inject(DOCUMENT) private document: Document,
-        @Inject(WINDOW) private window: Window,
+        @Inject(DOCUMENT) private document: any,
+        @Inject(WINDOW) private window: any,
     ) { }
     public get isSupported(): boolean {
         return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy');
