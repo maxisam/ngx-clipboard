@@ -27,12 +27,11 @@ echo(chalk.green('TSLint completed'));
 
 /* Aot compilation */
 echo('Start AoT compilation');
-echo('ngc -p tsconfig-build.json');
-
-exec('ngc -p tsconfig-build.json');
-
+if (exec(`ngc -p tsconfig-build.json`).code !== 0) {
+    echo(chalk.red(`Error: AoT compilation failed`));
+    exit(1);
+}
 echo(chalk.green('AoT compilation completed'));
-
 
 /* Creates umd bundle */
 echo('Start bundling');
