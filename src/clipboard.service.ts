@@ -7,8 +7,8 @@ import { WINDOW } from "ngx-window-token";
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement;
     constructor(
-        @Inject(DOCUMENT) private document,
-        @Inject(WINDOW) private window,
+        @Inject(DOCUMENT) private document: Document,
+        @Inject(WINDOW) private window: Window,
     ) { }
     public get isSupported(): boolean {
         return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy');
@@ -99,7 +99,7 @@ export class ClipboardService {
     }
 }
 // this pattern is mentioned in https://github.com/angular/angular/issues/13854 in #43
-export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(doc, win, parentDispatcher: ClipboardService) {
+export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(doc: Document, win: Window, parentDispatcher: ClipboardService) {
     return parentDispatcher || new ClipboardService(doc, win);
 };
 
