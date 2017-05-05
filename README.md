@@ -49,6 +49,19 @@ System.config({
 
 For webpack / Angular CLI, it works as any other libraries. Please check demo folder for more help. 
 
+This library support 2 kinds of copy source. 
+
+You can either set 
+```
+[cbContent]="'target string'"
+```
+Or 
+
+```
+[ngxClipboard]="inputTarget" 
+```
+**PLEASE CHECK WITH PLUNKER FIRST**
+
 ## Example
 
 [plunker](http://embed.plnkr.co/PD4Ap8/)
