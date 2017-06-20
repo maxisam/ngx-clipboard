@@ -3063,9 +3063,9 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-ngx-clipboard@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-7.0.4.tgz#8b8af978331d006e966d4e3b9e6ac54fbee98d1d"
+ngx-clipboard@^7.0.6:
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-7.0.6.tgz#5d20a4b85c1e094acfc230c08b0f8d1738725591"
 
 no-case@^2.2.0:
   version "2.3.1"
