@@ -2,13 +2,12 @@ import { WindowSrv } from './window.service';
 import { Inject, Injectable, Optional, Renderer, SkipSelf, OpaqueToken } from '@angular/core';
 import { DOCUMENT } from './document.service';
 
-
 @Injectable()
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement;
     private window: Window;
     constructor(
-        @Inject(DOCUMENT) private document: Document,
+        @Inject(DOCUMENT) private document,
         private windowService: WindowSrv
     ) {
         this.window = this.windowService.nativeWindow;
