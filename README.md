@@ -21,7 +21,7 @@ To make more sense with the future versioning scheme of Angular, the directive s
 You can get it on npm.
 
 ```
-npm install ngx-clipboard --save
+npm install ngx-clipboard@ng2 --save
 ```
 
 ## Build project
@@ -47,7 +47,7 @@ For webpack / Angular CLI, it works as any other libraries. Please check demo fo
 
 ## Example
 
-[plunker](http://embed.plnkr.co/PD4Ap8/)
+[plunker](https://plnkr.co/edit/zpMDmJ0A31in7t4HAWex?p=preview)
 
 
 ## Contributing 
