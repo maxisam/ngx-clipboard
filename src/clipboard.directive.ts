@@ -39,7 +39,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
      * Fires an event based on the copy operation result.
      * @param {Boolean} succeeded
      */
-    private handleResult(succeeded: Boolean, copiedContent: string) {
+    private handleResult(succeeded: Boolean, copiedContent: string | undefined) {
         if (succeeded) {
             this.cbOnSuccess.emit({ isSuccess: true, content: copiedContent });
         } else {
