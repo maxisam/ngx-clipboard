@@ -1,6 +1,6 @@
-import { Inject, InjectionToken, Injectable, Optional, Renderer, SkipSelf } from '@angular/core';
+import { Inject, Injectable, Optional, Renderer, SkipSelf } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
-import { WINDOW } from "ngx-window-token";
+import { WINDOW } from 'ngx-window-token';
 
 
 @Injectable()

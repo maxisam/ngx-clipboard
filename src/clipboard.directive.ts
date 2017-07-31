@@ -1,5 +1,16 @@
+import {
+    Directive,
+    ElementRef,
+    EventEmitter,
+    HostListener,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+    Renderer,
+} from '@angular/core';
+
 import { ClipboardService } from './clipboard.service';
-import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, Renderer, ElementRef } from '@angular/core';
 
 @Directive({
     selector: '[ngxClipboard]'
@@ -24,7 +35,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         this.clipboardSrv.destroy();
     }
 
-    @HostListener('click', ['$event.target']) private onClick(button: ElementRef) {
+    @HostListener('click', ['$event.target']) public onClick() {
         if (!this.clipboardSrv.isSupported) {
             this.handleResult(false, undefined);
         } else if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
