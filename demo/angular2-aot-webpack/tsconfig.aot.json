@@ -26,7 +26,7 @@
     "genDir": ".",
     "entryModule": "src/app/modules/main.module#MainModule"
   },
-  "compileOnSave": false,
+ 
   "exclude": [
     "node_modules",
     "dist",

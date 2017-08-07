@@ -7,7 +7,7 @@
             "dom"
         ],
         "baseUrl": "./node_modules",
-        "compileOnSave": false,
+       
         "module": "es2015",
         "moduleResolution": "node",
         "noEmitOnError": false,
