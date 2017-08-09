@@ -1,14 +1,4 @@
-import {
-    Directive,
-    ElementRef,
-    EventEmitter,
-    HostListener,
-    Input,
-    OnDestroy,
-    OnInit,
-    Output,
-    Renderer,
-} from '@angular/core';
+import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, Renderer } from '@angular/core';
 
 import { ClipboardService } from './clipboard.service';
 
