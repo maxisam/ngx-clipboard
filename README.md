@@ -60,6 +60,11 @@ Or
 ```
 [ngxClipboard]="inputTarget" 
 ```
+
+Or
+
+You can just use copyFromContent from clipboard.service to copy any text you dynamically created.
+
 **PLEASE CHECK WITH PLUNKER FIRST**
 
 ## Example
