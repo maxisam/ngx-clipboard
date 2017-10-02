@@ -94,7 +94,7 @@
     "README.md",
     "dist",
     "src",
-    "index.ts"
+    "index.d.ts"
   ],
   "config": {
     "commitizen": {
