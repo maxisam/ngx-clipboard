@@ -9,7 +9,7 @@ export class ClipboardService {
         @Inject(DOCUMENT) private document: any,
         @Inject(WINDOW) private window: any,
     ) { }
-    public get isSupported(): boolean {
+    public isSupported(): boolean {
         return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy');
     }
 
