@@ -79,7 +79,7 @@ describe('Directive: clipboard', () => {
     }));
 
     it('should create a textarea in dom, and remove it after calling destroy', async(() => {
-      let doc = fixture.debugElement.injector.get(DOCUMENT);
+      const doc = fixture.debugElement.injector.get(DOCUMENT);
       expect(doc.querySelector('textarea')).toBeFalsy();
       button.click();
       fixture.whenStable().then(() => {

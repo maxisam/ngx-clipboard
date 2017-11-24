@@ -3,6 +3,7 @@ import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output
 import { ClipboardService } from './clipboard.service';
 
 @Directive({
+    // tslint:disable-next-line:directive-selector
     selector: '[ngxClipboard]'
 })
 export class ClipboardDirective implements OnInit, OnDestroy {
@@ -19,6 +20,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
 
     ) { }
 
+    // tslint:disable-next-line:no-empty
     public ngOnInit() { }
 
     public ngOnDestroy() {
@@ -38,9 +40,9 @@ export class ClipboardDirective implements OnInit, OnDestroy {
 
     /**
      * Fires an event based on the copy operation result.
-     * @param {Boolean} succeeded
+     * @param succeeded
      */
-    private handleResult(succeeded: Boolean, copiedContent: string | undefined) {
+    private handleResult(succeeded: boolean, copiedContent: string | undefined) {
         if (succeeded) {
             this.cbOnSuccess.emit({ isSuccess: true, content: copiedContent });
         } else {

@@ -54,7 +54,7 @@ describe('Service: Clipboard', () => {
   });
 
   describe('check if other html element is valid', () => {
-    let div: any = undefined;
+    let div: any;
     it('undefined is NOT a valid target', inject([ClipboardService], (service: ClipboardService) => {
       expect(() => service.isTargetValid(div))
         .toThrowError('Target should be input or textarea');
