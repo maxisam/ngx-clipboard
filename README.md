@@ -18,7 +18,9 @@ To make more sense with the future versioning scheme of Angular, the directive s
 
 If you need to use it on 2.0.0, please use version 7.x.x.
 
-The code are pretty much the same, in 8.0.0 it uses InjectionToken which requires angular4.
+The code are pretty much the same, in 8.0.0 it uses InjectionToken which requires angular4 and above.
+
+
 
 ## Install
 
@@ -95,3 +97,5 @@ Kudos to
 The core function is ported from [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha).
 
 [blacksonic](https://github.com/blacksonic/ngx-aot-webpack) AoT's demo is based on his project.
+
+[robisim74](https://github.com/robisim74/angular-library-starter) This project uses his library starter.
