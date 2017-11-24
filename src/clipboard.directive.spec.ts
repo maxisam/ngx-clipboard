@@ -49,7 +49,7 @@ describe('Directive: clipboard', () => {
       fixture = createTestComponent(template);
       clipboardService = fixture.debugElement.injector.get(ClipboardService);
       // Setup spy on the `copyText` method, somehow document.execCommand('copy') doesn't work in Karma
-      spy = spyOn(clipboardService, 'copyText');
+      spy = spyOn(clipboardService, 'copyText' as keyof(ClipboardService));
       fixture.detectChanges();
       button = fixture.debugElement.nativeElement.querySelector('button');
     });
@@ -103,7 +103,7 @@ describe('Directive: clipboard', () => {
       fixture = createTestComponent(template);
       clipboardService = fixture.debugElement.injector.get(ClipboardService);
       // Setup spy on the `copyText` method, somehow document.execCommand('copy') doesn't work in Karma
-      spy = spyOn(clipboardService, 'copyText');
+      spy = spyOn(clipboardService, 'copyText' as keyof(ClipboardService));
       fixture.detectChanges();
       button = fixture.debugElement.nativeElement.querySelector('button');
       input = fixture.debugElement.nativeElement.querySelector('input');
