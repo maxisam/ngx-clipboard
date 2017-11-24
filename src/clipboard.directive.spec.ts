@@ -49,7 +49,7 @@ describe('Directive: clipboard', () => {
       fixture = createTestComponent(template);
       clipboardService = fixture.debugElement.injector.get(ClipboardService);
       // Setup spy on the `copyText` method, somehow document.execCommand('copy') doesn't work in Karma
-      spy = spyOn(clipboardService, 'copyText');
+      spy = spyOn(clipboardService, 'copyText' as keyof(ClipboardService));
       fixture.detectChanges();
       button = fixture.debugElement.nativeElement.querySelector('button');
     });
@@ -79,7 +79,7 @@ describe('Directive: clipboard', () => {
     }));
 
     it('should create a textarea in dom, and remove it after calling destroy', async(() => {
-      let doc = fixture.debugElement.injector.get(DOCUMENT);
+      const doc = fixture.debugElement.injector.get(DOCUMENT);
       expect(doc.querySelector('textarea')).toBeFalsy();
       button.click();
       fixture.whenStable().then(() => {
@@ -103,7 +103,7 @@ describe('Directive: clipboard', () => {
       fixture = createTestComponent(template);
       clipboardService = fixture.debugElement.injector.get(ClipboardService);
       // Setup spy on the `copyText` method, somehow document.execCommand('copy') doesn't work in Karma
-      spy = spyOn(clipboardService, 'copyText');
+      spy = spyOn(clipboardService, 'copyText' as keyof(ClipboardService));
       fixture.detectChanges();
       button = fixture.debugElement.nativeElement.querySelector('button');
       input = fixture.debugElement.nativeElement.querySelector('input');

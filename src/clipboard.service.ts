@@ -91,7 +91,7 @@ export class ClipboardService {
         ta.style.position = 'absolute';
         ta.style[isRTL ? 'right' : 'left'] = '-9999px';
         // Move element to the same position vertically
-        let yPosition = window.pageYOffset || doc.documentElement.scrollTop;
+        const yPosition = window.pageYOffset || doc.documentElement.scrollTop;
         ta.style.top = yPosition + 'px';
         ta.setAttribute('readonly', '');
         return ta;
@@ -100,10 +100,10 @@ export class ClipboardService {
 // this pattern is mentioned in https://github.com/angular/angular/issues/13854 in #43
 export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(doc: Document, win: Window, parentDispatcher: ClipboardService) {
     return parentDispatcher || new ClipboardService(doc, win);
-};
+}
 
 export const CLIPBOARD_SERVICE_PROVIDER = {
-    provide: ClipboardService,
     deps: [DOCUMENT, WINDOW, [new Optional(), new SkipSelf(), ClipboardService]],
+    provide: ClipboardService,
     useFactory: CLIPBOARD_SERVICE_PROVIDER_FACTORY
 };
