@@ -6,7 +6,7 @@
 
 # ngx-clipboard , F.K.A [angular2-clipboard](https://www.npmjs.com/package/angular2-clipboard)
 
-From 6.0.0, there is no dependency anymore. Just Angular.
+From 6.0.0, there is no other JS dependency anymore. Just Angular.
 
 It works with angular version 2.0.0 and up
 
