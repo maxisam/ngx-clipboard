@@ -21,7 +21,6 @@ If you need to use it on 2.0.0, please use version 7.x.x.
 The code are pretty much the same, in 8.0.0 it uses InjectionToken which requires angular4 and above.
 
 
-
 ## Install
 
 You can get it on npm.
