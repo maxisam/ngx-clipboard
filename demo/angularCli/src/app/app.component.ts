@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   text1: string;
   text2: string;
+  isCopied1: boolean;
+  isCopied2: boolean;
 }
