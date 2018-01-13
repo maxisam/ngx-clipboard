@@ -19,7 +19,8 @@
     "publish-npm:beta": "npm publish --tag=next",
     "semantic-release": "semantic-release pre && npm run publish-npm && semantic-release post",
     "sr": "npm run semantic-release",
-    "sr:beta": "semantic-release pre && npm run publish-npm:beta && semantic-release post"
+    "sr:beta": "semantic-release pre && npm run publish-npm:beta && semantic-release post",
+    "prepare": "npm run build"
   },
   "engines": {
     "node": ">=6.9.x"
