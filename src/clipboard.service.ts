@@ -103,7 +103,11 @@ export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(doc: Document, win: Window, p
 }
 
 export const CLIPBOARD_SERVICE_PROVIDER = {
-    deps: [DOCUMENT, WINDOW, [new Optional(), new SkipSelf(), ClipboardService]],
+    deps: [
+        DOCUMENT as InjectionToken<Document>,
+        WINDOW as InjectionToken<Document>,
+        [new Optional(), new SkipSelf(), ClipboardService]
+    ],
     provide: ClipboardService,
     useFactory: CLIPBOARD_SERVICE_PROVIDER_FACTORY
 };
