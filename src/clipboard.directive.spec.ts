@@ -1,5 +1,5 @@
 import { ClipboardService } from './clipboard.service';
-import { ClipboardModule } from './index';
+import { ClipboardModule } from './ngx-clipboard';
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
@@ -49,7 +49,7 @@ describe('Directive: clipboard', () => {
       fixture = createTestComponent(template);
       clipboardService = fixture.debugElement.injector.get(ClipboardService);
       // Setup spy on the `copyText` method, somehow document.execCommand('copy') doesn't work in Karma
-      spy = spyOn(clipboardService, 'copyText' as keyof(ClipboardService));
+      spy = spyOn(clipboardService, 'copyText' as keyof (ClipboardService));
       fixture.detectChanges();
       button = fixture.debugElement.nativeElement.querySelector('button');
     });
@@ -103,7 +103,7 @@ describe('Directive: clipboard', () => {
       fixture = createTestComponent(template);
       clipboardService = fixture.debugElement.injector.get(ClipboardService);
       // Setup spy on the `copyText` method, somehow document.execCommand('copy') doesn't work in Karma
-      spy = spyOn(clipboardService, 'copyText' as keyof(ClipboardService));
+      spy = spyOn(clipboardService, 'copyText' as keyof (ClipboardService));
       fixture.detectChanges();
       button = fixture.debugElement.nativeElement.querySelector('button');
       input = fixture.debugElement.nativeElement.querySelector('input');
