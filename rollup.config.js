@@ -1,5 +1,5 @@
 export default {
-    entry: './dist/index.js',
+    entry: './dist/ngx-clipboard.js',
     dest: './dist/bundles/ngxClipboard.umd.js',
     format: 'umd',
     // Global namespace.

@@ -2,7 +2,8 @@
   "name": "ngx-clipboard",
   "description": "angular 2 clipboard",
   "main": "./dist/bundles/ngxClipboard.umd.min.js",
-  "module": "./dist/index.js",
+  "module": "./dist/ngx-clipboard.js",
+  "typings": "./dist/ngx-clipboard.d.ts",
   "version": "0.0.0",
   "author": {
     "name": "Sam Lin",
@@ -95,7 +96,7 @@
     "README.md",
     "dist",
     "src",
-    "index.ts"
+    "ngx-clipboard.ts"
   ],
   "config": {
     "commitizen": {
