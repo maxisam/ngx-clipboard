@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, Renderer } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
 import { ClipboardService } from './clipboard.service';
 
@@ -16,7 +16,6 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     @Output() public cbOnError: EventEmitter<any> = new EventEmitter<any>();
     constructor(
         private clipboardSrv: ClipboardService,
-        private renderer: Renderer
 
     ) { }
 
@@ -31,10 +30,10 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         if (!this.clipboardSrv.isSupported) {
             this.handleResult(false, undefined);
         } else if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
-            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm, this.renderer),
+            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm),
                 this.targetElm.value);
         } else if (this.cbContent) {
-            this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent, this.renderer), this.cbContent);
+            this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent), this.cbContent);
         }
     }
 
