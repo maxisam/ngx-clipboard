@@ -1,4 +1,4 @@
-import { Inject, Injectable, Optional, Renderer, SkipSelf, InjectionToken } from '@angular/core';
+import { Inject, Injectable, Optional, SkipSelf, InjectionToken } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { WINDOW } from 'ngx-window-token';
 
@@ -27,9 +27,9 @@ export class ClipboardService {
     /**
      * copyFromInputElement
      */
-    public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement, renderer: Renderer): boolean {
+    public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement): boolean {
         try {
-            this.selectTarget(targetElm, renderer);
+            this.selectTarget(targetElm);
             const re = this.copyText();
             this.clearSelection(targetElm, this.window);
             return re;
@@ -42,13 +42,13 @@ export class ClipboardService {
      * Creates a fake textarea element, sets its value from `text` property,
      * and makes a selection on it.
      */
-    public copyFromContent(content: string, renderer: Renderer) {
+    public copyFromContent(content: string) {
         if (!this.tempTextArea) {
             this.tempTextArea = this.createTempTextArea(this.document, this.window);
             this.document.body.appendChild(this.tempTextArea);
         }
         this.tempTextArea.value = content;
-        return this.copyFromInputElement(this.tempTextArea, renderer);
+        return this.copyFromInputElement(this.tempTextArea);
     }
 
     // remove temporary textarea if any
@@ -60,9 +60,9 @@ export class ClipboardService {
     }
 
     // select the target html input element
-    private selectTarget(inputElement: HTMLInputElement | HTMLTextAreaElement, renderer: Renderer): number | undefined {
-        renderer.invokeElementMethod(inputElement, 'select');
-        renderer.invokeElementMethod(inputElement, 'setSelectionRange', [0, inputElement.value.length]);
+    private selectTarget(inputElement: HTMLInputElement | HTMLTextAreaElement): number | undefined {
+        inputElement.select();
+        inputElement.setSelectionRange(0, inputElement.value.length);
         return inputElement.value.length;
     }
 
