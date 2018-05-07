@@ -14,10 +14,12 @@ To make more sense with the future versioning scheme of Angular, the directive s
 
 ## Dependencies
 
-+ Angular >=5.0.0 
++ Angular >=6.0.0 
 
 If you need to use it on 2.x, please use version 7.x.x.
 If you need to use it on 4.x, please use version 8.x.x.
+If you need to use it on 5.x, please use version 10.x.x.
+
 
 The code are pretty much the same, in 8.0.0 it uses InjectionToken which requires angular4 and above.
 
