@@ -7,6 +7,7 @@
     "build": "ng build ngx-clipboard --prod",
     "test": "ng test ngx-clipboard",
     "lint": "ng lint ngx-clipboard",
+    "publish:lib": "npm publish ./dist/ngx-clipboard",
     "e2e": "ng e2e"
   },
   "private": true,
