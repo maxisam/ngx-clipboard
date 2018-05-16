@@ -75,7 +75,7 @@ You can just use copyFromContent from clipboard.service to copy any text you dyn
 
 ## Example
 
-[plunker](http://embed.plnkr.co/PD4Ap8/)
+[stackblitz.com](https://stackblitz.com/github/maxisam/ngx-clipboard)
 
 ## Contributing
 
