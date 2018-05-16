@@ -18,14 +18,14 @@ notifications:
 node_js:
   - stable
 before_install:  
-  - npm i -g npm@^4 -g
+  - npm i -g 
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 3
   - npm prune
 script:
-  - karma start
+  - npm run test
   - npm run build
 after_success:
-  - npm run semantic-release
+  - npm publish .\dist\ngx-clipboard\
