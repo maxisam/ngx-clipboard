@@ -24,8 +24,8 @@
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26",
-    "ngx-clipboard":"^11.1.0"
-
+    "ngx-clipboard": "^11.1.0",
+    "ngx-window-token": "^1.0.0"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.0",
