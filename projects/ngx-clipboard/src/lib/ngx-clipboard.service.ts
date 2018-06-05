@@ -8,9 +8,7 @@ import {
 import { DOCUMENT } from '@angular/platform-browser';
 import { WINDOW } from 'ngx-window-token';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ClipboardService {
   private tempTextArea: HTMLTextAreaElement | undefined;
   constructor(
