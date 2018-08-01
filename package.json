@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ngx-clipboard --prod",
+    "build": "ng build ngx-clipboard --prod && npm run build-copy",
     "test": "ng test ngx-clipboard",
     "lint": "ng lint ngx-clipboard",
     "publish:lib": "npm publish ./dist/ngx-clipboard",
+    "build-copy": "cpx \"./README.md\" \"./dist/ngx-clipboard\"",
     "e2e": "ng e2e"
   },
   "private": true,
