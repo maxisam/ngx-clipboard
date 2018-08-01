@@ -135,7 +135,7 @@ export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(
 export const CLIPBOARD_SERVICE_PROVIDER = {
   deps: [
     DOCUMENT as InjectionToken<Document>,
-    WINDOW as InjectionToken<Document>,
+    WINDOW as InjectionToken<Window>,
     [new Optional(), new SkipSelf(), ClipboardService]
   ],
   provide: ClipboardService,
