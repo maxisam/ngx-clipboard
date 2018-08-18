@@ -29,17 +29,17 @@ You can get it on npm.
 npm install ngx-clipboard --save
 ```
 
-## Build project
+Open your module file e.g `app.module.ts` and update **imports** array 
+```ts
+import { ClipboardModule } from 'ngx-clipboard';
+...
+imports: [
+...
+    ClipboardModule,
+...
+]
 
 ```
-1. npm i
-
-2. npm run build
-```
-
-To run demo code locally
-
-`npm run start`
 
 ## Usage
 
@@ -53,29 +53,77 @@ System.config({
 });
 ```
 
-This library support 2 kinds of copy source.
+### Copy source
+This library support multiple kinds of copy source.
 
-You can either set
+* Setting `cbContent` attribute 
+
+```html
+
+<button [cbContent]="'target string'">Copy</button>
 
 ```
-[cbContent]="'target string'"
+
+* Setting an input target
+
+```html
+....
+
+<input type="text" #inputTarget>
+
+<button [ngxClipboard]="inputTarget">Copy</button>
+
+```
+* Using `copyFromContent` from `ClipboardService` to copy any text you dynamically created.
+```ts
+import { ClipboardService } from 'ngx-clipboard'
+
+...
+
+constructor(private _clipboardService: ClipboardService){
+...
+}
+
+copy(text: string){
+  this._clipboardService.copyFromContent(text)
+}
+
 ```
 
-Or
+### Callbacks
 
+* `cbOnSuccess` callback attribute is triggered after copy was successful with `$event: {isSuccess: true, content: string}`
+
+```html
+
+<button (cbOnSuccess) = "copied($event)" [cbContent]="'example string'">Copied</button> 
 ```
-[ngxClipboard]="inputTarget"
+
+Or updating parameters directly like so
+```html
+<button (cbOnSuccess) = "isCopied = true" [cbContent]="'example string'">Copied</button>
 ```
 
-Or
+* `cbOnError` callback attribute is triggered when there's failure in copying with `$event:{isSuccess: false}`
 
-You can just use copyFromContent from clipboard.service to copy any text you dynamically created.
 
-**PLEASE CHECK WITH PLUNKER FIRST**
 
 ## Example
 
 [stackblitz.com](https://stackblitz.com/github/maxisam/ngx-clipboard)
+
+
+## Build project
+
+```
+1. npm i
+
+2. npm run build
+```
+
+To run demo code locally
+
+`npm run start`
 
 ## Contributing
 
