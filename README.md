@@ -53,11 +53,12 @@ System.config({
 });
 ```
 
+### Copy source
 This library support multiple kinds of copy source.
 
 * Setting `cbContent` attribute 
 
-```ts
+```html
 
 <button [cbContent]="'target string'">Copy</button>
 
@@ -65,7 +66,7 @@ This library support multiple kinds of copy source.
 
 * Setting an input target
 
-```ts
+```html
 ....
 
 <input type="text" #inputTarget>
@@ -88,6 +89,24 @@ copy(text: string){
 }
 
 ```
+
+### Callbacks
+
+* `cbOnSuccess` callback attribute is triggered after copy was successful with `$event: {isSuccess: true, content: string}`
+
+```html
+
+<button (cbOnSuccess) = "copied($event)" [cbContent]="'example string'">Copied</button> 
+```
+
+Or updating parameters directly like so
+```html
+<button (cbOnSuccess) = "isCopied = true" [cbContent]="'example string'">Copied</button>
+```
+
+* `cbOnError` callback attribute is triggered when there's failure in copying with `$event:{isSuccess: false}`
+
+
 
 ## Example
 
