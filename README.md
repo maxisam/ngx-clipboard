@@ -29,17 +29,17 @@ You can get it on npm.
 npm install ngx-clipboard --save
 ```
 
-## Build project
+Open your module file e.g `app.module.ts` and update **imports** array 
+```ts
+import { ClipboardModule } from 'ngx-clipboard';
+...
+imports: [
+...
+    ClipboardModule,
+...
+]
 
 ```
-1. npm i
-
-2. npm run build
-```
-
-To run demo code locally
-
-`npm run start`
 
 ## Usage
 
@@ -53,29 +53,58 @@ System.config({
 });
 ```
 
-This library support 2 kinds of copy source.
+This library support multiple kinds of copy source.
 
-You can either set
+* Setting `cbContent` attribute 
 
-```
-[cbContent]="'target string'"
-```
+```ts
 
-Or
+<button [cbContent]="'target string'">Copy</button>
 
 ```
-[ngxClipboard]="inputTarget"
+
+* Setting an input target
+
+```ts
+....
+
+<input type="text" #inputTarget>
+
+<button [ngxClipboard]="inputTarget">Copy</button>
+
 ```
+* Using `copyFromContent` from `ClipboardService` to copy any text you dynamically created.
+```ts
+import { ClipboardService } from 'ngx-clipboard'
 
-Or
+...
 
-You can just use copyFromContent from clipboard.service to copy any text you dynamically created.
+constructor(private _clipboardService: ClipboardService){
+...
+}
 
-**PLEASE CHECK WITH PLUNKER FIRST**
+copy(text: string){
+  this._clipboardService.copyFromContent(text)
+}
+
+```
 
 ## Example
 
 [stackblitz.com](https://stackblitz.com/github/maxisam/ngx-clipboard)
+
+
+## Build project
+
+```
+1. npm i
+
+2. npm run build
+```
+
+To run demo code locally
+
+`npm run start`
 
 ## Contributing
 
