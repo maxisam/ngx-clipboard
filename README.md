@@ -60,7 +60,7 @@ This library support multiple kinds of copy source.
 
 ```html
 
-<button [cbContent]="'target string'">Copy</button>
+<button ngxClipboard [cbContent]="'target string'">Copy</button>
 
 ```
 
