@@ -5,10 +5,11 @@ node_js:
   - '8'
 
 addons:
-  chrome: stable
-
-before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 cache:
   directories:
@@ -25,7 +26,7 @@ install:
   - yarn
 
 script:
-  - npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
+  - npm run test-- --watch=false --progress=false --browsers=ChromeHeadlessCI
   - npm run build
 
 after_success:
