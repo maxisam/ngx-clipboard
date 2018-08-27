@@ -26,7 +26,7 @@ install:
   - yarn
 
 script:
-  - npm run test
+  - npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
   - npm run build
 
 after_success:
