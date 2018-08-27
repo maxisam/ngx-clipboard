@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build ngx-clipboard --prod && npm run build-copy",
-    "test": "ng test ngx-clipboard",
+    "test": "ng test ngx-clipboard --watch=false --progress=false --browsers=ChromeHeadlessCI",
     "lint": "ng lint ngx-clipboard",
     "publish:lib": "npm publish ./dist/ngx-clipboard",
     "build-copy": "cpx \"./README.md\" \"./dist/ngx-clipboard\"",
