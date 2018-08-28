@@ -58,7 +58,7 @@ export class ClipboardService {
     }
 
     // remove temporary textarea if any
-    public destroy(container?: HTMLElement) {
+    public destroy(container: HTMLElement) {
         if (this.tempTextArea) {
             container.removeChild(this.tempTextArea);
             // removeChild doesn't remove the reference from memory
