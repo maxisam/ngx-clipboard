@@ -13,7 +13,6 @@ export class ClipboardService {
     public isTargetValid(element: HTMLInputElement | HTMLTextAreaElement): boolean {
         if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) {
             if (element.hasAttribute('disabled')) {
-                // tslint:disable-next-line:max-line-length
                 throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
             }
             return true;
@@ -40,6 +39,12 @@ export class ClipboardService {
      * and makes a selection on it.
      */
     public copyFromContent(content: string, container?: HTMLElement) {
+        // check if the temp textarea is still belong the current container.
+        // In case we have multiple places using ngx-clipboard, one is in a modal using container but the other one is not.
+        if (this.tempTextArea && !container.contains(this.tempTextArea)) {
+            this.destroy(this.tempTextArea.parentElement);
+        }
+
         if (!this.tempTextArea) {
             this.tempTextArea = this.createTempTextArea(this.document, this.window);
             try {
@@ -56,6 +61,7 @@ export class ClipboardService {
     public destroy(container?: HTMLElement) {
         if (this.tempTextArea) {
             container.removeChild(this.tempTextArea);
+            // removeChild doesn't remove the reference from memory
             this.tempTextArea = undefined;
         }
     }
