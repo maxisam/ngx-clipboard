@@ -131,9 +131,13 @@ To run demo code locally
 
 ## Contributing
 
-1.  Your commits conform to the conventions established [here](https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/convention.md)
+-   Your commits conform to the conventions established [here](https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/convention.md)
 
 ## Troubleshooting
+
+Please ask your general questions at https://stackoverflow.com/questions/tagged/ngx-clipboard
+
+## Shoutouts 🙏
 
 Kudos to
 
@@ -142,8 +146,6 @@ Kudos to
 The core function is ported from [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
-
-### Shoutouts 🙏
 
 <img src="https://www.browserstack.com/images/layout/browserstack-logo-600x315.png" height="80" title="BrowserStack Logo" alt="BrowserStack Logo" />
 
