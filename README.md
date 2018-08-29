@@ -11,6 +11,10 @@ It works with angular version 2.0.0 and up
 
 To make more sense with the future versioning scheme of Angular, the directive selector is now rename to **ngxClipboard**
 
+## Other packages
+
+-   [ngx-progressive-image-loader](https://github.com/maxisam/ngx-progressive-image-loader): it can lazy load img/picture, prevent reflow and seo friendly.
+
 ## Dependencies
 
 -   Angular >=6.0.0
