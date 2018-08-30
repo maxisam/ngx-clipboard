@@ -119,6 +119,36 @@ describe('Directive: clipboard', () => {
         }));
     });
 
+    describe('copy when using copyFromContent directly', () => {
+        let template: string;
+        let fixture: ComponentFixture<TestClipboardComponent>;
+        let clipboardService: ClipboardService;
+        let spy: jasmine.Spy;
+        let button: HTMLButtonElement;
+        beforeEach(() => {
+            template = `<div></div>`;
+            fixture = createTestComponent(template);
+            clipboardService = fixture.debugElement.injector.get(ClipboardService);
+            // Setup spy on the `copyText` method, somehow document.execCommand('copy') doesn't work in Karma
+            spy = spyOn(clipboardService, 'copyText' as keyof (ClipboardService));
+            fixture.detectChanges();
+            button = fixture.debugElement.nativeElement.querySelector('button');
+        });
+
+        it('should create a textarea in dom with parent as body, and remove it after calling destroy', async(() => {
+            const doc = fixture.debugElement.injector.get(DOCUMENT);
+            expect(doc.querySelector('textarea')).toBeFalsy();
+            clipboardService.copyFromContent('test content');
+            fixture.whenStable().then(() => {
+                const ta = doc.querySelector('textarea');
+                expect(ta).toBeTruthy();
+                expect(ta.parentElement.nodeName).toBe('BODY');
+                clipboardService.destroy(ta.parentElement);
+                expect(doc.querySelector('textarea')).toBeFalsy();
+            });
+        }));
+    });
+
     describe('copy when target is set', () => {
         let template: string;
         let fixture: ComponentFixture<TestClipboardComponent>;
