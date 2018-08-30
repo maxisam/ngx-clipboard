@@ -24,11 +24,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     constructor(private clipboardSrv: ClipboardService) {}
 
     // tslint:disable-next-line:no-empty
-    public ngOnInit() {
-        if (!this.container) {
-            this.container = this.clipboardSrv.document.body;
-        }
-    }
+    public ngOnInit() {}
 
     public ngOnDestroy() {
         this.clipboardSrv.destroy(this.container);
