@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
     selector: 'app-root',
@@ -13,4 +14,9 @@ export class AppComponent {
     isCopied2: boolean;
     isCopied3: boolean;
     basic = false;
+    constructor(private _clipboardService: ClipboardService) {}
+
+    callServiceToCopy() {
+        this._clipboardService.copyFromContent('This is copy thru service copyFromContent directly');
+    }
 }
