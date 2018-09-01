@@ -1,4 +1,4 @@
-<div class="content">
+<div class="container">
   <div class="row justify-content-center">
     <div class="col-10">
       <h3>Copy from text -- text</h3>
@@ -6,7 +6,7 @@
       <strong>text content</strong>
       <div class="input-group">
         <input type="text" class="form-control" [(ngModel)]="text1" placeholder="content will be copy after click the copy button">
-        <span class="input-group-btn">
+        <span class="input-group-append">
           <button class="btn btn-default" type="button" ngxClipboard [cbContent]="text1" (cbOnSuccess)="isCopied1 = true" [class.btn-success]="isCopied1">copy</button>
         </span>
       </div>
@@ -20,10 +20,35 @@
       <div class="input-group">
         <input type="text" class="form-control" [(ngModel)]="text2" placeholder="content will be copy after click the copy button"
           #inputTarget>
-        <span class="input-group-btn">
+        <span class="input-group-append">
           <button class="btn btn-default" type="button" [ngxClipboard]="inputTarget" (cbOnSuccess)="isCopied2 = true" [class.btn-success]="isCopied2">copy</button>
         </span>
       </div>
     </div>
   </div>
+  <div class="row justify-content-center">
+    <button class="btn btn-primary" (click)="callServiceToCopy()">Copy From Service</button>
+  </div>
+  <div class="row justify-content-center">
+    <button class="btn btn-primary" (click)="basic = true">focus trapper</button>
+  </div>
 </div>
+<clr-modal [(clrModalOpen)]="basic" [clrModalClosable]="false">
+  <h3 class="modal-title">Copy in a modal with focus trapper</h3>
+  <div class="modal-body container" #modal>
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="textModal" placeholder="content will be copy after click the copy button">
+          <span class="input-group-append">
+            <button class="btn btn-default" type="button" ngxClipboard [cbContent]="textModal" [container]="modal" (cbOnSuccess)="isCopied3 = true"
+              [class.btn-success]="isCopied3">copy</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="basic = false">Ok</button>
+  </div>
+</clr-modal>

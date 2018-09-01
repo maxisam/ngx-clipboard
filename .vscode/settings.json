@@ -7,11 +7,19 @@
         "**/*.js": {
             "when": "$(basename).ts"
         },
-        "**/*.js.map":false
-    }
-,
-"typescript.tsdk": "./node_modules/typescript/lib",
-"angulardoc.repoId": "6b429f77-eb2f-461e-81b9-5f7afa08ff23",
-"angulardoc.lastSync": 0,
-"git.ignoreLimitWarning": true
+        "**/*.js.map": false
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "/dist": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "/dist": true
+    },
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "git.ignoreLimitWarning": true
 }
