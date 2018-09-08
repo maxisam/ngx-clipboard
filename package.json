@@ -26,7 +26,7 @@
         "core-js": "^2.5.7",
         "rxjs": "^6.3.0",
         "zone.js": "~0.8.26",
-        "ngx-clipboard": "^11.1.6",
+        "ngx-clipboard": "^11.1.7",
         "ngx-window-token": "^1.0.0"
     },
     "devDependencies": {

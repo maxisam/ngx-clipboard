@@ -1,7 +1,7 @@
 {
     "name": "ngx-clipboard",
     "description": "angular 2 clipboard",
-    "version": "11.1.6",
+    "version": "11.1.7",
     "author": {
         "name": "Sam Lin",
         "email": "maxisam@gmail.com"

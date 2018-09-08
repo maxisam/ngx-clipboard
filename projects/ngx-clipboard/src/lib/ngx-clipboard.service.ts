@@ -28,10 +28,21 @@ export class ClipboardService {
             this.selectTarget(targetElm);
             const re = this.copyText();
             this.clearSelection(targetElm, this.window);
-            return re;
+            return re && this.isCopySuccessInIE11();
         } catch (error) {
             return false;
         }
+    }
+
+    // this is for IE11 return true even if copy fail
+    isCopySuccessInIE11() {
+        const clipboardData = this.window['clipboardData'];
+        if (clipboardData && clipboardData.getData) {
+            if (!clipboardData.getData('Text')) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
