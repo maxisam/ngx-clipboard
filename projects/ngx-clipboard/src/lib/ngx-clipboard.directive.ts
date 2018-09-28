@@ -33,11 +33,11 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     @HostListener('click', ['$event.target'])
     public onClick(event: Event) {
         if (!this.clipboardSrv.isSupported) {
-            this.handleResult(false, undefined);
+            this.handleResult(false, undefined, event);
         } else if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
-            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm), this.targetElm.value);
+            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm), this.targetElm.value, event);
         } else if (this.cbContent) {
-            this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent, this.container), this.cbContent);
+            this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent, this.container), this.cbContent, event);
         }
     }
 
@@ -45,11 +45,11 @@ export class ClipboardDirective implements OnInit, OnDestroy {
      * Fires an event based on the copy operation result.
      * @param succeeded
      */
-    private handleResult(succeeded: boolean, copiedContent: string | undefined) {
+    private handleResult(succeeded: boolean, copiedContent: string | undefined, event: Event) {
         if (succeeded) {
-            this.cbOnSuccess.emit({ isSuccess: true, content: copiedContent });
+            this.cbOnSuccess.emit({ isSuccess: true, content: copiedContent, event: event });
         } else {
-            this.cbOnError.emit({ isSuccess: false });
+            this.cbOnError.emit({ isSuccess: false, event: event });
         }
     }
 }
