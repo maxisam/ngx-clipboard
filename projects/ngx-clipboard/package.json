@@ -1,7 +1,7 @@
 {
     "name": "ngx-clipboard",
     "description": "angular 2 clipboard",
-    "version": "11.1.8",
+    "version": "11.1.9",
     "author": {
         "name": "Sam Lin",
         "email": "maxisam@gmail.com"
@@ -22,7 +22,7 @@
         "copy"
     ],
     "dependencies": {
-        "ngx-window-token": "^1.0.1"
+        "ngx-window-token": "^1.0.2"
     },
     "peerDependencies": {
         "@angular/common": ">=6.0.0 || ^7.0.0-rc.0",
