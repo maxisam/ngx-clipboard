@@ -1,14 +1,12 @@
 import { inject, TestBed } from '@angular/core/testing';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxWindowTokenModule } from 'ngx-window-token';
 
 import { ClipboardService } from './ngx-clipboard.service';
 
 describe('Service: Clipboard', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [BrowserModule, NgxWindowTokenModule],
-            providers: [ClipboardService]
+            imports: [BrowserModule]
         });
     });
 

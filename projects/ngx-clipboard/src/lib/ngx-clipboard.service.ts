@@ -1,8 +1,8 @@
-import { Inject, Injectable, InjectionToken, Optional, SkipSelf } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { WINDOW } from 'ngx-window-token';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
     constructor(@Inject(DOCUMENT) public document: any, @Inject(WINDOW) private window: any) {}
@@ -115,13 +115,3 @@ export class ClipboardService {
         return ta;
     }
 }
-// this pattern is mentioned in https://github.com/angular/angular/issues/13854 in #43
-export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(doc: Document, win: Window, parentDispatcher: ClipboardService) {
-    return parentDispatcher || new ClipboardService(doc, win);
-}
-
-export const CLIPBOARD_SERVICE_PROVIDER = {
-    deps: [DOCUMENT as InjectionToken<Document>, WINDOW as InjectionToken<Window>, [new Optional(), new SkipSelf(), ClipboardService]],
-    provide: ClipboardService,
-    useFactory: CLIPBOARD_SERVICE_PROVIDER_FACTORY
-};

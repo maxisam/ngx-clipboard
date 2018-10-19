@@ -22,7 +22,7 @@
         "copy"
     ],
     "dependencies": {
-        "ngx-window-token": "^1.0.2"
+        "ngx-window-token": "^2.0.0 || >=2.0.0-beta.1"
     },
     "peerDependencies": {
         "@angular/common": ">=6.0.0 || ^7.0.0-rc.0",
