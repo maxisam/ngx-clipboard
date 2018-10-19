@@ -7,7 +7,7 @@ export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
     constructor(@Inject(DOCUMENT) public document: any, @Inject(WINDOW) private window: any) {}
     public get isSupported(): boolean {
-        return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy');
+        return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy') && !!this.window;
     }
 
     public isTargetValid(element: HTMLInputElement | HTMLTextAreaElement): boolean {
