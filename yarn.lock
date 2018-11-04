@@ -187,19 +187,22 @@
   dependencies:
     tslib "^1.9.0"
 
-"@clr/angular@^0.12.10":
-  version "0.12.10"
-  resolved "https://registry.yarnpkg.com/@clr/angular/-/angular-0.12.10.tgz#aab495e6067a066d1fd7c7f8af20b8a80e558816"
+"@clr/angular@^0.12.11":
+  version "0.12.15"
+  resolved "https://registry.yarnpkg.com/@clr/angular/-/angular-0.12.15.tgz#d830e5eb980037998f9c7c0c1f28108d0f10b3b9"
+  integrity sha512-tSzlugHR4a6PCfY2pHiyREUbvXO36/yGb0TmNHfZyMwbJYtt/pmBzHn6/fEg+0sAlI3vKuFUkNywuiV353WEwQ==
   dependencies:
     tslib "^1.9.0"
 
-"@clr/icons@^0.12.10":
-  version "0.12.10"
-  resolved "https://registry.yarnpkg.com/@clr/icons/-/icons-0.12.10.tgz#10e41ab0076b508f283c82796973d5a37976e8c2"
+"@clr/icons@^0.12.11":
+  version "0.12.15"
+  resolved "https://registry.yarnpkg.com/@clr/icons/-/icons-0.12.15.tgz#566864faddc52f3ef41ab54e4a476bcb61604382"
+  integrity sha512-er/QkdYTWmx+wSXN75hnY/lfYMvJ8zX309L6x5PnyPRP8HSb+yjZuhkZefgQXRyRM0JZuNT9zohl53zGpiNQbA==
 
-"@clr/ui@^0.12.10":
-  version "0.12.10"
-  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-0.12.10.tgz#aba591dfe528a8db5c0ee2d4fbd936cac1c16ccf"
+"@clr/ui@^0.12.11":
+  version "0.12.15"
+  resolved "https://registry.yarnpkg.com/@clr/ui/-/ui-0.12.15.tgz#7f2db569ba21fd57e3f2882dfa2de94a8c57ca1e"
+  integrity sha512-m3SXcYQNGbrFewuXHczYhnXozNIDY7VEnRIhcDbYjvqamoEQUzeEBfmy19w/kXaF1cIJW3NSkFukkqCEycU6aA==
 
 "@ngtools/json-schema@^1.1.0":
   version "1.1.0"
@@ -3714,9 +3717,10 @@ karma-jasmine-html-reporter@^0.2.2:
   dependencies:
     karma-jasmine "^1.0.2"
 
-karma-jasmine@^1.0.2, karma-jasmine@~1.1.1:
+karma-jasmine@^1.0.2, karma-jasmine@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-1.1.2.tgz#394f2b25ffb4a644b9ada6f22d443e2fd08886c3"
+  integrity sha1-OU8rJf+0pkS5rabyLUQ+L9CIhsM=
 
 karma-source-map-support@^1.2.0:
   version "1.3.0"
@@ -4332,16 +4336,24 @@ ng-packagr@^3.0.0:
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
 
-ngx-clipboard@^11.1.6:
-  version "11.1.6"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-11.1.6.tgz#43fbf34d6438be0c37c369817139a99ce79fb6cd"
+ngx-clipboard@^11.1.7:
+  version "11.1.9"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-11.1.9.tgz#a391853dc49e436de407260863a2c814d73a9332"
+  integrity sha512-xF54Ibt/04g2B5SnYylNz7ESP1/thuC7odo+0bKkgbCC873NaqP1VTVx/umh/cnezlXKu8zuWNzzg05tvfgaJg==
   dependencies:
-    ngx-window-token "^1.0.0"
+    ngx-window-token "^1.0.2"
     tslib "^1.9.0"
 
 ngx-window-token@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-1.0.0.tgz#12acb174fbbcffa5c60b3fea5a6ea78cc3304793"
+  dependencies:
+    tslib "^1.9.0"
+
+ngx-window-token@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-1.0.2.tgz#2ebadd300fee1f61eb8b851b0ad97b1f46f5e4cc"
+  integrity sha512-bFgvi7MYSK1p4b3Mqvn9+biXaO8QDEbpP2sEMSwr0Zgrwh6zCO3F92a6SIIzusqpZBAhxyfVSqj3mO5qIxlM5Q==
   dependencies:
     tslib "^1.9.0"
 
