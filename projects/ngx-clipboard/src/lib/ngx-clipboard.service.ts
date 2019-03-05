@@ -87,10 +87,10 @@ export class ClipboardService {
     private copyText(): boolean {
         return this.document.execCommand('copy');
     }
-    // Removes current selection and focus from `target` element.
+    // Moves focus away from `target` and back to the trigger, removes current selection.
     private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement, window: Window) {
         // tslint:disable-next-line:no-unused-expression
-        inputElement && inputElement.blur();
+        inputElement && inputElement.focus();
         window.getSelection().removeAllRanges();
     }
 
