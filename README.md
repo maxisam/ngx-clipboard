@@ -67,11 +67,11 @@ This library support multiple kinds of copy source.
 <button ngxClipboard [cbContent]="'target string'">Copy</button>
 ```
 
-You can assign the parent container to avoid focus trapper issue, #145
+You can assign the parent **container** to avoid focus trapper issue, #145
 
 ```html
 <div #container>
-  <button ngxClipboard [cbContent]="'target string'" [container]="container">Copy</button>
+    <button ngxClipboard [cbContent]="'target string'" [container]="container">Copy</button>
 </div>
 ```
 
@@ -80,7 +80,7 @@ You can assign the parent container to avoid focus trapper issue, #145
 ```html
 ....
 
-<input type="text" #inputTarget>
+<input type="text" #inputTarget />
 
 <button [ngxClipboard]="inputTarget">Copy</button>
 ```
@@ -106,13 +106,13 @@ copy(text: string){
 -   `cbOnSuccess` callback attribute is triggered after copy was successful with `$event: {isSuccess: true, content: string}`
 
 ```html
-<button (cbOnSuccess) = "copied($event)" [cbContent]="'example string'">Copied</button>
+<button (cbOnSuccess)="copied($event)" [cbContent]="'example string'">Copied</button>
 ```
 
 Or updating parameters directly like so
 
 ```html
-<button (cbOnSuccess) = "isCopied = true" [cbContent]="'example string'">Copied</button>
+<button (cbOnSuccess)="isCopied = true" [cbContent]="'example string'">Copied</button>
 ```
 
 -   `cbOnError` callback attribute is triggered when there's failure in copying with `$event:{isSuccess: false}`
@@ -149,7 +149,7 @@ Kudos to
 
 The core function is ported from [clipboard.js](http://zenorocha.github.io/clipboard.js/) by [@zenorocha](https://twitter.com/zenorocha).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.
 
 <img src="https://www.browserstack.com/images/layout/browserstack-logo-600x315.png" height="80" title="BrowserStack Logo" alt="BrowserStack Logo" />
 
