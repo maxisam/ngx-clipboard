@@ -1,13 +1,15 @@
-import { Inject, Injectable, InjectionToken, Optional, SkipSelf } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { WINDOW } from 'ngx-window-token';
 
-@Injectable()
+// The following code is heavily copy from https://github.com/zenorocha/clipboard.js
+
+@Injectable({ providedIn: 'root' })
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
     constructor(@Inject(DOCUMENT) public document: any, @Inject(WINDOW) private window: any) {}
     public get isSupported(): boolean {
-        return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy');
+        return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy') && !!this.window;
     }
 
     public isTargetValid(element: HTMLInputElement | HTMLTextAreaElement): boolean {
@@ -87,10 +89,10 @@ export class ClipboardService {
     private copyText(): boolean {
         return this.document.execCommand('copy');
     }
-    // Removes current selection and focus from `target` element.
+    // Moves focus away from `target` and back to the trigger, removes current selection.
     private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement, window: Window) {
         // tslint:disable-next-line:no-unused-expression
-        inputElement && inputElement.blur();
+        inputElement && inputElement.focus();
         window.getSelection().removeAllRanges();
     }
 
@@ -115,13 +117,3 @@ export class ClipboardService {
         return ta;
     }
 }
-// this pattern is mentioned in https://github.com/angular/angular/issues/13854 in #43
-export function CLIPBOARD_SERVICE_PROVIDER_FACTORY(doc: Document, win: Window, parentDispatcher: ClipboardService) {
-    return parentDispatcher || new ClipboardService(doc, win);
-}
-
-export const CLIPBOARD_SERVICE_PROVIDER = {
-    deps: [DOCUMENT as InjectionToken<Document>, WINDOW as InjectionToken<Window>, [new Optional(), new SkipSelf(), ClipboardService]],
-    provide: ClipboardService,
-    useFactory: CLIPBOARD_SERVICE_PROVIDER_FACTORY
-};
