@@ -1,4 +1,5 @@
-import { Inject, Injectable } from '@angular/core';
+
+import { Inject, Injectable, Optional } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { WINDOW } from 'ngx-window-token';
 
@@ -7,7 +8,7 @@ import { WINDOW } from 'ngx-window-token';
 @Injectable({ providedIn: 'root' })
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
-    constructor(@Inject(DOCUMENT) public document: any, @Inject(WINDOW) private window: any) {}
+    constructor(@Inject(DOCUMENT) public document: any, @Optional() @Inject(WINDOW) private window: any) {}
     public get isSupported(): boolean {
         return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy') && !!this.window;
     }
