@@ -117,6 +117,14 @@ Or updating parameters directly like so
 
 -   `cbOnError` callback attribute is triggered when there's failure in copying with `$event:{isSuccess: false}`
 
+### Conditionally render host
+
+You can also use the structural directive *ngxClipboardIfSupported to conditionally render the host element
+
+```html
+<button ngxClipboard  *ngxClipboardIfSupported [cbContent]="'target string'" (cbOnSuccess)="isCopied = true">Copy</button>
+```
+
 ## Example
 
 [stackblitz.com](https://stackblitz.com/github/maxisam/ngx-clipboard)
