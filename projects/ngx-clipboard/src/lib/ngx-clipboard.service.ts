@@ -2,13 +2,23 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { WINDOW } from 'ngx-window-token';
+import { Subject, Observable } from 'rxjs';
+import { IClipboardResponse } from './interface';
 
 // The following code is heavily copy from https://github.com/zenorocha/clipboard.js
 
 @Injectable({ providedIn: 'root' })
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
-    constructor(@Inject(DOCUMENT) public document: any, @Optional() @Inject(WINDOW) private window: any) {}
+
+    private copySubject = new Subject<{}>();
+    public copyObservable$: Observable<{}> = this.copySubject.asObservable();
+
+    constructor(
+        @Inject(DOCUMENT) public document: any,
+        @Optional() @Inject(WINDOW) private window: any
+    ) {}
+
     public get isSupported(): boolean {
         return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy') && !!this.window;
     }
@@ -53,7 +63,7 @@ export class ClipboardService {
      * and makes a selection on it.
      */
     public copyFromContent(content: string, container: HTMLElement = this.window.document.body) {
-        // check if the temp textarea is still belong the current container.
+        // check if the temp textarea still belongs to the current container.
         // In case we have multiple places using ngx-clipboard, one is in a modal using container but the other one is not.
         if (this.tempTextArea && !container.contains(this.tempTextArea)) {
             this.destroy(this.tempTextArea.parentElement);
@@ -116,5 +126,13 @@ export class ClipboardService {
         ta.style.top = yPosition + 'px';
         ta.setAttribute('readonly', '');
         return ta;
+    }
+
+    /**
+     * Pushes copy operation response to copySubject, to provide global access
+     * to the response.
+     */
+    public pushCopyReponse(response: IClipboardResponse) {
+        this.copySubject.next(response);
     }
 }
