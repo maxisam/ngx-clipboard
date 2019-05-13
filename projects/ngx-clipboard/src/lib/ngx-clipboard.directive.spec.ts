@@ -5,16 +5,7 @@ import { BrowserModule, DOCUMENT } from '@angular/platform-browser';
 
 import { ClipboardModule } from './ngx-clipboard.module';
 import { ClipboardService } from './ngx-clipboard.service';
-
-/**
- * Helper function to easily build a component Fixture using the specified template
- * From: https://blog.thoughtram.io/angular/2016/12/27/angular-2-advance-testing-with-custom-matchers.html
- */
-function createTestComponent(template: string): ComponentFixture<TestClipboardComponent> {
-    return TestBed.overrideComponent(TestClipboardComponent, {
-        set: { template }
-    }).createComponent(TestClipboardComponent);
-}
+import { IClipboardResponse } from './interface';
 
 /*
  * Shell component with property 'text' that will be used with our tests
@@ -27,6 +18,17 @@ function createTestComponent(template: string): ComponentFixture<TestClipboardCo
 export class TestClipboardComponent {
     public text = 'test';
     public isCopied: boolean;
+    public copySuccessMsg = 'Foo bar';
+}
+
+/**
+ * Helper function to easily build a component Fixture using the specified template
+ * From: https://blog.thoughtram.io/angular/2016/12/27/angular-2-advance-testing-with-custom-matchers.html
+ */
+function createTestComponent(template: string): ComponentFixture<TestClipboardComponent> {
+    return TestBed.overrideComponent(TestClipboardComponent, {
+        set: { template }
+    }).createComponent(TestClipboardComponent);
 }
 
 describe('Directive: clipboard', () => {
@@ -44,7 +46,7 @@ describe('Directive: clipboard', () => {
         let spy: jasmine.Spy;
         let button: HTMLButtonElement;
         beforeEach(() => {
-            template = `<button ngxClipboard [cbContent]="'text'" (cbOnSuccess)="isCopied = true">copy</button>`;
+            template = `<button ngxClipboard [cbContent]="'text'" (cbOnSuccess)="isCopied = true" [cbSuccessMsg]="copySuccessMsg">copy</button>`;
             fixture = createTestComponent(template);
             clipboardService = fixture.debugElement.injector.get(ClipboardService);
             // Setup spy on the `copyText` method, somehow document.execCommand('copy') doesn't work in Karma
@@ -85,6 +87,18 @@ describe('Directive: clipboard', () => {
                 expect(doc.querySelector('textarea')).toBeTruthy();
                 clipboardService.destroy(doc.body);
                 expect(doc.querySelector('textarea')).toBeFalsy();
+            });
+        }));
+
+        it('should push copy response to copySubject', async(() => {
+            button.click();
+            const component = fixture.componentInstance;
+            clipboardService.copyObservable$.subscribe((res: IClipboardResponse) => {
+                expect(res).toBeDefined();
+                expect(res.isSuccess).toEqual(true);
+                expect(res.content).toEqual(component.text);
+                expect(res.successMessage).toEqual(component.copySuccessMsg);
+                expect(res.event).toBeDefined();
             });
         }));
     });

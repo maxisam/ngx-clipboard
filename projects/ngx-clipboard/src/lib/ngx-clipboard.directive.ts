@@ -1,6 +1,7 @@
 import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
 import { ClipboardService } from './ngx-clipboard.service';
+import { IClipboardResponse } from './interface';
 
 @Directive({
     // tslint:disable-next-line:directive-selector
@@ -16,8 +17,11 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     @Input()
     public cbContent: string;
 
+    @Input()
+    public cbSuccessMsg: string;
+
     @Output()
-    public cbOnSuccess: EventEmitter<any> = new EventEmitter<any>();
+    public cbOnSuccess: EventEmitter<IClipboardResponse> = new EventEmitter<IClipboardResponse>();
 
     @Output()
     public cbOnError: EventEmitter<any> = new EventEmitter<any>();
@@ -46,10 +50,21 @@ export class ClipboardDirective implements OnInit, OnDestroy {
      * @param succeeded
      */
     private handleResult(succeeded: boolean, copiedContent: string | undefined, event: Event) {
+        let response: IClipboardResponse = {
+            isSuccess: succeeded,
+            event
+        };
+
         if (succeeded) {
-            this.cbOnSuccess.emit({ isSuccess: true, content: copiedContent, event: event });
+            response = Object.assign(response, {
+                content: copiedContent,
+                successMessage: this.cbSuccessMsg
+            });
+            this.cbOnSuccess.emit(response);
         } else {
-            this.cbOnError.emit({ isSuccess: false, event: event });
+            this.cbOnError.emit(response);
         }
+
+        this.clipboardSrv.pushCopyReponse(response);
     }
 }
