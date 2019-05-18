@@ -126,7 +126,7 @@ You can also use the structural directive *ngxClipboardIfSupported to conditiona
 ```
 
 ### Handle copy response globally
-To handle copy response globally, you can subscribe to `copyObservable$` exposed by the `ClipboardService`
+To handle copy response globally, you can subscribe to `copyResponse$` exposed by the `ClipboardService`
 
 ```
 export class ClipboardResponseService {
