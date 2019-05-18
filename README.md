@@ -125,6 +125,29 @@ You can also use the structural directive *ngxClipboardIfSupported to conditiona
 <button ngxClipboard  *ngxClipboardIfSupported [cbContent]="'target string'" (cbOnSuccess)="isCopied = true">Copy</button>
 ```
 
+### Handle copy response globally
+To handle copy response globally, you can subscribe to `copyObservable$` exposed by the `ClipboardService`
+
+```
+export class ClipboardResponseService {
+  constructor(
+    private _clipboardService: ClipboardService,
+    private _toasterService: ToasterService
+  ) {
+    this.handleClipboardResponse();
+  }
+  
+  handleClipboardResponse() {
+    this._clipboardService.copyObservable$.subscribe((res: IClipboardResponse) => {
+      if (res.isSuccess) {
+        this._toasterService.pop('success', undefined, res.successMessage);
+      }
+    });
+  }
+}
+```
+
+
 ## Example
 
 [stackblitz.com](https://stackblitz.com/github/maxisam/ngx-clipboard)
