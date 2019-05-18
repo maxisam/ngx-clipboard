@@ -93,7 +93,7 @@ describe('Directive: clipboard', () => {
         it('should push copy response to copySubject', async(() => {
             button.click();
             const component = fixture.componentInstance;
-            clipboardService.copyObservable$.subscribe((res: IClipboardResponse) => {
+            clipboardService.copyResponse$.subscribe((res: IClipboardResponse) => {
                 expect(res).toBeDefined();
                 expect(res.isSuccess).toEqual(true);
                 expect(res.content).toEqual(component.text);
