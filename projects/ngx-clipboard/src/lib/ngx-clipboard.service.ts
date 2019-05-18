@@ -11,8 +11,8 @@ import { IClipboardResponse } from './interface';
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
 
-    private copySubject = new Subject<{}>();
-    public copyObservable$: Observable<{}> = this.copySubject.asObservable();
+    private copySubject = new Subject<IClipboardResponse>();
+    public copyResponse$: Observable<IClipboardResponse> = this.copySubject.asObservable();
 
     constructor(
         @Inject(DOCUMENT) public document: any,
