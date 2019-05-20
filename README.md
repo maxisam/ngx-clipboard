@@ -119,13 +119,16 @@ Or updating parameters directly like so
 
 ### Conditionally render host
 
-You can also use the structural directive *ngxClipboardIfSupported to conditionally render the host element
+You can also use the structural directive \*ngxClipboardIfSupported to conditionally render the host element
 
 ```html
-<button ngxClipboard  *ngxClipboardIfSupported [cbContent]="'target string'" (cbOnSuccess)="isCopied = true">Copy</button>
+<button ngxClipboard *ngxClipboardIfSupported [cbContent]="'target string'" (cbOnSuccess)="isCopied = true">Copy</button>
 ```
 
+_Special thanks to @surajpoddar16 for implementing this feature_
+
 ### Handle copy response globally
+
 To handle copy response globally, you can subscribe to `copyResponse$` exposed by the `ClipboardService`
 
 ```
@@ -136,7 +139,7 @@ export class ClipboardResponseService {
   ) {
     this.handleClipboardResponse();
   }
-  
+
   handleClipboardResponse() {
     this._clipboardService.copyObservable$.subscribe((res: IClipboardResponse) => {
       if (res.isSuccess) {
@@ -147,6 +150,7 @@ export class ClipboardResponseService {
 }
 ```
 
+_Special thanks to @surajpoddar16 for implementing this feature_
 
 ## Example
 
