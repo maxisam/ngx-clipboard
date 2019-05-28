@@ -123,7 +123,7 @@
             "root": "projects/ngx-clipboard",
             "sourceRoot": "projects/ngx-clipboard/src",
             "projectType": "library",
-            "prefix": "lib",
+            "prefix": "ngx",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-ng-packagr:build",

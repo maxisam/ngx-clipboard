@@ -1,10 +1,9 @@
 import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
-import { ClipboardService } from './ngx-clipboard.service';
 import { IClipboardResponse } from './interface';
+import { ClipboardService } from './ngx-clipboard.service';
 
 @Directive({
-    // tslint:disable-next-line:directive-selector
     selector: '[ngxClipboard]'
 })
 export class ClipboardDirective implements OnInit, OnDestroy {
