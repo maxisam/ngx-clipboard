@@ -1,7 +1,8 @@
+import { DOCUMENT } from '@angular/common';
 import { Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule, DOCUMENT } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { ClipboardModule } from './ngx-clipboard.module';
 import { ClipboardService } from './ngx-clipboard.service';
