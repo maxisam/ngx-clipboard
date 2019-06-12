@@ -5228,25 +5228,18 @@ ng-packagr@^4.2.0:
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
 
-ngx-clipboard@12.0.0-beta.1:
-  version "12.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-12.0.0-beta.1.tgz#06638902a1da3378adc0ddc8e305db6186efb6c8"
-  integrity sha512-5Q0qgFesJWQhecXiswnEJNfftOB+e9Tmxk32GGDwomWIgqd/Xs/cQRBqcDnqVBLsGzJJx8rtRlOaP/Sf0z4Lfg==
+ngx-clipboard@12.1.2:
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-12.1.2.tgz#69077d928a20b061ef22b51bd871633bb4d6af0a"
+  integrity sha512-tctOooh9WWvK7tVKV+CAGN5nNAhnL7oqEoJmJO4TmkHHwVbL0QQFWdWB5yiMYTRQ/ZXV3bCpufiVM8F4clXthw==
   dependencies:
-    ngx-window-token "^2.0.0 || >=2.0.0-beta.1"
+    ngx-window-token "^2.0.0"
     tslib "^1.9.0"
 
-ngx-window-token@2.0.1:
+ngx-window-token@2.0.1, ngx-window-token@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-2.0.1.tgz#8f91221af4116aa9f49bb3f7a6f1111639884fba"
   integrity sha512-rvqdqJEfnWXQFU5fyfYt06E10tR/UtFOYdF3QebfcOh5VIJhnTKiprX8e4B9OrX7WEVFm9BT8uV72xXcEgsaKA==
-  dependencies:
-    tslib "^1.9.0"
-
-"ngx-window-token@^2.0.0 || >=2.0.0-beta.1":
-  version "2.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-2.0.0-beta.1.tgz#ce775478e06bbc0e609b0c1e415dec74e6fabc9d"
-  integrity sha512-cbE2LjNS5o3JqL3MQa8dyo47Sk9PgoxTzG/KasLmywMpUJEXjluMmN1/P0yqTTkfaT5+eSFOTMriRwCNegC14w==
   dependencies:
     tslib "^1.9.0"
 
