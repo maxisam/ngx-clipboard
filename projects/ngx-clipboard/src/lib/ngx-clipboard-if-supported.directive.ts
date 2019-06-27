@@ -6,7 +6,11 @@ import { ClipboardService } from './ngx-clipboard.service';
     selector: '[ngxClipboardIfSupported]'
 })
 export class ClipboardIfSupportedDirective implements OnInit {
-    constructor(private _clipboardService: ClipboardService, private _viewContainerRef: ViewContainerRef, private _templateRef: TemplateRef<any>) {}
+    constructor(
+        private _clipboardService: ClipboardService,
+        private _viewContainerRef: ViewContainerRef,
+        private _templateRef: TemplateRef<any>
+    ) {}
 
     ngOnInit() {
         if (this._clipboardService.isSupported) {

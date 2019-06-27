@@ -48,7 +48,9 @@ describe('Service: Clipboard', () => {
 
         it('ta[disabled] is NOT a valid target', inject([ClipboardService], (service: ClipboardService) => {
             ta.setAttribute('disabled', '');
-            expect(() => service.isTargetValid(ta)).toThrowError('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
+            expect(() => service.isTargetValid(ta)).toThrowError(
+                'Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute'
+            );
         }));
     });
 

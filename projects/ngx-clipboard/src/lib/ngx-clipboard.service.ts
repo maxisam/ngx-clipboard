@@ -1,4 +1,3 @@
-
 import { Inject, Injectable, Optional } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { WINDOW } from 'ngx-window-token';
@@ -14,10 +13,7 @@ export class ClipboardService {
     private copySubject = new Subject<IClipboardResponse>();
     public copyResponse$: Observable<IClipboardResponse> = this.copySubject.asObservable();
 
-    constructor(
-        @Inject(DOCUMENT) public document: any,
-        @Optional() @Inject(WINDOW) private window: any
-    ) {}
+    constructor(@Inject(DOCUMENT) public document: any, @Optional() @Inject(WINDOW) private window: any) {}
 
     public get isSupported(): boolean {
         return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy') && !!this.window;
