@@ -3,8 +3,10 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
+        "prettier": "prettier --write \"**/*.{json,md,ts,html,component.html}\"",
         "start": "ng serve",
         "build": "ng build ngx-clipboard --prod && npm run build-copy",
+        "tslint-check": "tslint-config-prettier-check ./tslint.json",
         "test": "ng test ngx-clipboard",
         "lint": "ng lint ngx-clipboard",
         "publish:lib": "yarn publish ./dist/lib",
@@ -23,11 +25,11 @@
         "@angular/platform-browser-dynamic": "~7.2.15",
         "@angular/router": "~7.2.15",
         "core-js": "^2.5.4",
+        "ngx-clipboard": "12.1.2",
+        "ngx-window-token": "2.0.1",
         "rxjs": "~6.5.2",
         "tslib": "^1.9.0",
-        "zone.js": "~0.8.26",
-        "ngx-clipboard": "12.1.2",
-        "ngx-window-token": "2.0.1"
+        "zone.js": "~0.8.26"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.13.9",
@@ -35,10 +37,16 @@
         "@angular/cli": "~7.3.9",
         "@angular/compiler-cli": "~7.2.15",
         "@angular/language-service": "~7.2.15",
-        "@types/node": "~8.9.4",
+        "@clr/angular": "^0.13.6",
+        "@clr/icons": "^0.13.6",
+        "@clr/ui": "^0.13.6",
         "@types/jasmine": "~2.8.8",
         "@types/jasminewd2": "~2.0.3",
+        "@types/node": "~8.9.4",
+        "@webcomponents/custom-elements": "^1.2.1",
         "codelyzer": "~4.5.0",
+        "cpx": "^1.5.0",
+        "husky": "2.4.1",
         "jasmine-core": "~2.99.1",
         "jasmine-spec-reporter": "~4.2.1",
         "karma": "~4.0.0",
@@ -46,17 +54,26 @@
         "karma-coverage-istanbul-reporter": "~2.0.1",
         "karma-jasmine": "~1.1.2",
         "karma-jasmine-html-reporter": "^0.2.2",
+        "lint-staged": "8.2.1",
         "ng-packagr": "^4.2.0",
+        "prettier": "1.18.2",
         "protractor": "~5.4.0",
         "ts-node": "~7.0.0",
         "tsickle": ">=0.34.0",
         "tslib": "^1.9.0",
         "tslint": "~5.11.0",
-        "typescript": "~3.2.4",
-        "@webcomponents/custom-elements": "^1.2.1",
-        "@clr/ui": "^0.13.6",
-        "@clr/angular": "^0.13.6",
-        "@clr/icons": "^0.13.6",
-        "cpx": "^1.5.0"
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "~3.2.4"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{json,md,ts,html,component.html}": [
+            "prettier --write",
+            "git add"
+        ]
     }
 }

@@ -14,7 +14,9 @@ import { IClipboardResponse } from './interface';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'test-clipboard',
-    template: `<span>PlaceHolder HTML to be Replaced</span>`
+    template: `
+        <span>PlaceHolder HTML to be Replaced</span>
+    `
 })
 export class TestClipboardComponent {
     public text = 'test';
