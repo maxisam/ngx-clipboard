@@ -6,8 +6,7 @@ import { ClipboardService } from './ngx-clipboard.service';
 describe('Service: Clipboard', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [BrowserModule],
-            providers: [ClipboardService]
+            imports: [BrowserModule]
         });
     });
 

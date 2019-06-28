@@ -3,27 +3,22 @@ import { Inject, Injectable, Optional } from '@angular/core';
 import { WINDOW } from 'ngx-window-token';
 import { Observable, Subject } from 'rxjs';
 
-import { CLIPBOARD_ROOT_OPTIONS } from './injection-tokens';
 import { ClipboardParams, IClipboardResponse } from './interface';
-
 
 // The following code is heavily copy from https://github.com/zenorocha/clipboard.js
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
+    private config: ClipboardParams = {};
 
     private copySubject = new Subject<IClipboardResponse>();
     public copyResponse$: Observable<IClipboardResponse> = this.copySubject.asObservable();
 
-    constructor(
-        @Inject(DOCUMENT) public document: any,
-        @Optional() @Inject(WINDOW) private window: any,
-        @Optional() @Inject(CLIPBOARD_ROOT_OPTIONS) private rootOptions: ClipboardParams
-    ) {
-        if (!this.rootOptions) {
-            this.rootOptions = {};
-        }
+    constructor(@Inject(DOCUMENT) public document: any, @Optional() @Inject(WINDOW) private window: any) {}
+
+    public configure(config: ClipboardParams) {
+        this.config = config;
     }
 
     public get isSupported(): boolean {
@@ -87,7 +82,7 @@ export class ClipboardService {
         this.tempTextArea.value = content;
 
         const toReturn = this.copyFromInputElement(this.tempTextArea);
-        if (this.rootOptions.cleanUpAfterCopy) {
+        if (this.config.cleanUpAfterCopy) {
             this.destroy(this.tempTextArea.parentElement);
         }
         return toReturn;

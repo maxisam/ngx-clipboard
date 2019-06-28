@@ -7,4 +7,3 @@ export * from './lib/ngx-clipboard.directive';
 export * from './lib/ngx-clipboard.module';
 export * from './lib/ngx-clipboard-if-supported.directive';
 export * from './lib/interface';
-export * from './lib/injection-tokens';

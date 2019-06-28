@@ -4,8 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { CLIPBOARD_ROOT_OPTIONS } from './injection-tokens';
-import { ClipboardParams, IClipboardResponse } from './interface';
+import { IClipboardResponse } from './interface';
 import { ClipboardModule } from './ngx-clipboard.module';
 import { ClipboardService } from './ngx-clipboard.service';
 
@@ -93,6 +92,16 @@ describe('Directive: clipboard', () => {
                     expect(doc.querySelector('textarea')).toBeTruthy();
                     clipboardService.destroy(doc.body);
                     expect(doc.querySelector('textarea')).toBeFalsy();
+                });
+            }));
+
+            it('given the configuration it should clean up temp textarea after copying automatically', async(() => {
+                const doc = fixture.debugElement.injector.get(DOCUMENT);
+                clipboardService.configure({ cleanUpAfterCopy: true });
+                clipboardService.copyFromContent('test content');
+                fixture.whenStable().then(() => {
+                    const ta = doc.querySelector('textarea');
+                    expect(ta).toBeFalsy();
                 });
             }));
 
@@ -220,33 +229,5 @@ describe('Directive: clipboard', () => {
                 });
             }));
         });
-    });
-
-    describe('GIVEN with root configuration', () => {
-        let fixture: ComponentFixture<TestClipboardComponent>;
-        let clipboardService: ClipboardService;
-        let doc: Document;
-
-        beforeEach(() => {
-            TestBed.configureTestingModule({
-                declarations: [TestClipboardComponent],
-                imports: [BrowserModule, ClipboardModule, FormsModule],
-                providers: [
-                    ClipboardService,
-                    { provide: CLIPBOARD_ROOT_OPTIONS, useValue: <ClipboardParams>{ cleanUpAfterCopy: true } }
-                ]
-            });
-            fixture = createTestComponent(`<div></div>`);
-            clipboardService = TestBed.get(ClipboardService);
-            doc = TestBed.get(DOCUMENT);
-        });
-
-        it('should clean up temp textarea after copying automatically', async(() => {
-            clipboardService.copyFromContent('test content');
-            fixture.whenStable().then(() => {
-                const ta = doc.querySelector('textarea');
-                expect(ta).toBeFalsy();
-            });
-        }));
     });
 });
