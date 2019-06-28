@@ -3,8 +3,11 @@ export interface IClipboardResponse {
     content?: string;
     event: Event;
     successMessage?: string;
+<<<<<<< HEAD
 }
 
 export interface ClipboardParams {
     cleanUpAfterCopy?: boolean;
+=======
+>>>>>>> upstream/master
 }

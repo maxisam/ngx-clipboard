@@ -122,7 +122,9 @@ Or updating parameters directly like so
 You can also use the structural directive \*ngxClipboardIfSupported to conditionally render the host element
 
 ```html
-<button ngxClipboard *ngxClipboardIfSupported [cbContent]="'target string'" (cbOnSuccess)="isCopied = true">Copy</button>
+<button ngxClipboard *ngxClipboardIfSupported [cbContent]="'target string'" (cbOnSuccess)="isCopied = true">
+    Copy
+</button>
 ```
 
 _Special thanks to @surajpoddar16 for implementing this feature_
