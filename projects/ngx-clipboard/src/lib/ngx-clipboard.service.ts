@@ -1,19 +1,25 @@
-import { Inject, Injectable, Optional } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable, Optional } from '@angular/core';
 import { WINDOW } from 'ngx-window-token';
-import { Subject, Observable } from 'rxjs';
-import { IClipboardResponse } from './interface';
+import { Observable, Subject } from 'rxjs';
+
+import { ClipboardParams, IClipboardResponse } from './interface';
 
 // The following code is heavily copy from https://github.com/zenorocha/clipboard.js
 
 @Injectable({ providedIn: 'root' })
 export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
+    private config: ClipboardParams = {};
 
     private copySubject = new Subject<IClipboardResponse>();
     public copyResponse$: Observable<IClipboardResponse> = this.copySubject.asObservable();
 
     constructor(@Inject(DOCUMENT) public document: any, @Optional() @Inject(WINDOW) private window: any) {}
+
+    public configure(config: ClipboardParams) {
+        this.config = config;
+    }
 
     public get isSupported(): boolean {
         return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy') && !!this.window;
@@ -74,7 +80,12 @@ export class ClipboardService {
             }
         }
         this.tempTextArea.value = content;
-        return this.copyFromInputElement(this.tempTextArea);
+
+        const toReturn = this.copyFromInputElement(this.tempTextArea);
+        if (this.config.cleanUpAfterCopy) {
+            this.destroy(this.tempTextArea.parentElement);
+        }
+        return toReturn;
     }
 
     // remove temporary textarea if any

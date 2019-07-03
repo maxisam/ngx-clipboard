@@ -154,6 +154,18 @@ export class ClipboardResponseService {
 
 _Special thanks to @surajpoddar16 for implementing this feature_
 
+### Clean up temporary textarea used by this module after each copy to clipboard
+This library creates a textarea element at the root of the body for its internal use. By default it only destroys it when the directive is destroyed. If you'd like it to be destroyed after each copy to clipboard, provide root level module configuration like this:
+```ts
+import { ClipboardModule } from 'ngx-clipboard';
+...
+imports: [
+    ClipboardModule.forRoot({ cleanUpAfterCopy: true }),
+]
+```
+
+Special thanks to [@DmitryEfimenko](https://github.com/DmitryEfimenko) for implementing this feature
+
 ## Example
 
 [stackblitz.com](https://stackblitz.com/github/maxisam/ngx-clipboard)

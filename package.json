@@ -8,6 +8,7 @@
         "build": "ng build ngx-clipboard --prod && npm run build-copy",
         "tslint-check": "tslint-config-prettier-check ./tslint.json",
         "test": "ng test ngx-clipboard",
+        "test:watch": "ng test ngx-clipboard --watch",
         "lint": "ng lint ngx-clipboard",
         "publish:lib": "yarn publish ./dist/lib",
         "publish:lib:next": "yarn publish ./dist/lib --tag next",

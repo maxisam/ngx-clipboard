@@ -4,3 +4,7 @@ export interface IClipboardResponse {
     event: Event;
     successMessage?: string;
 }
+
+export interface ClipboardParams {
+    cleanUpAfterCopy?: boolean;
+}
