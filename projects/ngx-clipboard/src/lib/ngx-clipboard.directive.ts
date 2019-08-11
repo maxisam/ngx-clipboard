@@ -11,7 +11,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     @Input('ngxClipboard')
     public targetElm: HTMLInputElement;
     @Input()
-    public container: HTMLInputElement;
+    public container: HTMLElement;
 
     @Input()
     public cbContent: string;
