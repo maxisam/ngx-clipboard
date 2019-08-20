@@ -64,7 +64,7 @@ export class ClipboardService {
      * Creates a fake textarea element, sets its value from `text` property,
      * and makes a selection on it.
      */
-    public copyFromContent(content: string, container: HTMLElement = this.window.document.body) {
+    public copyFromContent(content: string, container: HTMLElement = this.document.body) {
         // check if the temp textarea still belongs to the current container.
         // In case we have multiple places using ngx-clipboard, one is in a modal using container but the other one is not.
         if (this.tempTextArea && !container.contains(this.tempTextArea)) {
@@ -89,7 +89,7 @@ export class ClipboardService {
     }
 
     // remove temporary textarea if any
-    public destroy(container: HTMLElement = this.window.document.body) {
+    public destroy(container: HTMLElement = this.document.body) {
         if (this.tempTextArea) {
             container.removeChild(this.tempTextArea);
             // removeChild doesn't remove the reference from memory
