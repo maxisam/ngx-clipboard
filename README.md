@@ -1,7 +1,4 @@
-[![Financial Contributors on Open Collective](https://opencollective.com/ngx-clipboard/all/badge.svg?label=financial+contributors)](https://opencollective.com/ngx-clipboard) [![travis build](https://img.shields.io/travis/maxisam/ngx-clipboard.svg?style=flat-square)](https://travis-ci.org/maxisam/ngx-clipboard)
-[![npm](https://img.shields.io/npm/dt/ngx-clipboard.svg?style=flat-square)](https://www.npmjs.com/package/ngx-clipboard)
-[![GitHub release](https://img.shields.io/github/release/maxisam/ngx-clipboard.svg?style=flat-square)](https://github.com/maxisam/ngx-clipboard/releases)
-[![npm](https://img.shields.io/npm/l/ngx-clipboard.svg?style=flat-square)]()
+# FORKED FROM https://github.com/maxisam/ngx-clipboard
 
 # ngx-clipboard , F.K.A [angular2-clipboard](https://www.npmjs.com/package/angular2-clipboard)
 

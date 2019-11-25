@@ -1,20 +1,20 @@
 {
-    "name": "ngx-clipboard",
+    "name": "@tabuckner/ngx-clipboard",
     "description": "angular 2 clipboard",
     "version": "12.2.1",
     "author": {
-        "name": "Sam Lin",
-        "email": "maxisam@gmail.com"
+        "name": "Taylor Buckner",
+        "email": "taylora.buckner@gmail.com"
     },
-    "homepage": "https://github.com/maxisam/ngx-clipboard",
+    "homepage": "https://github.com/tabuckner/ngx-clipboard",
     "license": "MIT",
     "publishConfig": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/maxisam/ngx-clipboard"
+        "url": "https://github.com/tabuckner/ngx-clipboard"
     },
     "bugs": {
-        "url": "https://github.com/maxisam/ngx-clipboard/issues"
+        "url": "https://github.com/tabuckner/ngx-clipboard/issues"
     },
     "keywords": [
         "angular",
