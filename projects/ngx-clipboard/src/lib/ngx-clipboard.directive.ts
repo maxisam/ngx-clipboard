@@ -64,6 +64,6 @@ export class ClipboardDirective implements OnInit, OnDestroy {
             this.cbOnError.emit(response);
         }
 
-        this.clipboardSrv.pushCopyReponse(response);
+        this.clipboardSrv.pushCopyResponse(response);
     }
 }
