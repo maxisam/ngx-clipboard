@@ -139,7 +139,7 @@ export class ClipboardService {
      * Pushes copy operation response to copySubject, to provide global access
      * to the response.
      */
-    public pushCopyReponse(response: IClipboardResponse) {
+    public pushCopyResponse(response: IClipboardResponse) {
         this.copySubject.next(response);
     }
 }
