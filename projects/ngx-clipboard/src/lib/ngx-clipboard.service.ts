@@ -6,19 +6,30 @@ import { Observable, Subject } from 'rxjs';
 import { ClipboardParams, IClipboardResponse } from './interface';
 
 /**
- * The following code is heavily copie from https://github.com/zenorocha/clipboard.js
+ * The following code is heavily copied from https://github.com/zenorocha/clipboard.js
  */
 @Injectable({ providedIn: 'root' })
 export class ClipboardService {
+    private copySubject = new Subject<IClipboardResponse>();
     public copyResponse$: Observable<IClipboardResponse> = this.copySubject.asObservable();
     private tempTextArea: HTMLTextAreaElement | undefined;
     private config: ClipboardParams = {};
-    private copySubject = new Subject<IClipboardResponse>();
 
     constructor(@Inject(DOCUMENT) public document: any, @Optional() @Inject(WINDOW) private window: any) {}
 
     public configure(config: ClipboardParams) {
         this.config = config;
+    }
+
+    public copy(content: string): void {
+        if (!this.isSupported || !content) {
+            return this.pushCopyResponse({ isSuccess: false, content });
+        }
+        const copyResult = this.copyFromContent(content);
+        if (copyResult) {
+            return this.pushCopyResponse({ content, isSuccess: copyResult });
+        }
+        return this.pushCopyResponse({ isSuccess: false, content });
     }
 
     public get isSupported(): boolean {
@@ -102,7 +113,7 @@ export class ClipboardService {
     }
 
     /**
-     * Select the target html input element
+     * Select the target html input element.
      */
     private selectTarget(inputElement: HTMLInputElement | HTMLTextAreaElement): number | undefined {
         inputElement.select();
@@ -150,7 +161,7 @@ export class ClipboardService {
      * Pushes copy operation response to copySubject, to provide global access
      * to the response.
      */
-    public pushCopyResponse(response: IClipboardResponse) {
+    public pushCopyResponse(response: IClipboardResponse): void {
         this.copySubject.next(response);
     }
 }
