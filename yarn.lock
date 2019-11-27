@@ -5534,10 +5534,10 @@ ng-packagr@^4.2.0:
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
 
-ngx-clipboard@12.2.2:
-  version "12.2.2"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-12.2.2.tgz#84de257d6a1cfbae1f17db25080ffdf0fe9b51aa"
-  integrity sha512-YCeAGJGt7DYXIgfnItud+oM2S1ze1JVUH+3wXTyJpjei+17RLv9OvqshntKfsMkDFskXEe/fpCAlth08JInIzw==
+ngx-clipboard@12.3.0:
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-12.3.0.tgz#8e61a894ff57249db64b733d26f9a0b98c08829f"
+  integrity sha512-ToSsuDv9I1L0g+TcthePcZ4B859/MpoarlHVr2KnHWy3pR8SxfJlNyP2i9STYRQkJ5bSEg65RFErW4tx52lHYQ==
   dependencies:
     ngx-window-token "^2.0.0"
     tslib "^1.9.0"
