@@ -163,4 +163,11 @@ export class ClipboardService {
     public pushCopyResponse(response: IClipboardResponse): void {
         this.copySubject.next(response);
     }
+
+    /**
+     * @deprecated use pushCopyResponse instead.
+     */
+    public pushCopyReponse(response: IClipboardResponse): void {
+        this.pushCopyResponse(response);
+    }
 }
