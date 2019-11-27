@@ -49,11 +49,11 @@ export class ClipboardService {
     /**
      * Attempts to copy from an input `targetElm`
      */
-    public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement): boolean {
+    public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement, isFocus = true): boolean {
         try {
             this.selectTarget(targetElm);
             const re = this.copyText();
-            this.clearSelection(targetElm, this.window);
+            this.clearSelection(isFocus ? targetElm : undefined, this.window);
             return re && this.isCopySuccessInIE11();
         } catch (error) {
             return false;
@@ -94,7 +94,7 @@ export class ClipboardService {
         }
         this.tempTextArea.value = content;
 
-        const toReturn = this.copyFromInputElement(this.tempTextArea);
+        const toReturn = this.copyFromInputElement(this.tempTextArea, false);
         if (this.config.cleanUpAfterCopy) {
             this.destroy(this.tempTextArea.parentElement);
         }
@@ -129,7 +129,6 @@ export class ClipboardService {
      * Moves focus away from `target` and back to the trigger, removes current selection.
      */
     private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement, window: Window): void {
-        // tslint:disable-next-line:no-unused-expression
         inputElement && inputElement.focus();
         window.getSelection().removeAllRanges();
     }
@@ -163,5 +162,12 @@ export class ClipboardService {
      */
     public pushCopyResponse(response: IClipboardResponse): void {
         this.copySubject.next(response);
+    }
+
+    /**
+     * @deprecated use pushCopyResponse instead.
+     */
+    public pushCopyReponse(response: IClipboardResponse): void {
+        this.pushCopyResponse(response);
     }
 }
