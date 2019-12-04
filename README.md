@@ -143,7 +143,7 @@ export class ClipboardResponseService {
   }
 
   handleClipboardResponse() {
-    this._clipboardService.copyObservable$.subscribe((res: IClipboardResponse) => {
+    this._clipboardService.copyResponse$.subscribe((res: IClipboardResponse) => {
       if (res.isSuccess) {
         this._toasterService.pop('success', undefined, res.successMessage);
       }
