@@ -9,7 +9,7 @@ import { ClipboardService } from './ngx-clipboard.service';
 export class ClipboardDirective implements OnInit, OnDestroy {
     // tslint:disable-next-line:no-input-rename
     @Input('ngxClipboard')
-    public targetElm: HTMLInputElement;
+    public targetElm: HTMLInputElement | HTMLTextAreaElement;
     @Input()
     public container: HTMLElement;
 
