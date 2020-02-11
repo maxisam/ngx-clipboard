@@ -145,6 +145,7 @@
     },
     "defaultProject": "library-host",
     "cli": {
-        "packageManager": "yarn"
+        "packageManager": "yarn",
+        "analytics": "26cce57c-232f-4bfb-ac75-bfc72a238bd7"
     }
 }
