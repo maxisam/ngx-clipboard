@@ -13,11 +13,12 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
+                        "aot": true,
                         "outputPath": "dist/library-host",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
-                        "tsConfig": "src/tsconfig.app.json",
+                        "tsConfig": "tsconfig.app.json",
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
                             "node_modules/@clr/ui/clr-ui.min.css",
@@ -28,6 +29,12 @@
                     },
                     "configurations": {
                         "production": {
+                            "budgets": [
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb"
+                                }
+                            ],
                             "fileReplacements": [
                                 {
                                     "replace": "src/environments/environment.ts",
@@ -68,7 +75,7 @@
                     "options": {
                         "main": "src/test.ts",
                         "polyfills": "src/polyfills.ts",
-                        "tsConfig": "src/tsconfig.spec.json",
+                        "tsConfig": "tsconfig.spec.json",
                         "karmaConfig": "src/karma.conf.js",
                         "styles": ["src/styles.css"],
                         "scripts": [],
@@ -118,7 +125,8 @@
                     },
                     "configurations": {
                         "production": {
-                            "project": "projects/ngx-clipboard/ng-package.prod.json"
+                            "project": "projects/ngx-clipboard/ng-package.prod.json",
+                            "tsConfig": "projects/ngx-clipboard/tsconfig.lib.prod.json"
                         }
                     }
                 },
