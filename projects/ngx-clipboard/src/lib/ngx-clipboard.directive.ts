@@ -7,14 +7,15 @@ import { ClipboardService } from './ngx-clipboard.service';
     selector: '[ngxClipboard]'
 })
 export class ClipboardDirective implements OnInit, OnDestroy {
+    // https://github.com/maxisam/ngx-clipboard/issues/239#issuecomment-623330624
     // tslint:disable-next-line:no-input-rename
     @Input('ngxClipboard')
-    public targetElm: HTMLInputElement | HTMLTextAreaElement;
+    public targetElm: HTMLInputElement | HTMLTextAreaElement | undefined | '';
     @Input()
     public container: HTMLElement;
 
     @Input()
-    public cbContent: string;
+    public cbContent: string | undefined;
 
     @Input()
     public cbSuccessMsg: string;
