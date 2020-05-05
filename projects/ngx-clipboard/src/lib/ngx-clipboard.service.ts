@@ -81,7 +81,7 @@ export class ClipboardService {
         // check if the temp textarea still belongs to the current container.
         // In case we have multiple places using ngx-clipboard, one is in a modal using container but the other one is not.
         if (this.tempTextArea && !container.contains(this.tempTextArea)) {
-            this.destroy(this.tempTextArea.parentElement);
+            this.destroy(this.tempTextArea.parentElement || undefined);
         }
 
         if (!this.tempTextArea) {
@@ -96,7 +96,7 @@ export class ClipboardService {
 
         const toReturn = this.copyFromInputElement(this.tempTextArea, false);
         if (this.config.cleanUpAfterCopy) {
-            this.destroy(this.tempTextArea.parentElement);
+            this.destroy(this.tempTextArea.parentElement || undefined);
         }
         return toReturn;
     }
@@ -128,9 +128,9 @@ export class ClipboardService {
     /**
      * Moves focus away from `target` and back to the trigger, removes current selection.
      */
-    private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement, window: Window): void {
+    private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement | undefined, window: Window): void {
         inputElement && inputElement.focus();
-        window.getSelection().removeAllRanges();
+        window.getSelection()?.removeAllRanges();
     }
 
     /**

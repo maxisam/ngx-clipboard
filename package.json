@@ -29,7 +29,7 @@
         "@clr/icons": "^2.3.7",
         "@clr/ui": "^2.3.7",
         "core-js": "^2.5.4",
-        "ngx-clipboard": "13.0.0-beta06",
+        "ngx-clipboard": "^13.0.1",
         "ngx-window-token": "3.0.0-beta01",
         "rxjs": "~6.5.4",
         "tslib": "^1.10.0",
