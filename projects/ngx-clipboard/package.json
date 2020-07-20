@@ -22,7 +22,8 @@
         "copy"
     ],
     "dependencies": {
-        "ngx-window-token": ">=4.0.0||4.0.0-beta01"
+        "ngx-window-token": ">=4.0.0||4.0.0-beta01",
+        "tslib": "^2.0.0"
     },
     "peerDependencies": {
         "@angular/common": ">=10.0.0",
