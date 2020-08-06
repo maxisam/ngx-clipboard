@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
         });
     }
     callServiceToCopy() {
-        this._clipboardService.copyFromContent('This is copy thru service copyFromContent directly');
+        this._clipboardService.copy('This is copy thru service copyFromContent directly');
     }
 
     onCopyFailure() {
