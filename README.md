@@ -85,7 +85,7 @@ You can assign the parent **container** to avoid focus trapper issue, #145
 <button [ngxClipboard]="inputTarget">Copy</button>
 ```
 
--   Using `copyFromContent` from `ClipboardService` to copy any text you dynamically created.
+-   Using `copy` from `ClipboardService` to copy any text you dynamically created.
 
 ```ts
 import { ClipboardService } from 'ngx-clipboard'
@@ -97,7 +97,7 @@ constructor(private _clipboardService: ClipboardService){
 }
 
 copy(text: string){
-  this._clipboardService.copyFromContent(text)
+  this._clipboardService.copy(text)
 }
 ```
 
