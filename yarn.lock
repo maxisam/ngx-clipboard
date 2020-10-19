@@ -7224,7 +7224,14 @@ ngx-clipboard@^14.0.0-beta01:
     ngx-window-token ">=4.0.0||4.0.0-beta01"
     tslib "^2.0.0"
 
-ngx-window-token@4.0.0-beta01, ngx-window-token@>=4.0.0||4.0.0-beta01:
+ngx-window-token@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-4.0.0.tgz#8d8553d193f0515eb28f04ccf2c598fbe6abaa34"
+  integrity sha512-z6tS3UQoKULdABWHpE57l1xtoxFFzlwLe1n+nu9+xzCZUdSvkGqhb5dSje4NOVhA6mMOqzR4SctSBZARwqPPuQ==
+  dependencies:
+    tslib "^2.0.0"
+
+ngx-window-token@>=4.0.0||4.0.0-beta01:
   version "4.0.0-beta01"
   resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-4.0.0-beta01.tgz#efa6835d93d35b6ec9d8447c92465eb62c731510"
   integrity sha512-B7Yg2y8xKGGPUPddRxl/mhEHyihzHsYaOsjHkKZRsiaaO+CUV7E/mckjUXTc5JLHm92A/lZV1lfqSUm4a2Wmkw==
