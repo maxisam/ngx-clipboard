@@ -22,6 +22,7 @@ To make more sense with the future versioning scheme of Angular, the directive s
  - If you need to use it on 5.x, please use version 10.x.x.
  - If you need to use it on 8.x, please use version 12.x.x.
  - If you need to use it on 9.x, please use version 13.x.x.
+ - If you need to use it on 10.x, please use version 14.x.x.
 
 The code are pretty much the same, in v8.0.0 it uses InjectionToken which requires angular4 and above.
 
