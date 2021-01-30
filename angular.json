@@ -136,6 +136,13 @@
                         "main": "projects/ngx-clipboard/src/test.ts",
                         "tsConfig": "projects/ngx-clipboard/tsconfig.spec.json",
                         "karmaConfig": "projects/ngx-clipboard/karma.conf.js"
+                    },
+                    "configurations": {
+                        "ci": {
+                            "watch": false,
+                            "progress": false,
+                            "browsers": "ChromeHeadlessCI"
+                        }
                     }
                 },
                 "lint": {

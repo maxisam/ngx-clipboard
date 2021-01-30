@@ -1,0 +1,47 @@
+name: ngx-clipboard
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.12
+
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn --pure-lockfile --non-interactive --no-progress
+
+      # Fix linting errors first
+      # - name: Run TSLint
+      #   run: yarn lint
+
+      - name: Run tests
+        run: yarn test --configuration=ci
+
+      - name: Build integration app
+        run: yarn build --prod
+
+      - name: Build library
+        run: yarn build
+
+      - name: Publish library
+        if: github.event_name == 'workflow_dispatch'
+        run: yarn publish:lib
