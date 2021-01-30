@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
 import { ClipboardModule } from './ngx-clipboard.module';
@@ -36,15 +36,21 @@ describe('ngxClipboardIfSupported directive', () => {
         spy = spyOnProperty(clipboardService, 'isSupported', 'get');
     });
 
-    it('should not render host when copy is not supported', async(() => {
-        spy.and.returnValue(false);
-        fixture.detectChanges();
-        expect(fixture.debugElement.queryAll(By.css('span')).length).toEqual(0);
-    }));
+    it(
+        'should not render host when copy is not supported',
+        waitForAsync(() => {
+            spy.and.returnValue(false);
+            fixture.detectChanges();
+            expect(fixture.debugElement.queryAll(By.css('span')).length).toEqual(0);
+        })
+    );
 
-    it('should render host when copy is supported', async(() => {
-        spy.and.returnValue(true);
-        fixture.detectChanges();
-        expect(fixture.debugElement.queryAll(By.css('span')).length).toEqual(1);
-    }));
+    it(
+        'should render host when copy is supported',
+        waitForAsync(() => {
+            spy.and.returnValue(true);
+            fixture.detectChanges();
+            expect(fixture.debugElement.queryAll(By.css('span')).length).toEqual(1);
+        })
+    );
 });

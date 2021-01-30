@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -60,62 +60,79 @@ describe('Directive: clipboard', () => {
                 button = fixture.debugElement.nativeElement.querySelector('button');
             });
 
-            it('should fire cbOnError if environment does not support copy', async(() => {
-                spy = spyOn(clipboardService, 'isSupported');
-                spy.and.returnValue(false);
-                button.click();
-                fixture.whenStable().then(() => {
-                    expect(fixture.componentInstance.isCopied).toBeFalsy();
-                });
-            }));
+            it(
+                'should fire cbOnError if environment does not support copy',
+                waitForAsync(() => {
+                    spy = spyOnProperty(clipboardService, 'isSupported', 'get').and.returnValue(false);
+                    button.click();
+                    fixture.whenStable().then(() => {
+                        expect(fixture.componentInstance.isCopied).toBeFalsy();
+                    });
+                })
+            );
 
-            it('should fire cbOnSuccess after copy successfully', async(() => {
-                spy.and.returnValue(true);
-                button.click();
-                fixture.whenStable().then(() => {
-                    expect(fixture.componentInstance.isCopied).toBeTruthy();
-                });
-            }));
+            it(
+                'should fire cbOnSuccess after copy successfully',
+                waitForAsync(() => {
+                    spy.and.returnValue(true);
+                    button.click();
+                    fixture.whenStable().then(() => {
+                        expect(fixture.componentInstance.isCopied).toBeTruthy();
+                    });
+                })
+            );
 
-            it('should fire cbOnError after copy fail', async(() => {
-                button.click();
-                fixture.whenStable().then(() => {
-                    expect(fixture.componentInstance.isCopied).toBeFalsy();
-                });
-            }));
+            it(
+                'should fire cbOnError after copy fail',
+                waitForAsync(() => {
+                    button.click();
+                    fixture.whenStable().then(() => {
+                        expect(fixture.componentInstance.isCopied).toBeFalsy();
+                    });
+                })
+            );
 
-            it('should create a textarea in dom, and remove it after calling destroy', async(() => {
-                const doc = fixture.debugElement.injector.get(DOCUMENT);
-                expect(doc.querySelector('textarea')).toBeFalsy();
-                button.click();
-                fixture.whenStable().then(() => {
-                    expect(doc.querySelector('textarea')).toBeTruthy();
-                    clipboardService.destroy(doc.body);
+            it(
+                'should create a textarea in dom, and remove it after calling destroy',
+                waitForAsync(() => {
+                    const doc = fixture.debugElement.injector.get(DOCUMENT);
                     expect(doc.querySelector('textarea')).toBeFalsy();
-                });
-            }));
+                    button.click();
+                    fixture.whenStable().then(() => {
+                        expect(doc.querySelector('textarea')).toBeTruthy();
+                        clipboardService.destroy(doc.body);
+                        expect(doc.querySelector('textarea')).toBeFalsy();
+                    });
+                })
+            );
 
-            it('given the configuration it should clean up temp textarea after copying automatically', async(() => {
-                const doc = fixture.debugElement.injector.get(DOCUMENT);
-                clipboardService.configure({ cleanUpAfterCopy: true });
-                clipboardService.copyFromContent('test content');
-                fixture.whenStable().then(() => {
-                    const ta = doc.querySelector('textarea');
-                    expect(ta).toBeFalsy();
-                });
-            }));
+            it(
+                'given the configuration it should clean up temp textarea after copying automatically',
+                waitForAsync(() => {
+                    const doc = fixture.debugElement.injector.get(DOCUMENT);
+                    clipboardService.configure({ cleanUpAfterCopy: true });
+                    clipboardService.copyFromContent('test content');
+                    fixture.whenStable().then(() => {
+                        const ta = doc.querySelector('textarea');
+                        expect(ta).toBeFalsy();
+                    });
+                })
+            );
 
-            it('should push copy response to copySubject', async(() => {
-                button.click();
-                const component = fixture.componentInstance;
-                clipboardService.copyResponse$.subscribe((res: IClipboardResponse) => {
-                    expect(res).toBeDefined();
-                    expect(res.isSuccess).toEqual(true);
-                    expect(res.content).toEqual(component.text);
-                    expect(res.successMessage).toEqual(component.copySuccessMsg);
-                    expect(res.event).toBeDefined();
-                });
-            }));
+            it(
+                'should push copy response to copySubject',
+                waitForAsync(() => {
+                    button.click();
+                    const component = fixture.componentInstance;
+                    clipboardService.copyResponse$.subscribe((res: IClipboardResponse) => {
+                        expect(res).toBeDefined();
+                        expect(res.isSuccess).toEqual(true);
+                        expect(res.content).toEqual(component.text);
+                        expect(res.successMessage).toEqual(component.copySuccessMsg);
+                        expect(res.event).toBeDefined();
+                    });
+                })
+            );
         });
 
         describe('copy when cbContent and container is set', () => {
@@ -134,18 +151,21 @@ describe('Directive: clipboard', () => {
                 button = fixture.debugElement.nativeElement.querySelector('button');
             });
 
-            it('should create a textarea in dom, and remove it after calling destroy', async(() => {
-                const doc = fixture.debugElement.injector.get(DOCUMENT);
-                expect(doc.querySelector('textarea')).toBeFalsy();
-                button.click();
-                fixture.whenStable().then(() => {
-                    const ta = doc.querySelector('textarea');
-                    expect(ta).toBeTruthy();
-                    expect(ta.parentElement.className).toBe('container');
-                    clipboardService.destroy(ta.parentElement);
+            it(
+                'should create a textarea in dom, and remove it after calling destroy',
+                waitForAsync(() => {
+                    const doc = fixture.debugElement.injector.get(DOCUMENT);
                     expect(doc.querySelector('textarea')).toBeFalsy();
-                });
-            }));
+                    button.click();
+                    fixture.whenStable().then(() => {
+                        const ta = doc.querySelector('textarea');
+                        expect(ta).toBeTruthy();
+                        expect(ta!.parentElement!.className).toBe('container');
+                        clipboardService.destroy(ta!.parentElement!);
+                        expect(doc.querySelector('textarea')).toBeFalsy();
+                    });
+                })
+            );
         });
 
         describe('copy when using copyFromContent directly', () => {
@@ -164,18 +184,21 @@ describe('Directive: clipboard', () => {
                 button = fixture.debugElement.nativeElement.querySelector('button');
             });
 
-            it('should create a textarea in dom with parent as body, and remove it after calling destroy', async(() => {
-                const doc = fixture.debugElement.injector.get(DOCUMENT);
-                expect(doc.querySelector('textarea')).toBeFalsy();
-                clipboardService.copyFromContent('test content');
-                fixture.whenStable().then(() => {
-                    const ta = doc.querySelector('textarea');
-                    expect(ta).toBeTruthy();
-                    expect(ta.parentElement.nodeName).toBe('BODY');
-                    clipboardService.destroy(ta.parentElement);
+            it(
+                'should create a textarea in dom with parent as body, and remove it after calling destroy',
+                waitForAsync(() => {
+                    const doc = fixture.debugElement.injector.get(DOCUMENT);
                     expect(doc.querySelector('textarea')).toBeFalsy();
-                });
-            }));
+                    clipboardService.copyFromContent('test content');
+                    fixture.whenStable().then(() => {
+                        const ta = doc.querySelector('textarea');
+                        expect(ta).toBeTruthy();
+                        expect(ta!.parentElement!.nodeName).toBe('BODY');
+                        clipboardService.destroy(ta!.parentElement!);
+                        expect(doc.querySelector('textarea')).toBeFalsy();
+                    });
+                })
+            );
         });
 
         describe('copy when target is set', () => {
@@ -200,34 +223,42 @@ describe('Directive: clipboard', () => {
                 input.dispatchEvent(new Event('input'));
             });
 
-            it('should fire cbOnSuccess after copy successfully', async(() => {
-                spy.and.returnValue(true);
-                fixture.detectChanges();
-                // button click to trigger copy
-                button.click();
-                fixture.whenStable().then(() => {
-                    expect(fixture.componentInstance.isCopied).toBeTruthy();
-                });
-            }));
+            it(
+                'should fire cbOnSuccess after copy successfully',
+                waitForAsync(() => {
+                    spy.and.returnValue(true);
+                    fixture.detectChanges();
+                    // button click to trigger copy
+                    button.click();
+                    fixture.whenStable().then(() => {
+                        expect(fixture.componentInstance.isCopied).toBeTruthy();
+                    });
+                })
+            );
 
-            it('should fire cbOnError if environment does not support copy', async(() => {
-                spy = spyOn(clipboardService, 'isSupported');
-                spy.and.returnValue(false);
-                button.click();
-                fixture.whenStable().then(() => {
-                    expect(fixture.componentInstance.isCopied).toBeFalsy();
-                });
-            }));
+            it(
+                'should fire cbOnError if environment does not support copy',
+                waitForAsync(() => {
+                    spy = spyOnProperty(clipboardService, 'isSupported', 'get').and.returnValue(false);
+                    button.click();
+                    fixture.whenStable().then(() => {
+                        expect(fixture.componentInstance.isCopied).toBeFalsy();
+                    });
+                })
+            );
 
-            it('should fire cbOnError after copy fail', async(() => {
-                spy.and.returnValue(false);
-                fixture.detectChanges();
-                // button click to trigger copy
-                button.click();
-                fixture.whenStable().then(() => {
-                    expect(fixture.componentInstance.isCopied).toBeFalsy();
-                });
-            }));
+            it(
+                'should fire cbOnError after copy fail',
+                waitForAsync(() => {
+                    spy.and.returnValue(false);
+                    fixture.detectChanges();
+                    // button click to trigger copy
+                    button.click();
+                    fixture.whenStable().then(() => {
+                        expect(fixture.componentInstance.isCopied).toBeFalsy();
+                    });
+                })
+            );
         });
     });
 });
