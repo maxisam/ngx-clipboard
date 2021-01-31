@@ -17,12 +17,13 @@ To make more sense with the future versioning scheme of Angular, the directive s
 
 ## Dependencies
 
- - If you need to use it on 2.x, please use version 7.x.x.
- - If you need to use it on 4.x, please use version 8.x.x.
- - If you need to use it on 5.x, please use version 10.x.x.
- - If you need to use it on 8.x, please use version 12.x.x.
- - If you need to use it on 9.x, please use version 13.x.x.
- - If you need to use it on 10.x, please use version 14.x.x.
+-   If you need to use it on 2.x, please use version 7.x.x.
+-   If you need to use it on 4.x, please use version 8.x.x.
+-   If you need to use it on 5.x, please use version 10.x.x.
+-   If you need to use it on 8.x, please use version 12.x.x.
+-   If you need to use it on 9.x, please use version 13.x.x.
+-   If you need to use it on 10.x, please use version 14.x.x.
+-   If you need to use it on 11.x, please use version 15.x.x. (Thanks https://github.com/arturovt for updating & tuning)
 
 The code are pretty much the same, in v8.0.0 it uses InjectionToken which requires angular4 and above.
 

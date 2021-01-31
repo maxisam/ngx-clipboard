@@ -4,7 +4,7 @@
     "scripts": {
         "ng": "ng",
         "prettier": "prettier --write \"**/*.{json,md,ts,html,component.html}\"",
-        "start": "ng serve",
+        "start": "ng serve --port 4311",
         "build": "ng build ngx-clipboard --prod && yarn build-copy",
         "tslint-check": "tslint-config-prettier-check ./tslint.json",
         "test": "ng test ngx-clipboard",
