@@ -1,11 +1,19 @@
-import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+    Directive,
+    ElementRef,
+    EventEmitter,
+    Input,
+    NgZone,
+    OnDestroy,
+    OnInit,
+    Output,
+    Renderer2
+} from '@angular/core';
 
 import { IClipboardResponse } from './interface';
 import { ClipboardService } from './ngx-clipboard.service';
 
-@Directive({
-    selector: '[ngxClipboard]'
-})
+@Directive({ selector: '[ngxClipboard]' })
 export class ClipboardDirective implements OnInit, OnDestroy {
     // https://github.com/maxisam/ngx-clipboard/issues/239#issuecomment-623330624
     // tslint:disable-next-line:no-input-rename
@@ -25,17 +33,33 @@ export class ClipboardDirective implements OnInit, OnDestroy {
 
     @Output()
     public cbOnError: EventEmitter<any> = new EventEmitter<any>();
-    constructor(private clipboardSrv: ClipboardService) {}
+
+    private clickListener: () => void;
+
+    constructor(
+        private ngZone: NgZone,
+        private host: ElementRef<HTMLElement>,
+        private renderer: Renderer2,
+        private clipboardSrv: ClipboardService
+    ) {}
 
     // tslint:disable-next-line:no-empty
-    public ngOnInit() {}
+    public ngOnInit() {
+        this.ngZone.runOutsideAngular(() => {
+            // By default each host listener schedules change detection and also wrapped
+            // into additional function that calls `markForCheck()`. We're listening the `click`
+            // event in the context of the root zone to avoid running unnecessary change detections,
+            // since this directive doesn't do anything template-related (e.g. updates template variables).
+            this.clickListener = this.renderer.listen(this.host.nativeElement, 'click', this.onClick);
+        });
+    }
 
     public ngOnDestroy() {
+        this.clickListener();
         this.clipboardSrv.destroy(this.container);
     }
 
-    @HostListener('click', ['$event.target'])
-    public onClick(event: Event) {
+    private onClick = (event: MouseEvent): void => {
         if (!this.clipboardSrv.isSupported) {
             this.handleResult(false, undefined, event);
         } else if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
@@ -43,26 +67,34 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         } else if (this.cbContent) {
             this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent, this.container), this.cbContent, event);
         }
-    }
+    };
 
     /**
      * Fires an event based on the copy operation result.
      * @param succeeded
      */
-    private handleResult(succeeded: boolean, copiedContent: string | undefined, event: Event) {
+    private handleResult(succeeded: boolean, copiedContent: string | undefined, event: MouseEvent): void {
         let response: IClipboardResponse = {
             isSuccess: succeeded,
             event
         };
 
         if (succeeded) {
-            response = Object.assign(response, {
-                content: copiedContent,
-                successMessage: this.cbSuccessMsg
-            });
-            this.cbOnSuccess.emit(response);
+            if (this.cbOnSuccess.observers.length > 0) {
+                response = Object.assign(response, {
+                    content: copiedContent,
+                    successMessage: this.cbSuccessMsg
+                });
+                this.ngZone.run(() => {
+                    this.cbOnSuccess.emit(response);
+                });
+            }
         } else {
-            this.cbOnError.emit(response);
+            if (this.cbOnError.observers.length > 0) {
+                this.ngZone.run(() => {
+                    this.cbOnError.emit(response);
+                });
+            }
         }
 
         this.clipboardSrv.pushCopyResponse(response);

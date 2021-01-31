@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, Optional } from '@angular/core';
+import { Inject, Injectable, NgZone, Optional } from '@angular/core';
 import { WINDOW } from 'ngx-window-token';
 import { Observable, Subject } from 'rxjs';
 
@@ -15,7 +15,11 @@ export class ClipboardService {
     private tempTextArea: HTMLTextAreaElement | undefined;
     private config: ClipboardParams = {};
 
-    constructor(@Inject(DOCUMENT) public document: any, @Optional() @Inject(WINDOW) private window: any) {}
+    constructor(
+        private ngZone: NgZone,
+        @Inject(DOCUMENT) public document: any,
+        @Optional() @Inject(WINDOW) private window: any
+    ) {}
 
     public configure(config: ClipboardParams) {
         this.config = config;
@@ -161,7 +165,11 @@ export class ClipboardService {
      * to the response.
      */
     public pushCopyResponse(response: IClipboardResponse): void {
-        this.copySubject.next(response);
+        if (this.copySubject.observers.length > 0) {
+            this.ngZone.run(() => {
+                this.copySubject.next(response);
+            });
+        }
     }
 
     /**
