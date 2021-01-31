@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClipboardService } from 'ngx-clipboard';
 
-// import { ClipboardService } from 'local-ngx-clipboard';
-
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
