@@ -36,9 +36,6 @@ jobs:
             - name: Run tests
               run: yarn test --configuration=ci
 
-            - name: Build integration app
-              run: ng build --prod
-
             - name: Build library
               run: yarn build
 
