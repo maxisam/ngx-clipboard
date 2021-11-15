@@ -20,11 +20,7 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": [
-                            "node_modules/@clr/ui/clr-ui.min.css",
-                            "node_modules/@clr/icons/clr-icons.min.css",
-                            "src/styles.css"
-                        ],
+                        "styles": ["src/styles.css"],
                         "scripts": []
                     },
                     "configurations": {
