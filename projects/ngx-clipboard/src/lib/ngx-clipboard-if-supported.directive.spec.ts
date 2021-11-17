@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-
 import { ClipboardModule } from './ngx-clipboard.module';
 import { ClipboardService } from './ngx-clipboard.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'test-cmp',
-    template: `
-        <span *ngxClipboardIfSupported ngxClipboard cbContent="Foo Bar">
-            Copy Foo Bar
-        </span>
-    `
+    template: `<span·*ngxClipboardIfSupported·ngxClipboard·cbContent="Foo·Bar">·Copy·Foo·Bar·</span>`
 })
 class TestComponent {}
 

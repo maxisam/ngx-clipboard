@@ -1,78 +1,80 @@
 {
-  "name": "library-host",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "prettier": "prettier --write \"**/*.{json,md,ts,html,component.html}\"",
-    "start": "ng serve",
-    "build": "ng build ngx-clipboard --configuration production && yarn build-copy",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json",
-    "test": "ng test ngx-clipboard",
-    "test:watch": "ng test ngx-clipboard --watch",
-    "lint": "ng lint ngx-clipboard",
-    "publish:lib": "yarn publish ./dist/lib",
-    "publish:lib:next": "yarn publish ./dist/lib --tag next",
-    "build-copy": "cpx \"./README.md\" \"./dist/lib\"",
-    "e2e": "ng e2e"
-  },
-  "private": true,
-  "dependencies": {
-    "@angular/animations": "^13.0.1",
-    "@angular/common": "~13.0.1",
-    "@angular/compiler": "~13.0.1",
-    "@angular/core": "~13.0.1",
-    "@angular/forms": "~13.0.1",
-    "@angular/platform-browser": "~13.0.1",
-    "@angular/platform-browser-dynamic": "~13.0.1",
-    "@angular/router": "~13.0.1",
-    "ngx-clipboard": "15.0.0",
-    "ngx-window-token": "6.0.0",
-    "rxjs": "~7.4.0",
-    "tslib": "^2.3.1",
-    "zone.js": "~0.11.4"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~13.0.2",
-    "@angular-eslint/builder": "13.0.0-alpha.0",
-    "@angular-eslint/eslint-plugin": "13.0.0-alpha.0",
-    "@angular-eslint/eslint-plugin-template": "13.0.0-alpha.0",
-    "@angular-eslint/schematics": "13.0.0-alpha.0",
-    "@angular-eslint/template-parser": "13.0.0-alpha.0",
-    "@angular/cli": "~13.0.2",
-    "@angular/compiler-cli": "~13.0.1",
-    "@angular/language-service": "~13.0.1",
-    "@types/jasmine": "~3.10.2",
-    "@types/jasminewd2": "~2.0.10",
-    "@types/node": "^16.11.7",
-    "@typescript-eslint/eslint-plugin": "5.3.0",
-    "@typescript-eslint/parser": "5.3.0",
-    "cpx": "^1.5.0",
-    "eslint": "^8.1.0",
-    "husky": "7.0.4",
-    "jasmine-core": "~3.10.1",
-    "jasmine-spec-reporter": "~7.0.0",
-    "karma": "~6.3.9",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.3",
-    "karma-jasmine": "~4.0.1",
-    "karma-jasmine-html-reporter": "^1.7.0",
-    "lint-staged": "12.0.2",
-    "ng-packagr": "^13.0.3",
-    "prettier": "2.4.1",
-    "protractor": "~7.0.0",
-    "ts-node": "~10.4.0",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "~4.4.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
+    "name": "library-host",
+    "version": "0.0.0",
+    "scripts": {
+        "ng": "ng",
+        "prettier": "prettier --write \"**/*.{json,md,ts,html,component.html}\"",
+        "start": "ng serve",
+        "build": "ng build ngx-clipboard --configuration production && yarn build-copy",
+        "tslint-check": "tslint-config-prettier-check ./tslint.json",
+        "test": "ng test ngx-clipboard",
+        "test:watch": "ng test ngx-clipboard --watch",
+        "lint": "ng lint ngx-clipboard",
+        "publish:lib": "yarn publish ./dist/lib",
+        "publish:lib:next": "yarn publish ./dist/lib --tag next",
+        "build-copy": "cpx \"./README.md\" \"./dist/lib\"",
+        "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+        "@angular/animations": "^13.0.1",
+        "@angular/common": "~13.0.1",
+        "@angular/compiler": "~13.0.1",
+        "@angular/core": "~13.0.1",
+        "@angular/forms": "~13.0.1",
+        "@angular/platform-browser": "~13.0.1",
+        "@angular/platform-browser-dynamic": "~13.0.1",
+        "@angular/router": "~13.0.1",
+        "ngx-clipboard": "15.0.0",
+        "ngx-window-token": "6.0.0",
+        "rxjs": "~7.4.0",
+        "tslib": "^2.3.1",
+        "zone.js": "~0.11.4"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "~13.0.2",
+        "@angular-eslint/builder": "13.0.0-alpha.0",
+        "@angular-eslint/eslint-plugin": "13.0.0-alpha.0",
+        "@angular-eslint/eslint-plugin-template": "13.0.0-alpha.0",
+        "@angular-eslint/schematics": "13.0.0-alpha.0",
+        "@angular-eslint/template-parser": "13.0.0-alpha.0",
+        "@angular/cli": "~13.0.2",
+        "@angular/compiler-cli": "~13.0.1",
+        "@angular/language-service": "~13.0.1",
+        "@types/jasmine": "~3.10.2",
+        "@types/jasminewd2": "~2.0.10",
+        "@types/node": "^16.11.7",
+        "@typescript-eslint/eslint-plugin": "5.3.0",
+        "@typescript-eslint/parser": "5.3.0",
+        "cpx": "^1.5.0",
+        "eslint": "^8.2.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "husky": "7.0.4",
+        "jasmine-core": "~3.10.1",
+        "jasmine-spec-reporter": "~7.0.0",
+        "karma": "~6.3.9",
+        "karma-chrome-launcher": "~3.1.0",
+        "karma-coverage-istanbul-reporter": "~3.0.3",
+        "karma-jasmine": "~4.0.1",
+        "karma-jasmine-html-reporter": "^1.7.0",
+        "lint-staged": "12.0.2",
+        "ng-packagr": "^13.0.3",
+        "prettier": "2.4.1",
+        "protractor": "~7.0.0",
+        "ts-node": "~10.4.0",
+        "tslint-config-prettier": "^1.18.0",
+        "typescript": "~4.4.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{json,md,ts,html,component.html}": [
+            "prettier --write",
+            "git add"
+        ]
     }
-  },
-  "lint-staged": {
-    "*.{json,md,ts,html,component.html}": [
-      "prettier --write",
-      "git add"
-    ]
-  }
 }
