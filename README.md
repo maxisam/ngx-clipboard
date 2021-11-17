@@ -1,4 +1,5 @@
-[![Financial Contributors on Open Collective](https://opencollective.com/ngx-clipboard/all/badge.svg?label=financial+contributors)](https://opencollective.com/ngx-clipboard) [![travis build](https://img.shields.io/travis/maxisam/ngx-clipboard.svg?style=flat-square)](https://travis-ci.org/maxisam/ngx-clipboard)
+[![Financial Contributors on Open Collective](https://opencollective.com/ngx-clipboard/all/badge.svg?label=financial+contributors)](https://opencollective.com/ngx-clipboard)
+[![ngx-clipboard](https://github.com/maxisam/ngx-clipboard/actions/workflows/ngx-clipboard.yml/badge.svg)](https://github.com/maxisam/ngx-clipboard/actions/workflows/ngx-clipboard.yml)
 [![npm](https://img.shields.io/npm/dt/ngx-clipboard.svg?style=flat-square)](https://www.npmjs.com/package/ngx-clipboard)
 [![GitHub release](https://img.shields.io/github/release/maxisam/ngx-clipboard.svg?style=flat-square)](https://github.com/maxisam/ngx-clipboard/releases)
 [![npm](https://img.shields.io/npm/l/ngx-clipboard.svg?style=flat-square)]()
@@ -17,12 +18,12 @@ To make more sense with the future versioning scheme of Angular, the directive s
 
 ## Dependencies
 
- - If you need to use it on 2.x, please use version 7.x.x.
- - If you need to use it on 4.x, please use version 8.x.x.
- - If you need to use it on 5.x, please use version 10.x.x.
- - If you need to use it on 8.x, please use version 12.x.x.
- - If you need to use it on 9.x, please use version 13.x.x.
- - If you need to use it on 10.x, please use version 14.x.x.
+-   If you need to use it on 2.x, please use version 7.x.x.
+-   If you need to use it on 4.x, please use version 8.x.x.
+-   If you need to use it on 5.x, please use version 10.x.x.
+-   If you need to use it on 8.x, please use version 12.x.x.
+-   If you need to use it on 9.x, please use version 13.x.x.
+-   If you need to use it on 10.x - 12.x, please use version 14.0.2.
 
 The code are pretty much the same, in v8.0.0 it uses InjectionToken which requires angular4 and above.
 
