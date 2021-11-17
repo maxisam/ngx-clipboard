@@ -16,7 +16,7 @@ import { ClipboardService } from './ngx-clipboard.service';
 @Directive({ selector: '[ngxClipboard]' })
 export class ClipboardDirective implements OnInit, OnDestroy {
     // https://github.com/maxisam/ngx-clipboard/issues/239#issuecomment-623330624
-    // tslint:disable-next-line:no-input-rename
+    // eslint-disable-next-line @angular-eslint/no-input-rename
     @Input('ngxClipboard')
     public targetElm: HTMLInputElement | HTMLTextAreaElement | undefined | '';
     @Input()
@@ -43,7 +43,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         private clipboardSrv: ClipboardService
     ) {}
 
-    // tslint:disable-next-line:no-empty
+    // eslint-disable-next-line no-empty, @typescript-eslint/no-empty-function
     public ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
             // By default each host listener schedules change detection and also wrapped

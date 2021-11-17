@@ -12,7 +12,7 @@ import { ClipboardService } from './ngx-clipboard.service';
  * Shell component with property 'text' that will be used with our tests
  */
 @Component({
-    // tslint:disable-next-line:component-selector
+    // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'test-clipboard',
     template: `
         <span>PlaceHolder HTML to be Replaced</span>
