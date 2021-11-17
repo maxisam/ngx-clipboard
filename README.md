@@ -12,10 +12,6 @@ It works with angular version 2.0.0 and up
 
 To make more sense with the future versioning scheme of Angular, the directive selector is now rename to **ngxClipboard**
 
-## Other packages
-
--   [ngx-progressive-image-loader](https://github.com/maxisam/ngx-progressive-image-loader): it can lazy load img/picture, prevent reflow and seo friendly.
-
 ## Dependencies
 
 -   If you need to use it on 2.x, please use version 7.x.x.
@@ -24,7 +20,7 @@ To make more sense with the future versioning scheme of Angular, the directive s
 -   If you need to use it on 8.x, please use version 12.x.x.
 -   If you need to use it on 9.x, please use version 13.x.x.
 -   If you need to use it on 10.x - 12.x, please use version 14.0.2.
--   If you need to use it on 13.x, please use version 15.x.x.
+-   If you need to use it on 13.x, please use version 15.x.x. (Also thanks https://github.com/arturovt for updating & tuning)
 
 The code are pretty much the same, in v8.0.0 it uses InjectionToken which requires angular4 and above.
 
