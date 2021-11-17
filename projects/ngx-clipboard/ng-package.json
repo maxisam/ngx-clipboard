@@ -2,7 +2,7 @@
     "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
     "dest": "../../dist/lib",
     "deleteDestPath": false,
-    "whitelistedNonPeerDependencies": ["ngx-window-token"],
+    "allowedNonPeerDependencies": ["ngx-window-token"],
     "lib": {
         "entryFile": "src/public_api.ts"
     }
