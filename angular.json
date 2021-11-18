@@ -81,6 +81,12 @@
                         "scripts": [],
                         "assets": ["src/favicon.ico", "src/assets"]
                     }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+                    }
                 }
             }
         },
@@ -130,6 +136,12 @@
                             "browsers": "ChromeHeadlessCI"
                         }
                     }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": ["projects/ngx-clipboard/**/*.ts", "projects/ngx-clipboard/**/*.html"]
+                    }
                 }
             }
         }
@@ -137,6 +149,7 @@
     "defaultProject": "library-host",
     "cli": {
         "packageManager": "yarn",
-        "analytics": "26cce57c-232f-4bfb-ac75-bfc72a238bd7"
+        "analytics": "26cce57c-232f-4bfb-ac75-bfc72a238bd7",
+        "defaultCollection": "@angular-eslint/schematics"
     }
 }

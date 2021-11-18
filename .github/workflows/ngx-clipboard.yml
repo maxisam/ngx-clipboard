@@ -1,48 +1,48 @@
 name: ngx-clipboard
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-  workflow_dispatch:
+    push:
+        branches:
+            - master
+    pull_request:
+    workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+        steps:
+            - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14.15.0
-          cache: 'yarn'
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: 14.17.0
+                  cache: 'yarn'
 
-      - uses: actions/cache@v2
-        id: angular-cache
-        with:
-          path: |
-            .angular/cache
-          key: ${{ runner.os }}-ng-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-ng
+            - uses: actions/cache@v2
+              id: angular-cache
+              with:
+                  path: |
+                      .angular/cache
+                  key: ${{ runner.os }}-ng-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-ng
 
-      - name: Install dependencies
-        run: yarn --pure-lockfile --non-interactive --no-progress
+            - name: Install dependencies
+              run: yarn --pure-lockfile --non-interactive --no-progress
 
-      # Fix linting errors first
-      # - name: Run TSLint
-      #   run: yarn lint
+            # Fix linting errors first
+            # - name: Run TSLint
+            #   run: yarn lint
 
-      - name: Run tests
-        run: yarn test --configuration=ci
+            - name: Run tests
+              run: yarn test --configuration=ci
 
-      - name: Build host app
-        run: yarn ng build library-host --prod
+            - name: Build host app
+              run: yarn ng build library-host --prod
 
-      - name: Build library
-        run: yarn build
+            - name: Build library
+              run: yarn build
 
-      - name: Publish library
-        if: github.event_name == 'workflow_dispatch'
-        run: yarn publish:lib
+            - name: Publish library
+              if: github.event_name == 'workflow_dispatch'
+              run: yarn publish:lib
