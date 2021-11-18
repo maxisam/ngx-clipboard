@@ -7,7 +7,7 @@ import { ClipboardService } from './ngx-clipboard.service';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'test-cmp',
-    template: `<span·*ngxClipboardIfSupported·ngxClipboard·cbContent="Foo·Bar">·Copy·Foo·Bar·</span>`
+    template: `<span *ngxClipboardIfSupported ngxClipboard cbContent="Foo Bar"> Copy Foo Bar </span>`
 })
 class TestComponent {}
 
