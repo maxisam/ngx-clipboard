@@ -55,7 +55,9 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     }
 
     public ngOnDestroy() {
-        this.clickListener();
+        if (this.clickListener) {
+            this.clickListener();
+        }
         this.clipboardSrv.destroy(this.container);
     }
 
