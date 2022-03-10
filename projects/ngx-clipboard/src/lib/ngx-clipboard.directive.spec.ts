@@ -17,9 +17,9 @@ import { ClipboardService } from './ngx-clipboard.service';
     template: ` <span>PlaceHolder HTML to be Replaced</span> `
 })
 export class TestClipboardComponent {
-    public text = 'test';
+    public text = 'text';
     public isCopied: boolean;
-    public copySuccessMsg = 'Foo bar';
+    public copySuccessMsg = 'copySuccessMsg';
 }
 
 /**
@@ -120,7 +120,7 @@ describe('Directive: clipboard', () => {
             it(
                 'should push copy response to copySubject',
                 waitForAsync(() => {
-                    button.click();
+                    spy.and.returnValue(true);
                     const component = fixture.componentInstance;
                     clipboardService.copyResponse$.subscribe((res: IClipboardResponse) => {
                         expect(res).toBeDefined();
@@ -129,6 +129,7 @@ describe('Directive: clipboard', () => {
                         expect(res.successMessage).toEqual(component.copySuccessMsg);
                         expect(res.event).toBeDefined();
                     });
+                    button.click();
                 })
             );
         });
