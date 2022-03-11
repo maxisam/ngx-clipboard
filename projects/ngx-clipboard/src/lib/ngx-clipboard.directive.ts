@@ -78,15 +78,13 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     private handleResult(succeeded: boolean, copiedContent: string | undefined, event: MouseEvent): void {
         let response: IClipboardResponse = {
             isSuccess: succeeded,
+            content: copiedContent,
+            successMessage: this.cbSuccessMsg,
             event
         };
 
         if (succeeded) {
             if (this.cbOnSuccess.observers.length > 0) {
-                response = Object.assign(response, {
-                    content: copiedContent,
-                    successMessage: this.cbSuccessMsg
-                });
                 this.ngZone.run(() => {
                     this.cbOnSuccess.emit(response);
                 });
