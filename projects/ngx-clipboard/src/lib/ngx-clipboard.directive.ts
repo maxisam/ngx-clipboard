@@ -9,7 +9,6 @@ import {
     Output,
     Renderer2
 } from '@angular/core';
-
 import { IClipboardResponse } from './interface';
 import { ClipboardService } from './ngx-clipboard.service';
 
@@ -84,13 +83,13 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         };
 
         if (succeeded) {
-            if (this.cbOnSuccess.observers.length > 0) {
+            if (this.cbOnSuccess.observed) {
                 this.ngZone.run(() => {
                     this.cbOnSuccess.emit(response);
                 });
             }
         } else {
-            if (this.cbOnError.observers.length > 0) {
+            if (this.cbOnError.observed) {
                 this.ngZone.run(() => {
                     this.cbOnError.emit(response);
                 });
