@@ -150,5 +150,13 @@
         "packageManager": "yarn",
         "analytics": "26cce57c-232f-4bfb-ac75-bfc72a238bd7",
         "schematicCollections": ["@angular-eslint/schematics"]
+    },
+    "schematics": {
+        "@angular-eslint/schematics:application": {
+            "setParserOptionsProject": true
+        },
+        "@angular-eslint/schematics:library": {
+            "setParserOptionsProject": true
+        }
     }
 }

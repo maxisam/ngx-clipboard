@@ -11,12 +11,11 @@
         "moduleResolution": "node",
         "importHelpers": true,
         "strictNullChecks": true,
-        "target": "es2020",
+        "target": "ES2022",
         "typeRoots": ["node_modules/@types"],
         "lib": ["es2018", "dom"],
-        "paths": {
-            // "ngx-clipboard": ["projects/ngx-clipboard/src/public_api.ts"]
-        }
+        "paths": {},
+        "useDefineForClassFields": false
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,
