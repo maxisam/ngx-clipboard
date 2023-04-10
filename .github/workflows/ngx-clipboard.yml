@@ -16,7 +16,7 @@ jobs:
 
             - uses: actions/setup-node@v2
               with:
-                  node-version: 14.17.0
+                  node-version: 14.20.0
                   cache: 'yarn'
 
             - uses: actions/cache@v2
@@ -38,7 +38,7 @@ jobs:
               run: yarn test --configuration=ci
 
             - name: Build host app
-              run: yarn ng build library-host --prod
+              run: yarn ng build library-host --configuration=production
 
             - name: Build library
               run: yarn build
