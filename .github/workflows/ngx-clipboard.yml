@@ -1,11 +1,13 @@
 name: ngx-clipboard
 
 on:
-    push:
-        branches:
-            - master
     pull_request:
     workflow_dispatch:
+        inputs:
+            isBeta:
+                description: 'Is this a beta release?'
+                required: false
+                default: 'false'
 
 jobs:
     build:
@@ -45,4 +47,7 @@ jobs:
 
             - name: Publish library
               if: github.event_name == 'workflow_dispatch'
-              run: yarn publish:lib
+              run: |
+                  echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc && npm publish ./dist/lib --access public --tag ${{ github.event.inputs.isBeta == 'true' && 'next' || 'latest' }}
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
