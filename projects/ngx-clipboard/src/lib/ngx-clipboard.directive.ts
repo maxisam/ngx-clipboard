@@ -27,9 +27,6 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     @Input()
     public cbSuccessMsg: string;
 
-    @Input()
-    public ngxNavigator: boolean = false;
-
     @Output()
     public cbOnSuccess: EventEmitter<IClipboardResponse> = new EventEmitter<IClipboardResponse>();
 
@@ -67,17 +64,9 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         if (!this.clipboardSrv.isSupported) {
             this.handleResult(false, undefined, event);
         } else if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
-            this.handleResult(
-                this.clipboardSrv.copyFromInputElement(this.targetElm, this.ngxNavigator),
-                this.targetElm.value,
-                event
-            );
+            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm), this.targetElm.value, event);
         } else if (this.cbContent) {
-            this.handleResult(
-                this.clipboardSrv.copyFromContent(this.cbContent, this.ngxNavigator, this.container),
-                this.cbContent,
-                event
-            );
+            this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent, this.container), this.cbContent, event);
         }
     };
 
