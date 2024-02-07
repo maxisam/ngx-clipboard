@@ -53,11 +53,22 @@ export class ClipboardService {
     /**
      * Attempts to copy from an input `targetElm`
      */
-    public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement, isFocus = true): boolean {
+    public copyFromInputElement(
+        targetElm: HTMLInputElement | HTMLTextAreaElement,
+        ngxNavigator: boolean,
+        isFocus = true
+    ): boolean {
         try {
             this.selectTarget(targetElm);
-            const re = this.copyText();
+            let re = false; //this.copyText();
+            if (ngxNavigator) {
+                re = true;
+                navigator.clipboard.writeText(targetElm.value);
+            } else {
+                re = this.copyText();
+            }
             this.clearSelection(isFocus ? targetElm : undefined, this.window);
+            console.log('the res : ', re);
             return re && this.isCopySuccessInIE11();
         } catch (error) {
             return false;
@@ -81,7 +92,11 @@ export class ClipboardService {
      * Creates a fake textarea element, sets its value from `text` property,
      * and makes a selection on it.
      */
-    public copyFromContent(content: string, container: HTMLElement = this.document.body): boolean {
+    public copyFromContent(
+        content: string,
+        ngxNavigator: boolean = false,
+        container: HTMLElement = this.document.body
+    ): boolean {
         // check if the temp textarea still belongs to the current container.
         // In case we have multiple places using ngx-clipboard, one is in a modal using container but the other one is not.
         if (this.tempTextArea && !container.contains(this.tempTextArea)) {
@@ -97,8 +112,7 @@ export class ClipboardService {
             }
         }
         this.tempTextArea.value = content;
-
-        const toReturn = this.copyFromInputElement(this.tempTextArea, false);
+        const toReturn = this.copyFromInputElement(this.tempTextArea, ngxNavigator, false);
         if (this.config.cleanUpAfterCopy) {
             this.destroy(this.tempTextArea.parentElement || undefined);
         }
