@@ -56,7 +56,7 @@ export class ClipboardService {
     public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement, isFocus = true): boolean {
         try {
             this.selectTarget(targetElm);
-            const re = this.copyText();
+            let re = this.copyText(targetElm);
             this.clearSelection(isFocus ? targetElm : undefined, this.window);
             return re && this.isCopySuccessInIE11();
         } catch (error) {
@@ -97,7 +97,6 @@ export class ClipboardService {
             }
         }
         this.tempTextArea.value = content;
-
         const toReturn = this.copyFromInputElement(this.tempTextArea, false);
         if (this.config.cleanUpAfterCopy) {
             this.destroy(this.tempTextArea.parentElement || undefined);
@@ -125,8 +124,9 @@ export class ClipboardService {
         return inputElement.value.length;
     }
 
-    private copyText(): boolean {
-        return this.document.execCommand('copy');
+    private copyText(targetElm: HTMLInputElement | HTMLTextAreaElement): boolean {
+        navigator.clipboard.writeText(targetElm.value);
+        return true; //this.document.execCommand('copy');
     }
 
     /**
