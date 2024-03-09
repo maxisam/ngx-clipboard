@@ -13,6 +13,7 @@ export class ClipboardService {
     private copySubject = new Subject<IClipboardResponse>();
     public copyResponse$: Observable<IClipboardResponse> = this.copySubject.asObservable();
     private tempTextArea: HTMLTextAreaElement | undefined;
+    private tempDivArea: HTMLDivElement | undefined;
     private config: ClipboardParams = {};
 
     constructor(
@@ -40,7 +41,7 @@ export class ClipboardService {
         return !!this.document.queryCommandSupported && !!this.document.queryCommandSupported('copy') && !!this.window;
     }
 
-    public isTargetValid(element: HTMLInputElement | HTMLTextAreaElement): boolean {
+    public isTargetValid(element: HTMLInputElement | HTMLDivElement): boolean {
         if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) {
             if (element.hasAttribute('disabled')) {
                 throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
@@ -53,10 +54,10 @@ export class ClipboardService {
     /**
      * Attempts to copy from an input `targetElm`
      */
-    public copyFromInputElement(targetElm: HTMLInputElement | HTMLTextAreaElement, isFocus = true): boolean {
+    public copyFromInputElement(targetElm: HTMLInputElement | HTMLDivElement, isFocus = true): boolean {
         try {
-            this.selectTarget(targetElm);
-            const re = this.copyText();
+            //this.selectTarget(targetElm);
+            let re = this.copyText(targetElm);
             this.clearSelection(isFocus ? targetElm : undefined, this.window);
             return re && this.isCopySuccessInIE11();
         } catch (error) {
@@ -84,23 +85,32 @@ export class ClipboardService {
     public copyFromContent(content: string, container: HTMLElement = this.document.body): boolean {
         // check if the temp textarea still belongs to the current container.
         // In case we have multiple places using ngx-clipboard, one is in a modal using container but the other one is not.
-        if (this.tempTextArea && !container.contains(this.tempTextArea)) {
-            this.destroy(this.tempTextArea.parentElement || undefined);
+        if (this.tempDivArea && !container.contains(this.tempDivArea)) {
+            this.destroy(this.tempDivArea.parentElement || undefined);
         }
+        // this.tempDivArea = document.createElement('div');
+        // this.tempDivArea.innerHTML = content;
+        // console.log(this.tempDivArea)
+        // document.body.appendChild(this.tempDivArea)
+        // navigator.clipboard.write([new ClipboardItem({
+        //     'text/plain': new Blob([this.tempDivArea.innerText], {type: 'text/plain'}),
+        //     'text/html': new Blob([this.tempDivArea.innerHTML], {type: 'text/html'})
+        //   })])
+        // document.body.removeChild(this.tempDivArea)
+        if (!this.tempDivArea) {
+            this.tempDivArea = this.createTempTextArea(this.document, this.window);
 
-        if (!this.tempTextArea) {
-            this.tempTextArea = this.createTempTextArea(this.document, this.window);
             try {
-                container.appendChild(this.tempTextArea);
+                container.appendChild(this.tempDivArea);
             } catch (error) {
                 throw new Error('Container should be a Dom element');
             }
         }
-        this.tempTextArea.value = content;
-
-        const toReturn = this.copyFromInputElement(this.tempTextArea, false);
+        //this.tempTextArea.value = content;
+        this.tempDivArea.innerHTML = content;
+        const toReturn = this.copyFromInputElement(this.tempDivArea, false);
         if (this.config.cleanUpAfterCopy) {
-            this.destroy(this.tempTextArea.parentElement || undefined);
+            this.destroy(this.tempDivArea.parentElement || undefined);
         }
         return toReturn;
     }
@@ -125,14 +135,21 @@ export class ClipboardService {
         return inputElement.value.length;
     }
 
-    private copyText(): boolean {
-        return this.document.execCommand('copy');
+    private copyText(targetElm: HTMLInputElement | HTMLDivElement): boolean {
+        //navigator.clipboard.writeText(targetElm.value);
+        navigator.clipboard.write([
+            new ClipboardItem({
+                'text/plain': new Blob([targetElm.innerText], { type: 'text/plain' }),
+                'text/html': new Blob([targetElm.innerHTML], { type: 'text/html' })
+            })
+        ]);
+        return true; //this.document.execCommand('copy');
     }
 
     /**
      * Moves focus away from `target` and back to the trigger, removes current selection.
      */
-    private clearSelection(inputElement: HTMLInputElement | HTMLTextAreaElement | undefined, window: Window): void {
+    private clearSelection(inputElement: HTMLInputElement | HTMLDivElement | undefined, window: Window): void {
         inputElement && inputElement.focus();
         window.getSelection()?.removeAllRanges();
     }
@@ -140,10 +157,10 @@ export class ClipboardService {
     /**
      * Creates a fake textarea for copy command.
      */
-    private createTempTextArea(doc: Document, window: Window): HTMLTextAreaElement {
+    private createTempTextArea(doc: Document, window: Window): HTMLDivElement {
         const isRTL = doc.documentElement.getAttribute('dir') === 'rtl';
-        let ta: HTMLTextAreaElement;
-        ta = doc.createElement('textarea');
+        let ta: HTMLDivElement;
+        ta = doc.createElement('div');
         // Prevent zooming on iOS
         ta.style.fontSize = '12pt';
         // Reset box model

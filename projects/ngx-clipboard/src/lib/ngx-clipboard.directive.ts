@@ -17,7 +17,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
     // https://github.com/maxisam/ngx-clipboard/issues/239#issuecomment-623330624
     // eslint-disable-next-line @angular-eslint/no-input-rename
     @Input('ngxClipboard')
-    public targetElm: HTMLInputElement | HTMLTextAreaElement | undefined | '';
+    public targetElm: HTMLInputElement | HTMLDivElement | undefined | '';
     @Input()
     public container: HTMLElement;
 
@@ -64,7 +64,7 @@ export class ClipboardDirective implements OnInit, OnDestroy {
         if (!this.clipboardSrv.isSupported) {
             this.handleResult(false, undefined, event);
         } else if (this.targetElm && this.clipboardSrv.isTargetValid(this.targetElm)) {
-            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm), this.targetElm.value, event);
+            this.handleResult(this.clipboardSrv.copyFromInputElement(this.targetElm), this.cbContent, event);
         } else if (this.cbContent) {
             this.handleResult(this.clipboardSrv.copyFromContent(this.cbContent, this.container), this.cbContent, event);
         }
