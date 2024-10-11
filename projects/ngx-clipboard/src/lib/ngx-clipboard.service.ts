@@ -147,6 +147,10 @@ export class ClipboardService {
         // Prevent zooming on iOS
         ta.style.fontSize = '12pt';
         // Reset box model
+        ta.style.height = '1px';
+        ta.style.width = '1px';
+        ta.style.overflow = 'hidden';
+        ta.style.clip = 'rect(0 0 0 0);';
         ta.style.border = '0';
         ta.style.padding = '0';
         ta.style.margin = '0';
@@ -157,6 +161,8 @@ export class ClipboardService {
         const yPosition = window.pageYOffset || doc.documentElement.scrollTop;
         ta.style.top = yPosition + 'px';
         ta.setAttribute('readonly', '');
+        ta.setAttribute('aria-hidden', 'true');
+
         return ta;
     }
 
